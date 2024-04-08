@@ -9,4 +9,3 @@
 
 <br>
 
-The purpose of this project is giving people a clear ideia of the movement of artificial sattelites and celestial bodies with Earth as reference.
