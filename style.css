@@ -1,0 +1,420 @@
+body {
+
+	color: aliceblue;	
+	cursor: default;
+}
+
+.calligraffitti-regular {
+	font-family: "Calligraffitti", cursive;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#video-bg {
+
+	position: fixed;
+
+	width: 100%;
+	height: 100%;
+
+	object-fit: fill;
+}
+
+.interface {
+
+	width: 100%;
+	height: 80vh;
+	margin: 0;
+	padding: 0;
+
+	padding: 18px 0 18px 0;
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 6vw;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+
+	opacity: 0;
+	
+}
+
+footer {
+
+	width: 100%;
+	height:30vh;
+	margin-top: 14vh;
+
+	display: inline-flex;
+    align-items:center;
+	justify-content: center;
+	align-content:center;
+	justify-items: center;
+
+	text-align: center; 
+	font-size: 30px;
+
+	background-color: rgba(0, 0, 0, 0.05);
+	border-width: 2px 0 0 0;
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.839);
+	border-radius: 30% 30% 0 0;
+
+	backdrop-filter: blur(20px);
+	background-color: rgba(77, 85, 152, 0.254);
+	
+}
+
+
+
+.footer-grid{
+
+	width: 100%;
+    display: flex;
+    align-items: center;
+	justify-content: space-evenly;
+
+	padding: 5px;
+
+}
+
+.footer-box{
+
+	height: 100%;
+
+	display: inline-flex;
+	height: fit-content;
+	flex-direction: column;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+
+
+}
+
+.powered-by {
+	display: inline-flex;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+
+	gap: 20px;
+
+	color: white;
+}
+
+
+footer img{
+
+	position: relative;
+	justify-self: center;
+	opacity: 0.9;
+	/* border-color: whitesmoke;
+	border-style: solid;
+	border-width: 0.5px; */
+
+
+}
+
+
+
+.box-image{
+	background-image: url(assets/clodome.png);
+	background-size: contain;
+	position: relative;
+	height: 80px; 
+	width: 80px ;
+	border-radius: 8%;
+
+	background-color: transparent;
+}
+
+p{
+		font-size: 0.5em;
+}
+
+.loader {
+
+	width: 35px;
+	height: 35px;
+	margin: 0;
+
+	background-color: transparent;
+	box-shadow: 0vw 0vw 1vw 0vw rgba(255, 211, 199, 0.458);   
+	border: 4px solid #f3f3f3a0;
+	border-top: 4px solid;
+	border-radius: 50%;		
+	
+}
+
+#wiki-loader {
+	border-top-color: #ffffff;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+
+
+.metaInfo{
+
+	background-image: linear-gradient(90deg,  rgba(200,200,200, 0.05), rgba(200,200,200, 0.4), rgba(200,200,200, 0.5), rgba(200,200,200, 0.4),  rgba(200,200,200, 0.05));
+	border-style: solid;
+	border-width: 1px 0 1px 0;
+	border-color: darkslategray;
+
+	cursor: default; 
+	font-family: monospace; 
+	font-weight: bolder;
+	color: rgb(255, 255, 255);
+}
+
+.wikiInfo {
+
+	width: 100%;
+	height: 100px;
+	margin-bottom: 20px;
+
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+
+	font-family: 'Courier New', Courier, monospace; 
+	font-size: 20px;
+	font-weight: 100;
+	color: rgb(253, 253, 253);
+
+	cursor: default; 
+}
+
+
+.band-container {
+    width: 100%;
+	height: fit-content;
+    min-height: 200px;
+
+    margin: 14vh 0 0 0;
+    /* padding: 2vh 0vw 2vh 0; */
+
+    backdrop-filter: blur(5px);
+    background-image: linear-gradient(45deg, rgba(48, 40, 40, 0.594), transparent);
+    box-shadow: 0.3vw 0.3vw 1vw 0.2vw rgba(235, 172, 155, 0.329);   
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    gap: 2vw;
+    color: azure;
+
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.596);
+	border-width: 1px 0 1px 0;
+
+	backdrop-filter: blur(20px);
+	background-color: rgba(77, 85, 152, 0.254);
+
+}
+
+.band-display  {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    justify-items: stretch;
+    color: azure;
+}
+
+.inline-flex-container{
+    display: flex;
+    flex-direction: row;
+    gap: 4vh;
+}
+
+.band-title-box {
+	height: 140px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	border-style: solid;
+	border-width:  0 1px 0 0;
+	border-color: rgba(255, 255, 255, 0.205);
+}
+
+.band-title{
+	height: fit-content;
+
+	display: inline-flex;
+	align-items: center;
+
+    text-align: right; 
+    text-justify: center; 
+    font-family: 'Courier New', Courier, monospace;
+	font-weight: 300; 
+	opacity: 0.9; 
+    font-size: 5vh; 
+    margin: 0 0 0 0;
+	padding: 0 1vw 0 0;
+	color: rgba(255, 255, 255, 0.685);
+
+
+}
+
+.band-button-container{
+    display: grid;
+    grid-template-rows: auto auto;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+
+    padding: 0px 0 0px 0;
+    gap:0;
+}
+
+.button-name{
+    margin: 0;
+    padding: 0 ;
+    font-family: monospace ;
+    font-style: normal;
+    font-weight: 300;
+    color: rgb(241, 241, 241);
+
+    opacity: 1;
+}
+
+#contribute{
+	display: inline-flex;
+	gap: 20px;
+}
+
+
+.rectangular-button{
+
+    background-color: transparent;
+
+    background-size: cover;
+    width: 240px;
+    height: 120px;
+    box-shadow: 0.3vw 0.3vw 1vw 0.2vw rgba(235, 172, 155, 0.329);
+
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 0;
+    border-color: rgba(245, 245, 245, 0.429);
+
+    opacity: 0.7;
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+
+    padding: 0;
+
+}
+
+.circular-button{
+
+    background-color: transparent;
+
+    background-size: cover;
+    width: 105px;
+    height: 105px;
+    /* box-shadow: 0.3vw 0.3vw 1vw 0.2vw rgba(235, 172, 155, 0.329); */
+
+    border-style: solid;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: rgba(245, 245, 245, 0.429);
+
+    opacity: 0.7;
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+
+    padding: 0;
+
+}
+
+.team-button:hover{
+    scale: 1.03;
+    opacity: 0.95;
+}
+
+.dev-image {
+	
+	object-fit: fill; 
+	border-radius: 50%;
+}
+
+.resource-image {
+	
+	object-fit: fill; 
+    border-radius: 2px;
+}
+
+.jointheteam-button img{
+	border-radius: 8px;
+	opacity: 0.8;
+}
+
+.buymeacoffee-button img{
+    opacity: 0.8;
+}
+
+.buymeacoffee-button img:hover, .jointheteam-button img:hover{
+    scale: 1.01;
+    opacity: 1;
+}
+
+.poem {
+
+	margin: 40px 0;
+	width: 100%;
+
+	font-family: 'Courier New', Courier, monospace;
+	font-style: oblique;
+	font-size: 15px;
+	color: white;
+
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	
+}
+
+
+a {
+
+	padding: 2px;
+
+	text-decoration: none;
+	transition: all 0s;
+
+	color: white; 
+	font-family: courier; 
+	font-weight: 300;
+
+}
+
+a:hover{
+	color: rgb(255, 255, 255);
+	font-weight: bolder;
+	scale: 1.03;	
+}
+

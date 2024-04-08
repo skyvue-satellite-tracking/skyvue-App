@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SkyVue</title>
+
+	<link rel="icon" href="assets/space_station.png">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="./components/Interface/ViewPanel/components/Map3DTab/map3D/css/style.css" rel="stylesheet" type="text/css"/>
+	<link href="https://fonts.googleapis.com" rel="preconnect" >
+	<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
+	<link href="./components/header/header.css" rel="stylesheet" type="text/css" />
+	<link href="./components/Interface/DataPanel/DataPanel.css" rel="stylesheet" type="text/css" />
+	<link href="./components/Interface/ViewPanel/ViewPanel.css" rel="stylesheet" type="text/css" />
+	<link href="./components/dataManager/DataManager.css" rel="stylesheet" type="text/css" />
+	<link href="./components/dataManager/components/DataRow/DataRow.css" rel="stylesheet" type="text/css" />
+	<link href="./components/dataManager/components/DataRow/components/Checkbox/Checkbox.css" rel="stylesheet" type="text/css" />
+
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!--Vue.js Development Build  -->
+	<!-- <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.prod.js"></script> -->  <!--Vue.js Production Build  -->
+
+	
+	<body>
+		
+		<div id="app">
+			
+			<data-manager :object_path="object_path" :units="units" :source="source_URL"></data-manager>
+			
+			<video id="video-bg" muted autoplay loop src="assets/bg.webm"></video>
+
+			<header-vue></header-vue>
+			
+			<div id="interface" class="interface">
+				
+				<data-panel :tracking="tracking" :object_path="object_path" :selected_satellite="selected_satellite" :source="source_URL"></data-panel>
+				
+				<view-panel :tracking="tracking" :object_path="object_path" :selected_satellite="selected_satellite"></view-panel>
+
+			</div>
+					
+			<div id="trivia" class="band-container">
+				<div class="band-display">
+					<div style="width: 100%; display: flex; flex-direction: column;" >
+						<div class="wikiInfo"> "The International Space Station (ISS) is the largest modular space station currently in low Earth orbit." </div>
+						<div style="width: 100%; display: flex; justify-content: center;">
+							<div class="loader" id="wiki-loader"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="resources" class="band-container">
+				<div class="band-display">
+					<div class="inline-flex-container">
+						<div class="band-title-box">
+							<h6>recommended</h6>
+							<h1 class="band-title">RESOURCES</h1>
+							<h6>from other creators</h6>
+						</div>
+						
+						<div style="display: inline-flex; flex-wrap: nowrap; gap: 4vh;">
+							<div class="band-button-container"><a target="_blank" href="https://celestrak.org/"><button class="rectangular-button" id="resource-button-1"><img class="resource-image" src="./assets/resource1.png" width="100%" height="100%" ></button></a><div class="button-name">Celestrack</div></div>
+							<div class="band-button-container"><a target="_blank" href="https://nattybumppo.github.io/rocket-launch-history/"><button class="rectangular-button" id="resource-button-1"><img class="resource-image" src="./assets/HistoryOfLaunches.gif" width="100%" height="100%" ></button></a><div class="button-name">A BRIEF HISTORY OF ROCKET LAUNCHES</div></div>
+							<div class="band-button-container"><a target="_blank" href="https://satmap.space/"><button class="rectangular-button" id="resource-button-1"><img class="resource-image" src="./assets/satmap_demo.gif" width="100%" height="100%" ></button></a><div class="button-name">satmap.space</div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="contribute" class="band-container">
+				<div class="band-display">
+					<div id="contribute">
+						<a class="buymeacoffee-button" target="_blank" href="https://www.buymeacoffee.com/"><img src="./assets/buymeacoffee-button.png" alt="Buy Me A Coffee" style="width: 165px;" ></a>
+						<a class="jointheteam-button" target="_blank" href="https://trello.com/b/D841pzzW/skylantern-web-app"><img src="./assets/join.png" alt="Join the team" style="width: 165px;" ></a>
+					</div>
+					<div class="inline-flex-container">
+						<div class="band-title-box">
+							<h1 class="band-title">THE TEAM</h1>
+						</div>
+						<div style="display: inline-flex; flex-wrap: nowrap; gap: 4vh;">
+							<div class="band-button-container"><a target="_blank" href="https://clodo.me/" target="_blank"><button class="circular-button" id="dev-button-1"><img class="dev-image" src="./assets/dev1.png" width="100%" ></button></a><div class="button-name">Clodomir Vianna</div></div>
+							<!-- <div class="band-button-container"><a target="_blank" href="https://clodon1109.github.io/caiosoter-webpage/" target="_blank"><button class="circular-button" id="dev-button-2"><img class="dev-image" src="./assets/caio-profile-art.png" width="100%" ></button></a><div class="button-name">Caio Sóter</div></div> -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="art" class="band-container">
+				<div class="band-display">
+					<div class="poem">
+						Lanterns of the Night
+						<br><br><br>
+						In the quiet of twilight, we gather,
+						<br><br>
+						Our hearts like paper lanterns, fragile and light.
+						<br><br>
+						We write our wishes, our secret desires,
+						<br><br>
+						And set them adrift on the canvas of the night.
+						<br>
+					</div>
+				</div>
+			</div>
+			
+			<footer id="footer">	
+				
+				<div class ="footer-grid">
+					
+					<a target="_blank" href="https://clodo.me">
+						<div class="footer-box">
+							
+							<div style="font-family:courier; font-size: 10px; color: white;"><div style="transition: all 0s">design by Clodo</div></div>
+							
+							<div class="box-image" ></div>
+							
+							<div style="transition: all 0s; color: white;"><div class="clodo-web-address" style="font-size: 0.8rem; transition: all 0s;">clodo.me</div></div> 
+							
+						</div>
+					</a>
+					
+					<div class="powered-by">
+						<div style="margin-right: 2vw;">Powered by</div>
+						
+						<a target="_blank" href="https://www.n2yo.com/api/"><img src="./assets/n2yo.png" width="200px" style="border-radius: 2%; background-color: rgba(255, 255, 255, 0.514);"></a>
+						<a target="_blank" href="https://wheretheiss.at/w/developer"><img src="./assets/wheretheissat.png" width="200px"></a>
+						<a target="_blank" href="https://flagsapi.com/"><img src="https://flagsapi.com/img/logo-countryflags.png" width="200px" style="border-radius: 2%; background-color: rgba(255, 255, 255, 0.514);"></a>
+						<a target="_blank" href="https://www.geonames.org/"><img src="./assets/geonames.png" width="200px" style="border-radius: 2%; background-color: rgba(255, 255, 255, 0.514);"></a>
+					</div>
+					
+					
+				</div>
+				
+			</footer>
+					
+		</div>
+				
+		<script src="./scripts/tracking.js"></script>
+		<script src="./scripts/misc.js"></script>
+		<script src="./components/Interface/ViewPanel/components/Map3DTab/map3D/js/base.js"></script>
+		<script src="./components/Interface/ViewPanel/components/Map3DTab/map3D/js/earth_sun.js"></script>
+		<script src="./components/Interface/ViewPanel/components/Map3DTab/map3D/js/clodo.js"></script>
+		<script src="./components/Interface/ViewPanel/components/Map2DTab/map.js"></script>
+
+		<!-- Vue Framework scripts -->
+		<script src="./app.js"></script>
+		<script src="./components/header/header.js"></script>
+		<script src="./components/Interface/DataPanel/DataPanel.js"></script>
+		<script src="./components/Interface/DataPanel/components/SourceTab.js"></script>
+		<script src="./components/Interface/DataPanel/components/DataTab.js"></script>
+		<script src="./components/Interface/DataPanel/components/ConfigTab.js"></script>
+		<script src="./components/Interface/ViewPanel/ViewPanel.js"></script>
+		<script src="./components/Interface/ViewPanel/components/AltidudeTab.js"></script>
+		<script src="./components/Interface/ViewPanel/components/ForecastTab.js"></script>
+		<script src="./components/Interface/ViewPanel/components/Map2DTab/Map2DTab.js"></script>
+		<script src="./components/Interface/ViewPanel/components//Map3DTab/Map3DTab.js"></script>
+		<script src="./components/Interface/ViewPanel/components/SpectsTab/SpecsTab.js"></script>
+		<script src="./components/Interface/ViewPanel/components/SpectsTab/components/spec.js"></script>
+		<script src="./components/Interface/ViewPanel/components/StatisticsTab.js"></script>
+		<script src="./components/Interface/ViewPanel/components/ViewLabel.js"></script>
+		<script src="./components/dataManager/DataManager.js"></script>
+		<script src="./components/dataManager/components/DataRow/DataRow.js"></script>
+		<script src="./components/dataManager/components/MetaField/MetaField.js"></script>
+		<script src="./components/dataManager/components/DataRow/components/Checkbox/Checkbox.js"></script>
+		<script>
+			const mountedApp = app.mount('#app');
+		</script>
+				
+	</body>
+				
+</html>

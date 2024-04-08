@@ -1,0 +1,153 @@
+#data-header {
+    font-weight: 600;
+}
+
+.data-manager-table-units {
+    padding: 0;
+    margin: 0;
+ 
+}
+
+.data-row-container, .header-row-container, .units-row-container {
+    
+    width: 100%;
+    
+
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+.data-row-gadgets {
+    display: inline-flex;
+    gap: 5px;
+
+    padding: 2px 2px 2px 6px;
+}
+
+.data-manager-row-button {
+
+    height: 20px;
+    cursor: pointer;
+    
+}
+
+.data-row {
+    
+    width: 100%;
+    height: fit-content;
+    
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    border: solid;
+    border-color: rgba(29, 27, 27, 0.819);
+    border-width: 0 0 0 3px;
+    border-radius: 0;
+    text-align: end;
+
+    font-weight: 100;
+
+}
+
+.data-gadgets {
+    
+    width: 100%;
+    height: fit-content;
+
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.data-manager-header-field {
+        
+    width: 120px;
+
+    white-space: nowrap;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-right: 5px;
+
+    border: solid;
+    border-color: rgba(29, 27, 27, 0.819);
+    border-width: 3px 3px 0 0;
+    border-radius: 0;
+
+    text-align: center;
+    font-size: 14px;
+    
+}
+
+.data-manager-header-field-units {
+        
+    width: 120px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    white-space: nowrap;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-right: 5px;
+
+    border: solid;
+    border-color: rgba(29, 27, 27, 0.819);
+    border-width: 0 3px 3px 0;
+    border-radius: 0;
+
+    text-align: center;
+    font-size: 14px;
+    
+}
+
+.data-manager-data-field {
+    
+    width: 120px;
+    min-height: 23px;
+    padding: 0px 1px 0px 8px;
+
+    white-space: nowrap;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-right: 5px;
+
+    border: solid;
+    border-color: rgba(29, 27, 27, 0.819);
+    border-width: 3px 3px 3px 0;
+    border-radius: 0;
+
+    text-align: left;
+    font-size: 12px;
+    
+}
+
+.time-data-manager {
+
+    min-width: 180px;
+
+}
+
+.index-data-manager {
+    width: 40px;
+    padding: 0 10px;   
+}
+
+.copyButton:hover, .binButton:hover {
+
+	cursor: pointer;
+
+}
