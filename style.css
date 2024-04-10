@@ -23,17 +23,17 @@ body {
 .interface {
 
 	width: 100%;
-	height: 80vh;
+	/* height: 80vh; */
+	height: fit-content;
+	
 	margin: 0;
-	padding: 0;
+	padding: 18px 0 18px 4vw;
 
-	padding: 18px 0 18px 0;
 	display: inline-flex;
 	flex-wrap: wrap;
-	gap: 6vw;
+	gap: 4vw;
 	align-items: center;
-	align-content: center;
-	justify-content: center;
+	justify-content: flex-start;
 
 	opacity: 0;
 	
@@ -55,10 +55,9 @@ footer {
 	font-size: 30px;
 
 	background-color: rgba(0, 0, 0, 0.05);
-	border-width: 2px 0 0 0;
+	border-width: 1px 0 0 0;
 	border-style: solid;
-	border-color: rgba(255, 255, 255, 0.839);
-	border-radius: 30% 30% 0 0;
+	border-color: rgba(255, 255, 255, 0.432);
 
 	backdrop-filter: blur(20px);
 	background-color: rgba(77, 85, 152, 0.254);
@@ -74,13 +73,14 @@ footer {
     align-items: center;
 	justify-content: space-evenly;
 
-	padding: 5px;
+	padding: 1vw;
 
 }
 
 .footer-box{
 
 	height: 100%;
+	margin: 0 10vw;
 
 	display: inline-flex;
 	height: fit-content;
@@ -93,6 +93,7 @@ footer {
 }
 
 .powered-by {
+
 	display: inline-flex;
 	justify-content: center;
 	justify-items: center;
@@ -103,6 +104,12 @@ footer {
 	color: white;
 }
 
+.power-ups {
+	width: 60%;
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 3vw;
+}
 
 footer img{
 
@@ -149,7 +156,7 @@ p{
 
 #wiki-loader {
 	border-top-color: #ffffff;
-	animation: spin 1s linear infinite;
+	animation: spin 4s linear infinite;
 }
 
 @keyframes spin {
@@ -176,7 +183,8 @@ p{
 
 	width: 100%;
 	height: 100px;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
+	padding: 0 2vw;
 
 
 	display: flex;
@@ -186,7 +194,7 @@ p{
 	align-items: center;
 
 	font-family: 'Courier New', Courier, monospace; 
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: 100;
 	color: rgb(253, 253, 253);
 
@@ -225,6 +233,7 @@ p{
 
 }
 
+
 .band-display  {
     width: 90%;
     display: flex;
@@ -236,6 +245,13 @@ p{
     justify-items: stretch;
     color: azure;
 }
+
+#trivia {
+	position: relative;
+	min-height: fit-content;
+	margin-top: 0;
+}
+
 
 .inline-flex-container{
     display: flex;

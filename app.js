@@ -10,6 +10,7 @@ const app = Vue.createApp( {
             locationNameByCoordinates_URL: 'https://api.wheretheiss.at/',
             // Collected data
             // object_path[i] = {index, name, id, latitude, longitude, altitude, velocity, visibility, footprint, time, daynum, solar_lat, solar_lon, units};
+            tle_string: '',
             object_path: new Array(),
             predicted_path: new Array(),
             user_location: new Array(),
@@ -23,20 +24,17 @@ const app = Vue.createApp( {
             display_framerate: 1000,
             line_level_detail: 5,
             loader_time: 1000,
-            units: 'kilometers'
+            units: 'kilometers',
+            // possible values: 'retreated', 'full'
+            satbot_display: 'retreated'
         }
     },
 
     methods: {
 
         showAllSatellites(){
-
-            // So far I've got a complete list of currently active satellites, 
-            // but the response, not really surprinsinly, doesn't come with
-            // the positions. It would be necessary, now with data massive data, to have access to a really fast, and
-            // likely paid API to request the current positions of all satellites one by one.
             
-            // API_URL = "https://sky-vue-api.onrender.com/tle/all";
+            // API_URL = "https://skyvue-ai.onrender.com/AllActiveSatellites";
 
             // fetch(API_URL)
             // .then((response) => response.json())

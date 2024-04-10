@@ -1,0 +1,187 @@
+#satbot-container {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 20vh;
+
+    width: fit-content;
+    height: 400px;
+
+    padding: 0px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#satbot-hook-container {
+    width: fit-content;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+}
+
+#satbot-hook {
+
+    width: fit-content;
+    height: fit-content;
+
+    padding: 1vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2vh;
+
+    border-style: solid;
+    border-width: 3px 1px 3px 3px;
+    border-color: rgba(255, 255, 255, 0.662);
+    border-right-color: rgba(255, 255, 255, 0.316);;
+    border-radius: 5% 0 0 5%;
+
+    background-color: rgba(33, 79, 107, 0.474);
+    backdrop-filter: blur(20px);
+    box-shadow: 0.3vw 0.3vw 1vw 0.2vw rgba(235, 172, 155, 0.329);   
+    /* box-shadow: 0vw 0vw 1vw 0vw rgba(255, 211, 199, 0.458);    */
+}
+
+.height-complement {
+    height: 100%;
+    width: 100%;
+
+    border-style: solid;
+    border-width: 0px 3px 0px 0px;
+    border-color: rgba(255, 255, 255, 0.662);
+    border-radius: 5% 0 0 5%;
+    
+}
+
+#satbot-response-container {
+    width: 300px;
+    height: 100%;
+
+    border-style: solid;
+    border-width: 3px 0 3px 0px;
+    border-color: rgba(255, 255, 255, 0.662);
+    border-radius: 0% 0 0 0%;
+
+    background-color: rgba(45, 65, 78, 0.427);
+    backdrop-filter: blur(20px);
+    box-shadow: 0.3vw 0.3vw 1vw 0.2vw rgba(235, 172, 155, 0.329);   
+    /* box-shadow: 0vw 0vw 1vw 0vw rgba(255, 211, 199, 0.458);    */
+
+}
+
+#satbot-img {
+
+	width: 6vw;
+	height: 6vw;
+	
+	position: relative;
+	/* z-index: 1000; */
+
+	/* bottom: 0;
+	right: 0; */
+
+	margin: 0vw;
+
+	border-style: solid;
+	border-radius: 50%;
+	border-color: white;
+	border-width: 2px;
+	
+}
+
+.satbot-loader-container {
+    width: 3vw;
+    height: 3vw;
+    margin: 0 1vw 0 1vw;
+    
+
+    background-image: url(../Satbot/assets/chatGPT.webp);
+    background-size: cover;
+
+}
+
+
+.chatbot-data-display {
+
+	height: inherit;
+	width: 100%;
+	overflow-y: scroll;
+
+	padding: 1vw;
+    
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	color: white; 	
+
+	scroll-behavior: smooth;
+	scroll-snap-type: mandatory;
+    scrollbar-color: rgb(255, 255, 255) rgba(43, 45, 43, 0.756);
+	-webkit-overflow-scrolling: touch;
+	
+	backdrop-filter: blur(20px);
+	background-color: rgba(77, 85, 152, 0.254);
+
+
+
+}
+
+#chatbot-response {
+
+	min-height: fit-content;
+	font-weight: 300;
+
+	color: rgb(237, 239, 241);
+    
+    margin-bottom: 2vh;
+	
+}
+
+
+#satbot-loader{
+
+    margin: 0;
+    padding: 0;
+    width: 3vw;
+    height: 3vw;
+	
+    border-top-color: #f3f3f3;
+    animation: spin 2s linear infinite;
+}
+
+.satbot-background-container {
+
+	position: fixed;
+    width: inherit;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+
+	opacity: 0.8;
+}
+
+.satbot-background {
+
+	position: fixed;
+    width: 7vw;
+    height: 7vw;
+
+    margin: 0;
+
+	opacity: 0.8;
+}

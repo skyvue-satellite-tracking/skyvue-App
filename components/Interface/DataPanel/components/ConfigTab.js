@@ -123,8 +123,6 @@ app.component('config-tab', {
                 mountedApp.data_update_rate = value * 1000;
         
                 if (value == 1) {mountedApp.loader_time = 500;}
-                // Parameter to cut avoid ploting points near the satellite's figure,
-                // and responsive to the selected value for the data_update_rate parameter.
                 else {mountedApp.loader_time = 1000;}
             }
         
@@ -134,7 +132,10 @@ app.component('config-tab', {
         
             if (id === 'line-level-detail'){ 
                 mountedApp.line_level_detail = value;
-                updateMap([[mountedApp.object_path, mountedApp.line_level_detail]]);  
+                updateMap([
+                    [mountedApp.object_path, mountedApp.line_level_detail],
+                    [mountedApp.predicted_path, 100]
+                ]);            
             }
         
             if (mountedApp.tracking === false) {
@@ -155,10 +156,18 @@ app.component('config-tab', {
             }, mountedApp.data_update_rate);
           
             const interval_UpdateDataDisplay = setInterval(() => {
-          
-              updateMap([[mountedApp.object_path, mountedApp.line_level_detail]]); 
-              updateObjectPosition(mountedApp.object_path);
-              updateNationalFlagPosition(mountedApp.object_path);
+                
+                if (mountedApp.object_path.length === 0) {
+                    return
+                }
+
+                updateMap([
+                    [mountedApp.object_path, mountedApp.line_level_detail],
+                    [mountedApp.predicted_path, 100]
+                ]);
+                
+                updateObjectPosition(mountedApp.object_path);
+                updateNationalFlagPosition(mountedApp.object_path);
           
             }, mountedApp.display_framerate);
           

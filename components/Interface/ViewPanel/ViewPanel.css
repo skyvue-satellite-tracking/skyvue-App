@@ -213,18 +213,38 @@
 	gap: 2vh;
 }
 
-#chatbot-box {
+#satbot-img {
 
-	width: 100%;
-	height: 100%;
+	width: 6vw;
+	height: 6vw;
+	
+	position: relative;
+	/* z-index: 1000; */
 
+	/* bottom: 0;
+	right: 0; */
+
+	margin: 0vw;
+
+	border-style: solid;
+	border-radius: 50%;
+	border-color: white;
+	border-width: 2px;
+	
 }
 
+.satbot-background {
 
-#chatbot-response {
-	min-height: 100%;
-	font-weight: 200;
+	position: fixed;
+
+	height: inherit;
+	width: max-content;
+
+	margin: 0 0 0 4vw;
+
+	opacity: 0.2;
 }
+
 
 .specs-flex {
 
@@ -245,9 +265,32 @@
 	border-radius: 4px;
 }
 
+.specs-grid {
+
+	width: 100%;
+	height: inherit;
+
+	display: grid;
+	grid-template-rows: auto auto;
+
+	gap: 0;
+
+	margin: 0;
+	padding: 0;
+
+	border-style: solid;
+	border-color: rgb(255, 255, 255);
+	border-width: 1px;
+	border-radius: 4px;
+}
+
 .specs-header {
 	width: 100%;
 	height: fit-content;
+
+	display: inline-flex;
+	justify-content: flex-start;
+	align-items: center;
 
 	border-style: solid;
 	border-color: rgba(255, 255, 255, 0.738);
@@ -256,14 +299,51 @@
 
 	padding: 10px;
 
+	font-size: 2vw;
+	font-weight: 100;
+
 	backdrop-filter: blur(20px);
 	background-color: rgba(36, 40, 68, 0.642);
 
 }
 
+.satbot-header {
+	width: 100%;
+	height: fit-content;
+
+	display: inline-flex;
+	justify-content:space-between;
+	align-items: center;
+
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.738);
+	border-width: 0 0 1px 0;
+	border-radius: 0px;
+
+	padding: 10px;
+
+	font-size: 2vw;
+	font-weight: 100;
+
+	backdrop-filter: blur(20px);
+	background-color: rgba(36, 40, 68, 0.642);
+
+}
+
+.satbot-box {
+	
+	height: 32vh;
+
+}
+
+#satbot-loader{
+	/* padding-right: 2vw; */
+	margin: 0 1vw 0 1vw;
+}
+
 .specs-data-display {
 
-	height: 100%;
+	height: inherit;
 	width: 100%;
 	overflow-y: scroll;
 
@@ -284,6 +364,7 @@
 	background-color: rgba(77, 85, 152, 0.254);
 
 
+
 }
 
 .spec {
@@ -302,11 +383,13 @@
 	font-weight: 100;
 
 }
-
+ 
 .spec-info {
 
 	width: 15px;
 	height: 15px;
+
+	margin: 0 0 0 1vw;
 
 	display: inline-flex;
 	align-items: center;

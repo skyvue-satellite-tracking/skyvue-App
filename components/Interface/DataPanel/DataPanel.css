@@ -241,7 +241,7 @@
 
 	color: white; 
 	font-family: monospace; 	
-	font-weight: bold;
+	font-weight: 100;
 
 	border-style: solid;
 	border-color: rgb(255, 255, 255);
@@ -308,6 +308,14 @@
 	border-top-color: #f3f3f3a0;
 	animation: spin 1s linear infinite;
 }
+
+#tle-loader {
+	width: 25px;
+	height: 25px;
+	border-top-color: #f3f3f3a0;
+	animation: spin 1s linear infinite;
+}
+
 
 @keyframes spin {
 	0% { transform: rotate(0deg); }

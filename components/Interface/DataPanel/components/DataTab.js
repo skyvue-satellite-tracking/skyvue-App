@@ -56,7 +56,7 @@ app.component('data-tab', {
             
             <div>
                 <div>
-                    <div class="spec-info-mini" title="The visibility of a satellite depends on its altitude. It determines the area from which the satellite is visible from an Earth station.">?</div>
+                    <div class="spec-info-mini" title="Whether the satellite is illumintaed by the Sun (not in Earth shadow).">?</div>
                     Visibility
                 </div>
                 <div class="data-field">

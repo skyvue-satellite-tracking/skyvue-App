@@ -17,7 +17,7 @@ app.component('view-panel', {
         
         <div id="screen" >
         
-            <specs-tab  v-show="viewer_state === 'specs'" :tracking="tracking" :selected_satellite="selected_satellite"></specs-tab>
+            <specs-tab  v-show="viewer_state === 'specs'" :tracking="tracking" :selected_satellite="selected_satellite" :tle_string="tle_string" ></specs-tab>
             <map2D-tab  v-show="viewer_state === 'map2D'" :tracking="tracking" :object_path="object_path"></map2D-tab>
             <map3D-tab  v-show="viewer_state === 'map3D'"></map3D-tab>
             <altitude-tab  v-show="viewer_state === 'altitude'"></altitude-tab>
@@ -58,6 +58,10 @@ app.component('view-panel', {
             required: true
         },
 		selected_satellite: {
+			type: String,
+			required: true
+		},
+        tle_string: {
 			type: String,
 			required: true
 		}

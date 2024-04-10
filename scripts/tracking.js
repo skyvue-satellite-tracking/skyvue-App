@@ -91,7 +91,7 @@ function fetchCurrentState(norad_number, object_path){
     activityLogging("requesting data");
 
     // https://sky-vue-api.onrender.com/position/satellite_norad_number
-    API_URL = "https://sky-vue-api.onrender.com/position/" + norad_number;
+    API_URL = "https://skyvue-ai.onrender.com/Position?satid=" + norad_number;
 
     fetch(API_URL)
     .then((response) => response.json())
@@ -132,31 +132,6 @@ function fetchCurrentState(norad_number, object_path){
 
 }
 
-function fecthPredictedPath(norad_number, predicted_path = []){
-
-  // Request a satellite's TLE info based on its NORAD number. 
-  API_URL = "https://sky-vue-api.onrender.com/tle/" + norad_number;
-  fetch(API_URL)
-  .then((response) => response.json())
-  .then((tle) => {
-
-    tle_string = JSON.stringify(tle);
-    // console.log(tle_string);
-
-    // Request computed orbit based on the TLE info.
-    API_URL = "https://skyvue-python-api.onrender.com/tle?satTLE=" + tle_string;
-    fetch(API_URL)
-    .then((response) => response.json())
-    .then((data) => {
-      
-      console.log(data);
-
-    });
-
-  })
-  
-}
-
 function activityLogging(activityLog){
 
   document.getElementById("log").textContent = activityLog;
@@ -170,12 +145,45 @@ function activityLogging(activityLog){
   setTimeout(() => {
 
     document.getElementById("log-loader").style.borderTopColor = "#f3f3f3a0";
-    document.getElementById("log-loader").style.animation = "spin 0.1s linear infinite";
+    document.getElementById("log-loader").style.animation = "";
     
     document.getElementById("log").style.transition = "all 2s";
     document.getElementById("log").style.opacity = 0;
 
   }, mountedApp.loader_time);
+  
+}
+
+function satbotActivityLogging(state){
+
+  if (state === 'waiting') {
+    document.getElementById("satbot-loader").style.borderTopColor = "#ffffff";
+    document.getElementById("satbot-loader").style.animation = "spin 0.1s linear infinite";
+  }
+  else {
+    document.getElementById("satbot-loader").style.borderTopColor = "#f3f3f3";
+    document.getElementById("satbot-loader").style.animation = "spin 1s linear infinite";
+    
+    mountedApp.satbot_display = 'full';
+    setTimeout(() => {
+      mountedApp.satbot_display = 'retreated';
+    }, 6000);
+
+  }
+  
+}
+
+function tleActivityLogging(state){
+
+  if (state === 'waiting') {
+    document.getElementById("tle-loader").style.borderTopColor = "#ffffff";
+    document.getElementById("tle-loader").style.animation = "spin 0.1s linear infinite";
+  }
+  else {
+    document.getElementById("tle-loader").style.borderTopColor = "#f3f3f3a0";
+    document.getElementById("tle-loader").style.animation = "";
+
+  }
   
 }
 

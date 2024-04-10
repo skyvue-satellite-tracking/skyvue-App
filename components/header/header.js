@@ -14,7 +14,10 @@ app.component('header-vue', {
                 
             </div>
             
-            <a target="_blank" href="https://github.com/clodoN1109/ISS-Tracking"><img src="./assets/github.png" width="45px"></a>
+            <div id="social-links">
+                <a target="_blank" href="https://github.com/clodoN1109/ISS-Tracking"><img src="./assets/github.png" width="45px"></a>
+            </div>
+
         </div>
     </header>
     `
