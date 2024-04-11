@@ -50,6 +50,7 @@ function fetchCurrentState(norad_number, object_path){
       'visibility': data.visibility,
       'footprint': data.footprint,
       'time': time,
+      'timestamp': data.timestamp,
       'daynum': data.daynum,
       'solarlatitude': data.solar_lat,
       'solarlongitude': data.solar_lon,
@@ -118,6 +119,7 @@ function fetchCurrentState(norad_number, object_path){
         'visibility': data.positions[0].eclipsed,
         'footprint': data.footprint,
         'time': time,
+        'timestamp': data.positions[0].timestamp,
         'daynum': data.daynum,
         'solarlatitude': data.solar_lat,
         'solarlongitude': data.solar_lon,
@@ -187,7 +189,7 @@ function tleActivityLogging(state){
   
 }
 
-function showUserLocation(user_location){
+function showUserLocation(){
   
   // Check if geolocation is supported by the browser
   if ("geolocation" in navigator) {
@@ -198,9 +200,9 @@ function showUserLocation(user_location){
         // Get the user's latitude and longitude coordinates
         let latitude = position.coords.latitude;
         let longitude = position.coords.longitude;
+        let altitude = position.coords.altitude;
         
-        user_location[0] = latitude;
-        user_location[1] = longitude;
+        mountedApp.user_location = [latitude, longitude, altitude];
         
         //Unit conversions, scaling and positional adjustments:
         user_picture_width = Number(document.getElementById("user-location").offsetWidth); 
@@ -211,7 +213,7 @@ function showUserLocation(user_location){
         document.getElementById("user-location").style.opacity = 1;
 
         // https://secure.geonames.org/countryCodeJSON?formatted=true&lat=47.03&lng=10.2&username=clodolinus&style=full
-        fetch("https://secure.geonames.org/countryCodeJSON?formatted=true&lat=" + user_location[0] + "&lng=" + user_location[1] + "&username=clodolinus&style=full")
+        fetch("https://secure.geonames.org/countryCodeJSON?formatted=true&lat=" + mountedApp.user_location[0] + "&lng=" + mountedApp.user_location[1] + "&username=clodolinus&style=full")
         .then((response) => response.json())
         .then((data) => {
           

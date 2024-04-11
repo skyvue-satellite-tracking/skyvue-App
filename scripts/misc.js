@@ -128,7 +128,7 @@ function map2DGradualAppearance(timeToAppear){
     document.getElementById('map2D-container').style.height = '400px';  
 
     setTimeout(() => {
-      showUserLocation(mountedApp.user_location);
+      showUserLocation();
     }, 500);
     
   }, timeToAppear);

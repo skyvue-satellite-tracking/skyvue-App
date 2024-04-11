@@ -48,8 +48,8 @@ app.component('data-manager', {
     data(){
 
         return {
-            data_header: {'index': '#', 'name':'NAME', 'id':'ID', 'latitude':'LATITUDE', 'longitude':'LONGITUDE', 'altitude':'ALTITUDE', 'velocity':'VELOCITY', 'visibility':'VISIBILITY', 'footprint':'FOOTPRINT', 'time':'TIME', 'daynum':'DAYNUM', 'solarlatitude':'SOLAR LAT.', 'solarlongitude':'SOLAR LON.', 'units':'UNITS'},
-            data_units: {'index': '()', 'name':'()', 'id':'()', 'latitude':'(degrees)', 'longitude':'(degrees)', 'altitude':'(km)', 'velocity':'(km/h)', 'visibility':'()', 'footprint':'(Km)', 'time':'(GMT)', 'daynum':'()', 'solarlatitude':'(degrees)', 'solarlongitude':'(degrees)', 'units':'()'},
+            data_header: {'index': '#', 'name':'NAME', 'id':'ID', 'latitude':'LATITUDE', 'longitude':'LONGITUDE', 'altitude':'ALTITUDE', 'velocity':'VELOCITY', 'visibility':'VISIBILITY', 'footprint':'FOOTPRINT', 'time':'TIME', 'timestamp':'TIMESTAMP', 'daynum':'DAYNUM', 'solarlatitude':'SOLAR LAT.', 'solarlongitude':'SOLAR LON.', 'units':'UNITS'},
+            data_units: {'index': '()', 'name':'()', 'id':'()', 'latitude':'(degrees)', 'longitude':'(degrees)', 'altitude':'(km)', 'velocity':'(km/h)', 'visibility':'()', 'footprint':'(Km)', 'time':'(GMT)', 'timestamp': '(seconds)', 'daynum':'()', 'solarlatitude':'(degrees)', 'solarlongitude':'(degrees)', 'units':'()'},
         }
 
     },

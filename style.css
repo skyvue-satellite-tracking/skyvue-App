@@ -10,7 +10,7 @@ body {
 	font-style: normal;
 }
 
-#video-bg {
+#video-bg, #img-bg {
 
 	position: fixed;
 
@@ -108,7 +108,7 @@ footer {
 	width: 60%;
 	display: inline-flex;
 	flex-wrap: wrap;
-	gap: 3vw;
+	gap: 2vw;
 }
 
 footer img{
@@ -116,6 +116,7 @@ footer img{
 	position: relative;
 	justify-self: center;
 	opacity: 0.9;
+	border-radius: 5px;
 	/* border-color: whitesmoke;
 	border-style: solid;
 	border-width: 0.5px; */

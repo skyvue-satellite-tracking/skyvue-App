@@ -2,14 +2,13 @@ const app = Vue.createApp( {
 
     data() {
         return{
-            active_satellites_tle: [],
             selected_satellite: '',
             tracking: false,
             //API configuration
             source_URL: '',
             locationNameByCoordinates_URL: 'https://api.wheretheiss.at/',
             // Collected data
-            // object_path[i] = {index, name, id, latitude, longitude, altitude, velocity, visibility, footprint, time, daynum, solar_lat, solar_lon, units};
+            // object_path[i] = {index, name, id, latitude, longitude, altitude, velocity, visibility, footprint, time, timestamp, daynum, solar_lat, solar_lon, units};
             tle_string: '',
             object_path: new Array(),
             predicted_path: new Array(),
@@ -32,24 +31,6 @@ const app = Vue.createApp( {
 
     methods: {
 
-        showAllSatellites(){
-            
-            // API_URL = "https://skyvue-ai.onrender.com/AllActiveSatellites";
-
-            // fetch(API_URL)
-            // .then((response) => response.json())
-            // .then((data) => {
-
-            //     data.forEach(sat => {
-            //         this.active_satellites_tle.push(
-            //             {name:sat.OBJECT_NAME, id:sat.NORAD_CAT_ID}
-            //         )
-            //     });
-
-            // })
-        },
-
-        
         resetInterface(){
             // Reset output variables and canvas.
 
@@ -92,8 +73,6 @@ const app = Vue.createApp( {
         
             gradualOpacity('interface', 1500);    
             map2DGradualAppearance(3000);
-
-            this.showAllSatellites();
 
         }, 100);
 
