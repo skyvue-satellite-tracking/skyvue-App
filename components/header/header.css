@@ -27,8 +27,8 @@ header {
 
 #header-satellite {
     position: relative;
-    width: 100px;
-	height: 100px;
+    width: 80px;
+	height: 80px;
     opacity: 0.90;
 }
 
@@ -152,8 +152,10 @@ header {
 }
 
 .sky-status-field-value {
+	min-width: 4vw;
 	font-weight: 800;
 	padding-left: 20px;
+	text-align: end;
 }
 
 .status-info {

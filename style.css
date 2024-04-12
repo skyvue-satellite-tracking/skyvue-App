@@ -105,7 +105,7 @@ footer {
 }
 
 .power-ups {
-	width: 60%;
+	width: 75%;
 	display: inline-flex;
 	flex-wrap: wrap;
 	gap: 2vw;

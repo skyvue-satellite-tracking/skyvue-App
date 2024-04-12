@@ -105,7 +105,7 @@ app.component('header-vue', {
         showAllActiveSatellites(){
             
             this.active_satellites.forEach(satellite => {
-                console.log(satellite);
+                // console.log(satellite);
             });
 
         },
