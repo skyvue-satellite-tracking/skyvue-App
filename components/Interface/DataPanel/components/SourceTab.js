@@ -114,7 +114,7 @@ app.component('source-tab', {
                     ]);
                         
                     updateObjectPosition(mountedApp.object_path);
-                    updateNationalFlagPosition(mountedApp.object_path);                        
+                                         
                    
 
               

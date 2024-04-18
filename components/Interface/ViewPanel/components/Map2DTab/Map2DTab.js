@@ -53,20 +53,29 @@ app.component('map2D-tab', {
             return this.object_path.length;
         }
     },
+    watch: {
+
+        path_length(new_value, old_value){
+        
+            updateNationalFlagPosition(mountedApp.object_path);                   
+
+        }
+
+    },
     methods: {
         placeCross(event) {
 
-            y = event.offsetY;
-            x = event.offsetX;
+            y = event.layerY;
+            x = event.layerX;
         
-            crossYPosition = (100 - (y / 400) * 100);
-            crossXPosition = (100 - (x / 800) * 100);
+            crossYPosition = 100 *(1 - (y / 400));
+            crossXPosition = 100 * (1 - (x / 800));
             
             document.getElementById('parallel').style.bottom = crossYPosition + '%';
             document.getElementById('meridian').style.right = crossXPosition + '%';
 
-            this.crossLatitude = ((crossYPosition / 100) * 180 - 90).toFixed(8);
-            this.crossLongitude = ((crossXPosition / 100) * 360 - 180).toFixed(8);
+            this.crossLatitude = ((crossYPosition / 100) * 180 - 90).toFixed(0) + '°';
+            this.crossLongitude = ((-1)*((crossXPosition / 100) * 360 - 180)).toFixed(0) + '°';
         },
         crossOff(){
             this.crossDisplay = false;

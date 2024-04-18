@@ -49,12 +49,14 @@ app.component('specs-tab', {
                 {id: 'bstar-spec', name:'BSTAR: ', info: "Bstar drag term (leading decimal point assumed)."},
                 {id: 'ephemeris-spec', name:'EPHEMERIS TYPE: ', info: ""},
                 {id: 'inclination-spec', name:'INCLINATION: ', info: "(degrees)"},
-                {id: 'ascension-spec', name:'RIGHT ASCENSION: ', info: "(degrees)"},
+                {id: 'ascension-spec', name:'RAAN: ', info: "Right Ascension of the Ascending Node (degrees)"},
                 {id: 'eccentricity-spec', name:'ECCENTRICITY: ', info: "Leading decimal point assumed."},
                 {id: 'perigee-spec', name:'PERIGEE: ', info: "Argument of perigee. (degrees)"},
                 {id: 'mean-anomaly-spec', name:'MEAN ANOMALY: ', info: "(degrees)"},
                 {id: 'mean-motion-spec', name:'MEAN MOTION: ', info: "(revolutions per day)"},
-                {id: 'revolution-number-spec', name:'REVOLUTION NUMBER: ', info: "Number of revolution at epoch."},
+                {id: 'revolution-number-spec', name:'REVOLUTION NUMBER: ', info: "Number of revolution at epoch this TLE refers to."},
+                {id: 'checksum-line1-spec', name:'CHECKSUM (LINE 1): ', info: "Indicates TLE's line 1 data integrity."},
+                {id: 'checksum-line2-spec', name:'CHECKSUM (LINE 2): ', info: "Indicates TLE's line 2 data integrity."},
             ]
         }
     },
@@ -146,6 +148,7 @@ app.component('specs-tab', {
             mean_motion_second_derivative = tle_line1.substring(44, 52).trim();
             bstar = tle_line1.substring(53, 61).trim();
             ephemeris_type = tle_line1.substring(62, 63).trim();
+            checksum1 = tle_line1.substring(68, 69).trim();
              
             // Line 2:
             inclination = tle_line2.substring(8, 16).trim();
@@ -155,6 +158,7 @@ app.component('specs-tab', {
             mean_anomaly = tle_line2.substring(43, 51).trim();
             mean_motion = tle_line2.substring(52, 63).trim();
             revolution_number = tle_line2.substring(63, 68).trim();
+            checksum2 = tle_line2.substring(68, 69).trim();
 
             document.getElementById('name-spec').value = satname;
             document.getElementById('norad-spec').value = satid;
@@ -175,6 +179,8 @@ app.component('specs-tab', {
             document.getElementById('mean-anomaly-spec').value = mean_anomaly;
             document.getElementById('mean-motion-spec').value = mean_motion;
             document.getElementById('revolution-number-spec').value = revolution_number;
+            document.getElementById('checksum-line1-spec').value = checksum1;
+            document.getElementById('checksum-line2-spec').value = checksum2;
             
         }
         ,
@@ -206,14 +212,28 @@ app.component('specs-tab', {
 
         fetchPredictedPath(){
 
+            tle_object = JSON.parse(this.tle_string);
+
+            satname = tle_object.info.satname;
+            satid = tle_object.info.satid;
+            tle = tle_object.tle;
+
+            tle_line1 = tle.substring(0, tle.indexOf("\r\n")).trim();
+            tle_line2 = tle.substring(tle.indexOf("\r\n"), tle.length).trim();
+            
+            // console.log(encodeURI(tle_line1));
+            // console.log(encodeURI(tle_line2));
+            
             // Request computed orbit based on the TLE info.
-            API_URL = "https://skyvue-ai.onrender.com/OrbitFromTLE?satTLE=" + mountedApp.tle_string;
+            API_URL = "http://ec2-34-222-130-73.us-west-2.compute.amazonaws.com/skyVue-php" + "?tle_line1=" + tle_line1 + "&tle_line2=" + tle_line2;
             fetch(API_URL)
             .then((response) => response.json())
             .then((data) => {
               
-              mountedApp.predicted_path = data.path;
-              console.log(mountedApp.predicted_path);
+                console.log(data);
+
+            //   mountedApp.predicted_path = data.path;
+            //   console.log(mountedApp.predicted_path);
         
             });
         

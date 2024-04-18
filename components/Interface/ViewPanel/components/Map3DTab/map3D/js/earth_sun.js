@@ -187,43 +187,6 @@ function GLDrawer(scale, ready_callback) {
         earth_vert_src,
         earth_frag_src, ["coordinates"], ["ctm", "tr", "rot", "sun_dir", "sun_scale", "point_scale", "aa", "ground_tex", "clouds_tex", "lights_tex"]);
 
-
-    var outline_vert_src =
-        `
-    attribute vec2 coordinates;
-    uniform mat2 ctm;
-    uniform vec2 tr;
-    varying vec2 unit;
-    void main(void) {
-        unit = coordinates * vec2(3.14159265359, 3.14159265359 * 0.5);
-        gl_Position = vec4(coordinates * ctm + tr, 0.0, 1.0);
-    }
-    `;
-
-    var outline_frag_src =
-        `
-        precision highp float;
-        varying highp vec2 unit;
-        
-        uniform vec3 sun_dir;
-
-        void main(void) {
-            vec2 u = unit;
-
-            vec3 xyz = vec3 (sin(u.x)*cos(u.y), sin(u.y), cos(u.x)*cos(u.y));
-
-            float mul = mix(1.0, sqrt(max(0.0, dot(xyz, sun_dir))), 0.75);
-            float dot_a = 0.8 * smoothstep (0.9996, 0.99995, dot(xyz, sun_dir));
-
-            mediump vec4 color = vec4(0, 0, 0,1.0 - mul);
-            
-            color *= 1.0 - dot_a;
-            color += dot_a * vec4(1.0, 0.15, 0.15, 1.0);
-
-            gl_FragColor = color;
-        }
-        `;
-
     var ndc_sx, ndc_sy;
 
     this.begin = function(width, height) {
@@ -588,8 +551,6 @@ function SpaceDrawer(gl, scale, container, mode) {
                 ctx.stroke();
             }
 
-
-
             // ctx.font = "20px IBM Plex Sans";
             // ctx.textAlign = "right";
 
@@ -636,7 +597,6 @@ function SpaceDrawer(gl, scale, container, mode) {
 
 document.addEventListener("DOMContentLoaded", function(event) {
     
-
     metric = localStorage.getItem("global.metric") === "true";
 
     var scale = Math.min(2, window.devicePixelRatio || 1);
@@ -644,45 +604,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var sunlight_drawer = new SpaceDrawer(gl, scale, document.getElementById("es_earth_sunlight"), "earth_sunlight");
 
-    function t_to_date(t) {
-
-        var year = 2019;
-
-        t *= 365;
-        var i = 0;
-        var l = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-        while (t > l[i]) {
-            t -= l[i];
-            i++;
-        }
-        t = Math.floor(t);
-
-
-        return i == 11 && t == 31 ? [year + 1, 1, 1] : [year, i + 1, t + 1];
-    }
-
-    function t_to_time(t) {
-        t *= 24.0;
-        var h = Math.floor(t);
-        var m = Math.floor((t - h) * 60);
-        return [h, m]
-    }
-
     updateSunlightDirection = function(timeArray) {
         sunlight_drawer.set_date(timeArray[0], timeArray[1], timeArray[2]);
         sunlight_drawer.set_time(timeArray[3], timeArray[4]);
     }
-
-    // new Slider(document.getElementById("es_earth_sunlight_date_slider_container"), function(x) {
-    //     var ymd = t_to_date(x);
-    //     sunlight_drawer.set_date(ymd[0], ymd[1], ymd[2]);
-    // }, undefined);
-
-    // new Slider(document.getElementById("es_earth_sunlight_time_slider_container"), function(x) {
-    //     var hm = t_to_time(x);
-    //     sunlight_drawer.set_time(hm[0], hm[1]);
-    // }, undefined, 0.25);
-
 
 });
 

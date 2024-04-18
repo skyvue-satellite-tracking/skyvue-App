@@ -175,7 +175,7 @@
     align-items: flex-end;
     justify-content: flex-start;
 
-    border-style: solid;
+    border-style: groove;
     border-width: 0 0 1px 0;
     border-color: rgba(218, 218, 218, 0.641);
 
@@ -198,10 +198,20 @@
     align-items: flex-start;
     justify-content: flex-start;
 
-    border-style: solid;
+    border-style:groove;
     border-width: 0 1px 0 0;
     border-color: rgba(218, 218, 218, 0.641);
 
     writing-mode: vertical-rl;
 
+}
+
+#latitude-value{
+	padding: 1px 6px;
+	color: rgba(208, 208, 208, 0.884);
+}
+
+#longitude-value {
+	padding: 6px 1px;
+	color: rgba(208, 208, 208, 0.884);
 }

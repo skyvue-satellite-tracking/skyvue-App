@@ -23,7 +23,7 @@ function fetchCurrentState(norad_number, object_path){
   //     "units": "kilometers"
   // }
 
-    API_URL = mountedApp.source_URL + "v1/satellites/" + norad_number + "?units=" + mountedApp.units; 
+  let API_URL = mountedApp.source_URL + "v1/satellites/" + norad_number + "?units=" + mountedApp.units; 
       // https://api.wheretheiss.at/v1/satellites/25544?units=miles
   fetch(API_URL)
   .then((response) => response.json())
@@ -92,7 +92,7 @@ function fetchCurrentState(norad_number, object_path){
     activityLogging("requesting data");
 
     // https://sky-vue-api.onrender.com/position/satellite_norad_number
-    API_URL = "https://skyvue-ai.onrender.com/Position?satid=" + norad_number;
+    let API_URL = "https://skyvue-ai.onrender.com/Position?satid=" + norad_number;
 
     fetch(API_URL)
     .then((response) => response.json())
@@ -205,15 +205,16 @@ function showUserLocation(){
         mountedApp.user_location = [latitude, longitude, altitude];
         
         //Unit conversions, scaling and positional adjustments:
-        user_picture_width = Number(document.getElementById("user-location").offsetWidth); 
-        userY = (Number(latitude) - 90)*(-2.2222) - user_picture_width/2;
-        userX = (Number(longitude) + 180)*(2.2222) - user_picture_width/2;
+        let user_picture_width = Number(document.getElementById("user-location").offsetWidth); 
+        let userY = (Number(latitude) - 90)*(-2.2222) - user_picture_width/2;
+        let userX = (Number(longitude) + 180)*(2.2222) - user_picture_width/2;
         
         document.getElementById("user-location").style.transform = "translate(" + userX + "px, " + userY +  "px)";
         document.getElementById("user-location").style.opacity = 1;
 
         // https://secure.geonames.org/countryCodeJSON?formatted=true&lat=47.03&lng=10.2&username=clodolinus&style=full
-        fetch("https://secure.geonames.org/countryCodeJSON?formatted=true&lat=" + mountedApp.user_location[0] + "&lng=" + mountedApp.user_location[1] + "&username=clodolinus&style=full")
+        let API_URL = "https://secure.geonames.org/countryCodeJSON?formatted=true&lat=" + mountedApp.user_location[0] + "&lng=" + mountedApp.user_location[1] + "&username=clodolinus&style=full";  
+        fetch(API_URL)
         .then((response) => response.json())
         .then((data) => {
           
@@ -224,9 +225,9 @@ function showUserLocation(){
           let flagURL = "https://flagsapi.com/" + country_code + "/shiny/64.png";
           document.getElementById("user-location-flag").src = flagURL;
           
-          user_picture_width = Number(document.getElementById("user-location").offsetWidth);
-          positionY = (Number(latitude) - 90)*(-2.2222);
-          positionX = (Number(longitude) + 180)*(2.2222);
+          let user_picture_width = Number(document.getElementById("user-location").offsetWidth);
+          let positionY = (Number(latitude) - 90)*(-2.2222);
+          let positionX = (Number(longitude) + 180)*(2.2222);
           
           document.getElementById("user-location-flag").style.transform = "translate(" + (positionX - user_picture_width/2 -8) + "px, " + (positionY - user_picture_width/2 - 10) +  "px)";
           document.getElementById("user-location-name").style.transform = "translate(" + (positionX + 10) + "px, " + (positionY + 10) +  "px)";

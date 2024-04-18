@@ -85,19 +85,6 @@ function copyCoordinates(){
 
 }
 
-// Making an element A inherit the height value from an element B .
-function makeSameHeightByID(elementA_id, elementB_id){
-  
-  const sourceValue = document.getElementById(elementB_id).clientHeight;
-  document.getElementById(elementA_id).style.height = sourceValue + "px";
-
-}
-
-// window.addEventListener('load', function() {
-//   document.querySelector('.loader').style.display = 'none';
-// });
-
-
 function gradualOpacity(className, timeToAppear){
 
   elementsOfClass = document.getElementsByClassName(className);

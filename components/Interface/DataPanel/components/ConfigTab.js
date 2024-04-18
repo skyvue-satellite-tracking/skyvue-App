@@ -167,7 +167,6 @@ app.component('config-tab', {
                 ]);
                 
                 updateObjectPosition(mountedApp.object_path);
-                updateNationalFlagPosition(mountedApp.object_path);
           
             }, mountedApp.display_framerate);
           

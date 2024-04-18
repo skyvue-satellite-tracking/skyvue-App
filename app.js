@@ -61,18 +61,15 @@ const app = Vue.createApp( {
 
             const interval_Wiki = setInterval(updateWikiInfo, this.wiki_update_rate);
             
-            // Making data-display and main-window elements have the same height.
-            makeSameHeightByID("data-display", "main-window");
-            window.onresize = function() {
-                makeSameHeightByID("data-display", "main-window");
-            };
-        
             // Initialize 3D map Sun ilumination.
             let timestamp = (new Date()).getTime().toString().substring(0, 10);
-            updateEarthIlumination(timestamp);
-        
+            
             gradualOpacity('interface', 1500);    
             map2DGradualAppearance(3000);
+
+            setTimeout(() => {
+                updateEarthIlumination(timestamp);    
+            }, 4000);
 
         }, 100);
 
