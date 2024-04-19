@@ -24,7 +24,7 @@ function updateMap(paths) {
       lon = longitude/scale_fix;
       
       canvas2D.getContext('2d').fillStyle = "rgba(255, 255, 255, 1)";
-      canvas2D.getContext('2d').fillRect(lon, lat, 2, 2);
+      canvas2D.getContext('2d').fillRect(lon, lat, 0.3, 0.3);
     }
 
   }

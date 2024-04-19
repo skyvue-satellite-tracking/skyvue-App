@@ -89,7 +89,7 @@ app.component('specs-tab', {
         tle_string(new_value, old_value){
           
             this.feedTLEFields();
-            this.fetchSatbotInfo();                    
+            // this.fetchSatbotInfo();                    
             this.fetchPredictedPath();
         }
 
@@ -225,15 +225,14 @@ app.component('specs-tab', {
             // console.log(encodeURI(tle_line2));
             
             // Request computed orbit based on the TLE info.
-            API_URL = "http://ec2-34-222-130-73.us-west-2.compute.amazonaws.com/skyVue-php" + "?tle_line1=" + tle_line1 + "&tle_line2=" + tle_line2;
+            API_URL = "https://ec2-34-222-130-73.us-west-2.compute.amazonaws.com/skyVue-php/" + "?tle_line1=" + tle_line1 + "&tle_line2=" + tle_line2;
             fetch(API_URL)
             .then((response) => response.json())
             .then((data) => {
               
-                console.log(data);
+                // console.log(data);
 
-            //   mountedApp.predicted_path = data.path;
-            //   console.log(mountedApp.predicted_path);
+                mountedApp.predicted_path = data;
         
             });
         

@@ -37,6 +37,7 @@ const app = Vue.createApp( {
             canvas2D.getContext('2d').clearRect(0, 0, canvas2D.width, canvas2D.height);
 
             mountedApp.object_path.length = 0;
+            mountedApp.predicted_path.length = 0;
 
             // Cleaning all interface output fields.
             document.getElementById("latitude").value = ''; 
