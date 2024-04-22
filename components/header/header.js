@@ -57,7 +57,7 @@ app.component('header-vue', {
     watch: {
         user_location(new_value, old_value) {
             if (new_value.length == 3) {
-                // this.fetchSatellitesCrossingUserSky();
+                this.fetchSatellitesCrossingUserSky();
             }
         },
         active_satellites(new_value, old_value){
@@ -111,7 +111,7 @@ app.component('header-vue', {
         },
     },
     mounted() {
-        // this.fetchActiveSatellites();
+        this.fetchActiveSatellites();
         this.fetchDebris();
     }
 
