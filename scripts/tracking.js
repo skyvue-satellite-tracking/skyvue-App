@@ -189,7 +189,7 @@ function tleActivityLogging(state){
   
 }
 
-function showUserLocation(){
+function fetchUserLocation(){
   
   // Check if geolocation is supported by the browser
   if ("geolocation" in navigator) {
@@ -219,6 +219,7 @@ function showUserLocation(){
         .then((data) => {
           
           let country_code = data.countryCode;
+          mountedApp.user_location.push(data.countryCode);
           // country_code = 'BR';
           
           document.getElementById("user-location-name").textContent = country_code;

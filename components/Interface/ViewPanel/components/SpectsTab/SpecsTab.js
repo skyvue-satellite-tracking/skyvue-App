@@ -225,7 +225,7 @@ app.component('specs-tab', {
             // console.log(encodeURI(tle_line2));
             
             // Request computed orbit based on the TLE info.
-            API_URL = "https://easyfermi.com/computeOrbit/" + "?tle_line1=" + tle_line1 + "&tle_line2=" + tle_line2;
+            API_URL = "https://easyfermi.com/ComputeOrbitFromTLE/" + "?tle_line1=" + tle_line1 + "&tle_line2=" + tle_line2;
             fetch(API_URL)
             .then((response) => response.json())
             .then((data) => {

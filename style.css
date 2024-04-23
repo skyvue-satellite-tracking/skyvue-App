@@ -23,14 +23,13 @@ body {
 .interface {
 
 	width: 100%;
-	height: fit-content;
+	height: 87vh;
 	
-	margin: 0;
-	padding: 18px 0 18px 4vw;
+	padding: 18px 0 18px 6vw;
 
 	display: inline-flex;
 	flex-wrap: wrap;
-	gap: 4vw;
+	gap: 6vw;
 	align-items: center;
 	justify-content: flex-start;
 
@@ -43,6 +42,7 @@ footer {
 	width: 100%;
 	height:30vh;
 	margin-top: 14vh;
+	padding-right: 0.8vw;
 
 	display: inline-flex;
     align-items:center;
@@ -59,7 +59,7 @@ footer {
 	border-color: rgba(255, 255, 255, 0.432);
 
 	backdrop-filter: blur(20px);
-	background-color: rgba(77, 85, 152, 0.254);
+	/* background-color: rgba(77, 85, 152, 0.254); */
 	
 }
 
@@ -211,7 +211,6 @@ p{
     /* padding: 2vh 0vw 2vh 0; */
 
     backdrop-filter: blur(5px);
-    background-image: linear-gradient(45deg, rgba(48, 40, 40, 0.594), transparent);
     box-shadow: 0.3vw 0.3vw 1vw 0.2vw rgba(235, 172, 155, 0.329);   
 
     display: flex;
@@ -229,13 +228,12 @@ p{
 	border-width: 1px 0 1px 0;
 
 	backdrop-filter: blur(20px);
-	background-color: rgba(77, 85, 152, 0.254);
+	
 
 }
 
-
 .band-display  {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -246,56 +244,24 @@ p{
     color: azure;
 }
 
-#trivia {
-	position: relative;
-	min-height: fit-content;
-	margin-top: 0;
-}
-
-
 .inline-flex-container{
     display: flex;
     flex-direction: row;
     gap: 4vh;
 }
 
-.band-title-box-resources {
-	height: auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	border-style: solid;
-	border-width:  0 1px 0 0;
-	border-color: rgba(255, 255, 255, 0.205);
-}
-
 .band-title-box {
-
 	height: auto;
+	width: fit-content;
+	padding: 0 3vw;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
 	border-style: solid;
-	border-width:  0 1px 0 0;
-	border-color: rgba(255, 255, 255, 0.205);
-}
-
-.band-title-box-the-team {
-
-	height: 200px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	padding-left: 10px;
-
-	border-style: solid;
-	border-width:  0 0 0 1px;
+	border-width:  0 0 0 0;
 	border-color: rgba(255, 255, 255, 0.205);
 }
 
@@ -312,7 +278,7 @@ p{
 	opacity: 0.9; 
     font-size: 5vh; 
     margin: 0 0 0 0;
-	padding: 0 1vw 0 0;
+	padding: 0;
 	color: rgba(255, 255, 255, 0.685);
 
 
@@ -330,6 +296,12 @@ p{
     gap:0;
 }
 
+#trivia {
+	position: relative;
+	min-height: fit-content;
+	margin-top: 0;
+}
+
 .button-name{
     margin: 0;
     padding: 0 ;
@@ -343,6 +315,7 @@ p{
 
 #contribute{
 	display: inline-flex;
+	padding: 0 3vw;
 	gap: 20px;
 }
 
@@ -463,4 +436,96 @@ a:hover{
 	font-weight: bolder;
 	scale: 1.03;	
 }
+
+#community-display-container{
+    width: 100%;
+    height: fit-content;
+
+    margin: 0vh 0 3vh 0;
+    padding: 2vw 0 5vh 0;
+
+    border-radius: 40px;
+
+    /* background-image: url(./images/background2.png); */
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+
+#the-community-title{
+    font-family: 'Courier New', Courier, monospace;
+    opacity: 0.6; 
+    color: white; 
+    font-size: 5vh; 
+	font-weight: 300;
+
+    align-self: flex-start;
+    margin: 0 0 0 4vh;
+}
+
+#the-community-display {
+    width: 80%;
+    height:fit-content;
+    margin-top: 5vh;
+
+    backdrop-filter: blur(10px);
+
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    color: azure;
+
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: rgba(245, 245, 245, 0.249);
+}
+
+.band-container-community {
+    width: 100%;
+	height: fit-content;
+    min-height: 200px;
+
+    margin: 14vh 0 0 0;
+    /* padding: 2vh 0vw 2vh 0; */
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    gap: 2vw;
+    color: azure;
+
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.596);
+	border-width: 1px 0 1px 0;
+
+	background-color: rgba(91, 104, 243, 0.014);
+    box-shadow: 0.3vw 0.3vw 1vw 0.2vw rgba(235, 172, 155, 0.329);   
+
+}
+
+
+
+#datawrapper-chart-IzNXS{
+    width:100%;
+    height: 600px; 
+    padding: 2vw; 
+    align-self: center; 
+    justify-self: center; 
+	color-scheme: dark;
+}
+
 

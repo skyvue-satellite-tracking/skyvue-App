@@ -1,8 +1,8 @@
 #satbot-container {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     right: 0;
-    bottom: 20vh;
+    bottom: 16vh;
 
     width: fit-content;
     height: 400px;
@@ -45,7 +45,7 @@
     border-right-color: rgba(255, 255, 255, 0.316);;
     border-radius: 5% 0 0 5%;
 
-    background-color: rgba(33, 79, 107, 0.474);
+    /* background-color: rgba(33, 79, 107, 0.474); */
     backdrop-filter: blur(20px);
     box-shadow: 0.3vw 0.3vw 1vw 0.2vw rgba(235, 172, 155, 0.329);   
     /* box-shadow: 0vw 0vw 1vw 0vw rgba(255, 211, 199, 0.458);    */
@@ -71,7 +71,7 @@
     border-color: rgba(255, 255, 255, 0.662);
     border-radius: 0% 0 0 0%;
 
-    background-color: rgba(45, 65, 78, 0.427);
+    /* background-color: rgba(45, 65, 78, 0.427); */
     backdrop-filter: blur(20px);
     box-shadow: 0.3vw 0.3vw 1vw 0.2vw rgba(235, 172, 155, 0.329);   
     /* box-shadow: 0vw 0vw 1vw 0vw rgba(255, 211, 199, 0.458);    */
@@ -99,13 +99,16 @@
 }
 
 .satbot-loader-container {
-    width: 3vw;
-    height: 3vw;
-    margin: 0 1vw 0 1vw;
+    width: 5vw;
+    height: 5vw;
+    margin: 0;
     
 
-    background-image: url(../Satbot/assets/chatGPT.webp);
+    /* background-image: url(../Satbot/assets/chatGPT.webp); */
+    background-image: url(../../assets/satbot.jpeg);
     background-size: cover;
+
+    border-radius: 50%;
 
 }
 
@@ -130,7 +133,7 @@
 	-webkit-overflow-scrolling: touch;
 	
 	backdrop-filter: blur(20px);
-	background-color: rgba(77, 85, 152, 0.254);
+	/* background-color: rgba(77, 85, 152, 0.254); */
 
 
 
@@ -152,8 +155,8 @@
 
     margin: 0;
     padding: 0;
-    width: 3vw;
-    height: 3vw;
+    width: 5vw;
+    height: 5vw;
 	
     border-top-color: #f3f3f3;
     animation: spin 2s linear infinite;

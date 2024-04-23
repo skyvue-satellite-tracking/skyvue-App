@@ -3,7 +3,7 @@ header {
 	position: relative;
 	z-index: 1;
 
-	height: fit-content;
+	height: 13vh;
 	width: 100%;
 	font-family: 'Courier New', Courier, monospace;
 	padding: 1vh 2vw;
@@ -20,7 +20,7 @@ header {
 	gap: 0;
 	
 	backdrop-filter: blur(20px);
-	background-color: rgba(77, 85, 152, 0.254);
+	/* background-color: rgba(77, 85, 152, 0.254); */
 
 
 }

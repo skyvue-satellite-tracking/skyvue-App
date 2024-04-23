@@ -6,7 +6,6 @@ app.component('satbot', {
 
         <div id="satbot-hook-container">
             <div id="satbot-hook">
-                <img  id="satbot-img" text="satbot" src="./assets/satbot.jpeg" />
                 <div class="satbot-loader-container">
                     <div class="loader" id="satbot-loader"></div>
                 </div>
@@ -22,9 +21,9 @@ app.component('satbot', {
                 <div id="chatbot-response">
                     Hi! I am Satbot.
                     <br><br> 
-                    I am a robot assistant with a great passion for all things related to space. 
+                    I am a robot assistant with a great passion for space science. 
                     <br><br>
-                    I am here to help you digging into the satellites you are tracking.
+                    I'm here to help you find out more about the satellites you're interested in.
                 </div>
                 
             </div>

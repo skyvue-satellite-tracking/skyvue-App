@@ -2,6 +2,7 @@ const app = Vue.createApp( {
 
     data() {
         return{
+            timestamp: "",
             selected_satellite: '',
             tracking: false,
             //API configuration
@@ -12,6 +13,7 @@ const app = Vue.createApp( {
             tle_string: '',
             object_path: new Array(),
             predicted_path: new Array(),
+            // [latitude, longitute, altitude, country_code]
             user_location: new Array(),
             // Container for scheduled intervals.
             intervals: new Array(),
@@ -53,6 +55,25 @@ const app = Vue.createApp( {
             // document.getElementById("units").value = ''; 
 
         },
+        updateCommunityMapDatabase(timestamp, country_code) {
+            // this.user_location;
+            // this.timestamp;  
+
+            data = {
+                'country_code': country_code,
+                'timestamp': timestamp,
+            };
+
+            fetch("https://easyfermi.com/CommunityMap/UpdateDataBase/", 
+            {
+             method: "POST",
+             headers: {
+                'Content-Type': 'application/json',
+             },
+             body: JSON.stringify(data),
+            });
+        },
+
 
     },
 
@@ -60,21 +81,21 @@ const app = Vue.createApp( {
         
         setTimeout(() => {
 
-            const interval_Wiki = setInterval(updateWikiInfo, this.wiki_update_rate);
+            // const interval_Wiki = setInterval(updateWikiInfo, this.wiki_update_rate);
             
             // Initialize 3D map Sun ilumination.
-            let timestamp = (new Date()).getTime().toString().substring(0, 10);
+            this.timestamp = (new Date()).getTime().toString().substring(0, 10);
             
             gradualOpacity('interface', 1500);    
             map2DGradualAppearance(3000);
 
             setTimeout(() => {
-                updateEarthIlumination(timestamp);    
+                updateEarthIlumination(this.timestamp);    
             }, 4000);
+
+            // updateCommunityMapDatabase(this.timestamp, this.user_location[3]);
 
         }, 100);
 
     }
-
-
 } )
