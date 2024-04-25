@@ -60,18 +60,25 @@ const app = Vue.createApp( {
             // this.timestamp;  
 
             data = {
-                'country_code': country_code,
-                'timestamp': timestamp,
+                "country_code": country_code,
+                "timestamp": timestamp
             };
 
-            fetch("https://easyfermi.com/CommunityMap/UpdateDataBase/", 
+            json_string = JSON.stringify(data);
+            // console.log(data);
+            
+            fetch("https://easyfermi.com/CommunityMap/UpdateDatabase/", 
             {
              method: "POST",
              headers: {
                 'Content-Type': 'application/json',
              },
-             body: JSON.stringify(data),
+             body: json_string,
+            }).then((response) => response.json())
+            .then((data) => {
+                // console.log(data);
             });
+
         },
 
 
@@ -92,8 +99,10 @@ const app = Vue.createApp( {
             setTimeout(() => {
                 updateEarthIlumination(this.timestamp);    
             }, 4000);
-
-            // updateCommunityMapDatabase(this.timestamp, this.user_location[3]);
+            
+            setTimeout(() => {
+                this.updateCommunityMapDatabase(this.timestamp, this.user_location[4]);                
+            }, 8000);
 
         }, 100);
 

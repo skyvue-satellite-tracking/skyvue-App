@@ -218,8 +218,11 @@ function fetchUserLocation(){
         .then((response) => response.json())
         .then((data) => {
           
-          let country_code = data.countryCode;
           mountedApp.user_location.push(data.countryCode);
+          mountedApp.user_location.push(data.countryName);
+
+          let country_code = data.countryCode;
+
           // country_code = 'BR';
           
           document.getElementById("user-location-name").textContent = country_code;
