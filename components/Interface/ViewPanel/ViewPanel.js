@@ -5,10 +5,10 @@ app.component('view-panel', {
     <div id ="main-window">
 					
         <div id="view-tabs">
-            <div @click="selectTab($event.target)" class="tab" id="specs-tab">SPECS</div>
+            <div @click="selectTab($event.target)" class="tab" id="specs-tab">TLE</div>
             <div @click="selectTab($event.target)" class="tab" id="map2D-tab">2D VIEW</div>
             <div @click="selectTab($event.target)" class="tab" id="map3D-tab">3D VIEW</div>
-            <div @click="selectTab($event.target)" class="tab" id="altitude-tab">PLANETARIUM</div>
+            <!-- <div @click="selectTab($event.target)" class="tab" id="altitude-tab">PLANETARIUM</div> -->
             <div @click="selectTab($event.target)" class="tab" id="statistics-tab">STATISTICS</div>
             <div @click="selectTab($event.target)" class="tab" id="forecast-tab">FORECAST</div>
         </div>
