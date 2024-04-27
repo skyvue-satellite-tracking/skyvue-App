@@ -121,7 +121,9 @@ app.component('header-vue', {
             let skyvue_php_source = "https://easyfermi.com/AllActiveSatellites/";
             let skyvue_python_source = "https://skyvue-ai.onrender.com/AllActiveSatellites";
 
-            fetch(skyvue_php_source)
+            // Letting celestrck direct link makes each user responsible by the use of this resource, since it is its own IP in use for these requests. 
+            // Differently from the N2YO plataform, Celestrak allows that approach.
+            fetch(celestrack_URL)
             .then((response => response.text()))
             .then((body) => {
 
