@@ -23,7 +23,7 @@
     backdrop-filter: blur(10px);
 
     border-style: solid;
-    border-radius: 6px;
+    border-radius: 1px;
     border-width: 4px;
     border-color: rgba(238, 225, 225, 0.844);
 
@@ -67,7 +67,7 @@
 
 .close-button {
     border-style: solid;
-    border-radius: 3px;
+    border-radius: 1px;
     border-width: 3px;
     border-color: rgba(255, 255, 255, 0.501);
 
@@ -162,7 +162,7 @@
 
 #data-table {
 
-    background-color: rgba(39, 39, 39, 0.884);
+    background-color: rgba(40, 44, 59, 0.60);
 
     width: 100%;
     height: 50vh;
@@ -215,9 +215,9 @@
     color: rgba(241, 234, 234, 0.833);
 
     border: solid;
-    border-color: rgba(29, 27, 27, 0.819);
-    border-width: 2px;
-    border-radius: 2px;
+    border-color: rgba(208, 203, 203, 0.641);
+    border-width: 1px;
+    border-radius: 1px;
 }
 
 .meta-field-title {

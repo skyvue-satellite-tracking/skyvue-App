@@ -1,7 +1,11 @@
-#canvas2D {
+canvas {
 
-    position: absolute;
+	position: absolute;
+	z-index: 1;
+	width: inherit;
+	height: inherit;
 
+	transition: 'width 3s, opacity 1.5s';
 }
 
 #map2D-container {
@@ -27,10 +31,24 @@
 
 }
 
+
+#map3D-container {
+
+	/* background-image: url(assets/map3D.png);  */
+	/* background-size:cover;  */
+	height: inherit;
+	width: inherit;
+
+	overflow-y: hidden;
+	overflow-x: hidden;
+
+	cursor: crosshair;
+}
+
 #satellite {
 
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 
 	width:50px;
 	height:50px;
@@ -49,7 +67,7 @@
 
 #visibility-radius {
 	position: absolute;
-    z-index: 2;
+    z-index: 3;
 	width: 150px;
 	height: 150px;	
 
@@ -64,7 +82,7 @@
 #user-location {
 
 	position: absolute;
-    z-index: 1;
+    z-index: 3;
 
 	width: 35px;
 	height: 35px;
@@ -86,14 +104,14 @@
 #satellite-location-flag{
 
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 
 }
 
 #user-location-flag {
 
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 	opacity: 1;
 
 }
@@ -101,7 +119,7 @@
 #satellite-location-name {
 
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 	padding: 0.5px;
 
 	/* background-color: white; */
@@ -123,7 +141,7 @@
 #user-location-name {
 
 	position: absolute;
-	z-index: 2;
+	z-index: 3;
 	opacity: 1;
 	padding: 0.5px;
 
@@ -145,7 +163,7 @@
 
 #cursor-cross {
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 
     width: 800px;
     height: 400px;

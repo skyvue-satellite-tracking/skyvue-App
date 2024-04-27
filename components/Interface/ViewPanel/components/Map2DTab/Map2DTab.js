@@ -9,12 +9,14 @@ app.component('map2D-tab', {
         <img v-show="path_length > 0 && tracking" width="20px" id="satellite-location-flag">
         <div v-show="path_length > 0 && tracking" id="satellite-location-name"></div>
         
-        <img id="user-location" src="assets/here.png" alt="here" lang="en">
+        <img id="user-location" src="assets/here.png" style="background-color:rgba(40,40,40,1)" alt="here" lang="en">
         <img width="20px" id="user-location-flag">
         <div id="user-location-name"></div>
 
         <img id="map2D-img" src="./assets/map2D.png">
         <canvas id="canvas2D"></canvas>
+        <canvas id="canvas2D_active_satellites" style="opacity:0;"></canvas>
+        <canvas id="canvas2D_crossing_sky" style="opacity:0;"></canvas>
 
         <div @mousemove="placeCross($event)" @mouseout="crossOff()" @mouseover="crossOn()" id="cursor-cross">
             <div id="parallel" @mouseover="crossOn()" v-show="crossDisplay">

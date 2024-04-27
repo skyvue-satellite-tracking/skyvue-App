@@ -1,38 +1,53 @@
 // updateMap([path_1, line_level_detail_1], ...)
-function updateMap(paths) {
+function drawArray(path, detail_level, point_color = 'rgba(255, 255, 255, 1)', point_size = 0.1, point_strength = 10, canvas_ctx){
 
-  function drawArray(path, detail_level){
+  // console.log('path: ', path);
    
-    if(path.length === 0){
-      return
-    }
-
-    let step = Math.floor(100/detail_level);
-
-    for (let index = 0; index < path.length - 1; index += step) {
-    
-      latitude = path[index]['latitude'];
-      longitude = path[index]['longitude'];
-      
-      //Unit conversions:
-      latitude = (Number(latitude) - 90)*(-2.2222);
-      longitude = (Number(longitude) + 180)*(2.2222);
-      
-      scale_fix = 2.66;
-      
-      lat = latitude/scale_fix;
-      lon = longitude/scale_fix;
-      
-      canvas2D.getContext('2d').fillStyle = "rgba(255, 255, 255, 1)";
-      canvas2D.getContext('2d').fillRect(lon, lat, 0.3, 0.3);
-    }
-
+  if(path.length === 0){
+    return
   }
 
-  let canvas2D = document.getElementById('canvas2D');
-  canvas2D.getContext('2d').clearRect(0, 0, canvas2D.width, canvas2D.height);
+  let step = Math.floor(100/detail_level);
+
+  for (let index = 0; index < path.length - 1; index += step) {
+
+    // console.log('satellite: ', path[index]);
+
+    latitude = path[index]['latitude'];
+    longitude = path[index]['longitude'];
+
+    // console.log(latitude);
+    // console.log(longitude);
+    // console.log('-----------------------------------');
+
+    //Unit conversions:
+    latitude = (Number(latitude) - 90)*(-2.2222);
+    longitude = (Number(longitude) + 180)*(2.2222);
+    
+    scale_fix = 2.66;
+    
+    lat = latitude/scale_fix;
+    lon = longitude/scale_fix;
+    
+     
+
+    canvas_ctx.fillStyle = point_color;
+
+    for (let stroke = 0; stroke < point_strength; stroke++) {
+      canvas_ctx.fillRect(lon, lat, point_size, point_size);
+    }
+    
+  }
+  
+}
+
+function updateMap(paths) {
+
+  let canvas_ctx = document.getElementById('canvas2D').getContext('2d');
+  canvas_ctx.clearRect(0, 0, canvas2D.width, canvas2D.height);
+  
   paths.forEach(path => {
-    drawArray(path[0], path[1]);
+    drawArray(path[0], path[1], 'white', 0.1, 10, canvas_ctx);
   });
     
 }

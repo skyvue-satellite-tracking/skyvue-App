@@ -12,7 +12,7 @@ app.component('source-tab', {
 
                 <div class="source-field">
                     
-                    <input @keyup.enter="startTracking(norad_number)" @click="$event.target.value = ''" type="text" class="" v-model="norad_number"/>
+                    <input style="color: #ffc431;" @keyup.enter="startTracking(norad_number)" @click="$event.target.value = ''" type="text" class="" v-model="norad_number"/>
 
                 </div>
                 <div class="spec">
@@ -35,15 +35,15 @@ app.component('source-tab', {
                 </div>
                 <div class="source-example-row">
                     <div class="source-example-field">ISS - International Space Station</div>
-                    <div class="source-example-field">25544</div>
+                    <div class="source-example-field-value">25544</div>
                 </div>
                 <div class="source-example-row">
                     <div class="source-example-field">GLAST - Fermi Gamma-ray Space Telescope</div>
-                    <div class="source-example-field">33053</div>
+                    <div class="source-example-field-value">33053</div>
                 </div>
                 <div class="source-example-row">
                     <div class="source-example-field">STARLINK 1020</div>
-                    <div class="source-example-field">44725</div>
+                    <div class="source-example-field-value">44725</div>
                 </div>
             </div>
         </div>

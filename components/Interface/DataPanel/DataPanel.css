@@ -425,7 +425,7 @@
 
 }
 
-.source-example-field {
+.source-example-field, .source-example-field-value {
 
 	min-height: 50px;
 
@@ -450,6 +450,12 @@
 	border-width: 1px;
 	border-radius: 0px;
 
+
+}
+
+.source-example-field-value {
+
+	color: #ffc431;
 
 }
 
