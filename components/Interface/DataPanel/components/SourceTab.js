@@ -137,6 +137,9 @@ app.component('source-tab', {
         stopTracking(){
         
             //Reseting variables, intervals and timeouts. 
+
+            let canvas_ctx = document.getElementById('canvas2D').getContext('2d');
+            canvas_ctx.clearRect(0, 0, canvas2D.width, canvas2D.height);
             
             mountedApp.tracking = false; 
             

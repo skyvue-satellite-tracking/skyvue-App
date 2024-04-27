@@ -387,7 +387,7 @@ p{
 	background-color: aliceblue;
 }
 
-.jointheteam-button img{
+.roadmap-button img{
 	border-radius: 8px;
 	opacity: 0.8;
 }
@@ -396,7 +396,7 @@ p{
     opacity: 0.8;
 }
 
-.buymeacoffee-button img:hover, .jointheteam-button img:hover{
+.buymeacoffee-button img:hover, .roadmap-button img:hover{
     scale: 1.01;
     opacity: 1;
 }
