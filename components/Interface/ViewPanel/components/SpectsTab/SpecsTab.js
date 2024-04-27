@@ -89,7 +89,7 @@ app.component('specs-tab', {
         tle_string(new_value, old_value){
           
             this.feedTLEFields();
-            // this.fetchSatbotInfo();                    
+            this.fetchSatbotInfo();                    
             this.fetchPredictedPath();
         }
 
