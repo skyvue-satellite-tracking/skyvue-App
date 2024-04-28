@@ -2,7 +2,6 @@
 
 ## Satellite Tracking Graphical Interface
 
-### Webapp for learning about and tracking satellites orbiting Earth.
+### An interactive web application designed for learning about and monitoring Earth-orbiting satellites.
   
-
-  
+![skyVue_demo](https://github.com/skyvue-satellite-tracking/skyvue-App/assets/104923248/fd9dfed4-d313-4d78-a260-2ca58cb31b39)
