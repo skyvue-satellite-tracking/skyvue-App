@@ -11,7 +11,7 @@ app.component('data-panel', {
 		<div id="data-tabs">
 			<div @click="selectTab($event.target)" class="data-tab" id="source-tab">SOURCE</div>
 			<div @click="selectTab($event.target)" class="data-tab" id="data-tab">DATA</div>
-			<div @click="selectTab($event.target)" class="data-tab" id="config-tab">CONFIG.</div>
+			<div @click="selectTab($event.target)" class="data-tab" id="config-tab">SETUP</div>
 		</div>
 		
 		<source-tab v-show="data_display_state === 'source'" :tracking="tracking"></source-tab>

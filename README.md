@@ -1,11 +1,7 @@
-### FRONT-END
-# Satellite Tracking Graphical Interface ![Static Badge](https://img.shields.io/badge/https%3A%2F%2Fclodon1109.github.io%2Fsatellite-tracking%2F?style=flat&logoColor=white&label=webpage&labelColor=gray&color=blue&link=https%3A%2F%2Fclodon1109.github.io%2FISS-Tracking%2F)
+# SKYVUE APP <a href="https://skyvue.space">![website](https://img.shields.io/badge/https://skyvue.space-blue)</a>
 
-## Webapp for tracking satellites orbiting Earth.
+## Satellite Tracking Graphical Interface
 
-<div align="center">
-<img width="70%" alt="snapshot" src="https://github.com/clodoN1109/ISS-Tracking/assets/104923248/225fd032-aa88-4374-b2f8-67c0e115384d">
-</div>
-
-<br>
-
+### An interactive web application designed for learning about and monitoring Earth-orbiting satellites.
+  
+![skyVue_demo](https://github.com/skyvue-satellite-tracking/skyvue-App/assets/104923248/fd9dfed4-d313-4d78-a260-2ca58cb31b39)
