@@ -22,7 +22,7 @@ app.component('config-tab', {
                 </div>	
             </div>
             
-            <div>
+<!--            <div>
                 <div>
                     <div class="spec-info-mini" title="Path plot point density.">?</div>
                     Plot detail level
@@ -37,7 +37,7 @@ app.component('config-tab', {
                     </div>
                 </div>	
             </div>
-            
+-->            
             
             <div>
                 <div>

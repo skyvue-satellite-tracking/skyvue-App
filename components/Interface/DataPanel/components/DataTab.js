@@ -142,7 +142,13 @@ app.component('data-tab', {
                     }    
                 });
             }
-        
+
+            //Temporary approach to suply velocity information for satellites other than ISS:
+             try {
+                document.getElementById('velocity').value = mountedApp.predicted_path[0].velocity;                
+             } catch (error) {
+                console.log('Still no velocity value obtained from TLE data.');
+             }   
         }
     }
 })

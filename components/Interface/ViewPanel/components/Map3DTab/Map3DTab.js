@@ -8,6 +8,19 @@ app.component('map3D-tab', {
         <div class="es_date" id="es_earth_sunlight_date_slider_container"></div>
         <div class="es_time" id="es_earth_sunlight_time_slider_container"></div>
         
+        <div class="display-system SOON" id="statistics-container">
+                
+        <div class="in-development">
+            <div style="font-size: 30px;">IN DEVELOPMENT</div>
+            
+            <div id="contribute">
+                <a class="buymeacoffee-button" target="_blank" href="https://buymeacoffee.com/skyvue?new=1"><img src="./assets/buymeacoffee-button.png" alt="Buy Me A Coffee" style="width: 140px;" ></a>
+                <a class="roadmap-button" target="_blank" href="https://github.com/orgs/skyvue-satellite-tracking/projects/1"><img src="./assets/join.png" alt="Join the team" style="width: 140px;" ></a>
+            </div>
+        </div>
+        
+    </div>
+
     </div>
     `
 })

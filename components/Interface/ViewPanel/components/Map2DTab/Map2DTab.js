@@ -15,7 +15,7 @@ app.component('map2D-tab', {
 
         <img id="map2D-img" src="./assets/map2D.png">
         <canvas id="canvas2D"></canvas>
-        <canvas id="canvas2D_active_satellites" style="opacity:0;"></canvas>
+        <canvas id="canvas2D_active_satellites" style="opacity:1;"></canvas>
         <canvas id="canvas2D_crossing_sky" style="opacity:0;"></canvas>
 
         <div @mousemove="placeCross($event)" @mouseout="crossOff()" @mouseover="crossOn()" id="cursor-cross">

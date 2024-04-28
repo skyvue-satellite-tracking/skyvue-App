@@ -165,7 +165,6 @@ p{
 }
 
 
-
 .metaInfo{
 
 	background-image: linear-gradient(90deg,  rgba(200,200,200, 0.05), rgba(200,200,200, 0.4), rgba(200,200,200, 0.5), rgba(200,200,200, 0.4),  rgba(200,200,200, 0.05));
@@ -401,6 +400,23 @@ p{
     opacity: 1;
 }
 
+.buymeacoffee-button:hover::after{
+
+	content: '';
+
+	position: absolute;
+	z-index: 5;
+	top: 100%;
+	left: 0;
+
+	background-image: url(./assets/bmc_qr.png);
+	background-size: cover;
+	width: 165px;
+	height: 165px;
+
+	border-radius: 5px;
+}
+
 .poem {
 
 	margin: 40px 0;
@@ -528,4 +544,21 @@ a:hover{
 	color-scheme: dark;
 }
 
+.in-development {
+	position: absolute;
+	z-index: 100;
 
+	bottom: 0;
+	left: 0;
+
+	margin: 0;
+
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 800px;
+	height: auto;
+
+	opacity: 0.8;
+}

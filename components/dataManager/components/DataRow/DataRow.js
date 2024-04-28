@@ -17,7 +17,7 @@ app.component('data-row', {
         field_data: {
             type: Object,
             required: true 
-        }
+        },
     }
     ,
     computed: {

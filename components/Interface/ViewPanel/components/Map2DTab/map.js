@@ -1,5 +1,5 @@
 // updateMap([path_1, line_level_detail_1], ...)
-function drawArray(path, detail_level, point_color = 'rgba(255, 255, 255, 1)', point_size = 0.1, point_strength = 10, canvas_ctx){
+function drawArray(path, detail_level, point_color = 'rgba(255, 255, 255, 1)', point_size = 0.1, point_strength = 10, canvas_ctx, delay_miliseconds = 0){
 
   // console.log('path: ', path);
    
@@ -38,6 +38,63 @@ function drawArray(path, detail_level, point_color = 'rgba(255, 255, 255, 1)', p
     }
     
   }
+  
+}
+
+// updateMap([path_1, line_level_detail_1], ...)
+function drawGradually(path, detail_level, point_color = 'rgba(255, 255, 255, 1)', point_size = 0.1, point_strength = 10, canvas_ctx, delay_miliseconds = 0){
+
+  // console.log('path: ', path);
+   
+  if(path.length === 0){
+    return
+  }
+
+  canvas_ctx.fillStyle = point_color;
+
+  let step = Math.floor(100/detail_level);
+
+  let sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+  }
+
+  const drawPoint = async (path) => {
+    for (let position of path) {
+
+      if (delay_miliseconds > 0) {
+        await sleep(delay_miliseconds);
+      }
+
+      mountedApp.active_satellites_count++;
+
+      // console.log('satellite: ', path[index]);
+  
+      let latitude = position['latitude'];
+      let longitude = position['longitude'];
+  
+      // console.log(latitude);
+      // console.log(longitude);
+      // console.log('-----------------------------------');
+  
+      //Unit conversions:
+      latitude = (Number(latitude) - 90)*(-2.2222);
+      longitude = (Number(longitude) + 180)*(2.2222);
+      
+      let scale_fix = 2.66;
+      
+      let lat = latitude/scale_fix;
+      let lon = longitude/scale_fix;
+      
+      for (let stroke = 0; stroke < point_strength; stroke++) {
+        canvas_ctx.fillRect(lon, lat, point_size, point_size);
+      }
+      
+         
+    }
+  }
+
+  drawPoint(path);
+    
   
 }
 

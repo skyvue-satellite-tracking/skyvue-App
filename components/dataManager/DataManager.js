@@ -27,7 +27,7 @@ app.component('data-manager', {
                     
                     <data-row id="data-units" :field_data="data_units"></data-row>
 
-                    <data-row v-for="field_data in object_path" :id="field_data.index" :field_data="field_data"></data-row>
+                    <data-row v-for="field_data in predicted_path.slice(0,100)" :id="field_data.index" :field_data="field_data"></data-row>
 
                 </div>
             </div>
@@ -62,6 +62,10 @@ app.component('data-manager', {
 
     props: { 
         object_path: {
+            type: Array,
+            required: true
+        },
+        predicted_path: {
             type: Array,
             required: true
         },
@@ -125,7 +129,7 @@ app.component('data-manager', {
             path = this.object_path;
 
             if (path.length > 0){
-                return {'source: ': this.source.toString(), 'name: ': path[0].name.toString(), 'id: ': path[0].id.toString(), 'rows: ': this.object_path.length.toString(), 'columns: ': Object.keys(path[0]).length.toString(),'units: ':this.units.toString()} 
+                return {'source: ': this.source.toString(), 'name: ': path[0].name.toString(), 'id: ': path[0].id.toString(), 'rows: ': this.predicted_path.length.toString(), 'columns: ': Object.keys(path[0]).length.toString(),'units: ':this.units.toString()} 
             }
 
             return {'source: ': '', 'name: ': '', 'id: ': '', 'rows: ': '', 'columns: ': '','units: ': ''}

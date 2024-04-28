@@ -11,18 +11,24 @@ app.component('header-vue', {
                     <img id="header-satellite" src="./assets/header_satellite.png">
                     <div id="sky-status-flex">
 
-                        <div @mouseover="show_all_active_satellites = true" @mouseout="show_all_active_satellites = false" class="sky-status">
+                        <div class="sky-status">
                             <div class="status-info" :title="info.ACTIVE_SATELLITES">?</div> 
                             <div class="sky-status-field-name">ACTIVE SATELLITES:</div>
                             <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.active_satellites_count}}</div>
-                            <div @click="updateActiveSatellitesPositions();" class=refresh-button><img src="./components/header/assets/refresh_button.png" /></div>
+                            <div @click="updateActiveSatellitesPositions();" class=refresh-button id=refresh-button-1><img src="./components/header/assets/refresh_button.png" /></div>
+                            <label @change="showAllActiveSatellites($event.target.checked)" class="bin-button data-manager-row-button" for="myCheckbox">
+                                <input checked type="checkbox" name="myCheckbox" id='active_satellites_checkbox'>
+                            </label>
                         </div>
 
-                        <div @mouseover="show_active_satellites_crossing_sky = true" @mouseout="show_active_satellites_crossing_sky = false" class="sky-status">
+                        <div class="sky-status">
                             <div class="status-info" :title="info.CROSSING_YOUR_SKY">?</div> 
                             <div class="sky-status-field-name">CROSSING YOUR SKY:</div>
                             <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.crossing_sky_count}}</div>
-                            <div @click="updateSatellitesCrossingSkyPositions();" class=refresh-button><img src="./components/header/assets/refresh_button.png" /></div>
+                            <div @click="updateSatellitesCrossingSkyPositions();" class=refresh-button id=refresh-button-2><img src="./components/header/assets/refresh_button.png" /></div>
+                            <label @change="showActiveSatellitesCrossingUserSky($event.target.checked)" class="bin-button data-manager-row-button" for="myCheckbox">
+                                <input type="checkbox" name="myCheckbox" id='satellites_crossing_sky_checkbox'>
+                            </label>
                         </div>
 
                     </div>
@@ -42,8 +48,6 @@ app.component('header-vue', {
             active_satellites: [],
             active_satellites_tle: [],
             active_satellites_crossing_sky: [],
-            show_all_active_satellites: false,
-            show_active_satellites_crossing_sky: false,
             debris: [],
             objects_crossing_sky: [],
             info: {
@@ -57,7 +61,11 @@ app.component('header-vue', {
         user_location: {
             type: Array,
             required: true
-        }
+        },
+        active_satellites_count: {
+            type: Number,
+            required: true
+        },
     }
     ,
     watch: {
@@ -66,28 +74,14 @@ app.component('header-vue', {
                 this.fetchSatellitesCrossingUserSky();
             }
         },
-        show_all_active_satellites(new_value, old_value){
-            if (new_value === true) {
-
-                this.showAllActiveSatellites();
-                
-            } else{
-                this.hideAllActiveSatellites();
-            }
-        },
-        show_active_satellites_crossing_sky(new_value, old_value){
-            if (new_value === true) {
-
-                this.showActiveSatellitesCrossingUserSky();
-                
-            } else{
-                this.hideActiveSatellitesCrossingUserSky();
-            }
-        },
         active_satellites() {
 
             let canvas_ctx = document.getElementById('canvas2D_active_satellites').getContext('2d');
-            drawArray(this.active_satellites, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx);
+            // drawArray(this.active_satellites, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx, 0);
+            // mountedApp.active_satellites_count = this.active_satellites.length;
+
+            drawGradually(this.active_satellites, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx, 0.01);
+            
         },
         active_satellites_crossing_sky() {
             let canvas_ctx = document.getElementById('canvas2D_crossing_sky').getContext('2d');
@@ -96,10 +90,10 @@ app.component('header-vue', {
 
     },
     computed: {
-        active_satellites_count() {
-            // It is devided by three because the tle list has 3 lines per satellite, i.e., it is a 3LE format.
-            return this.active_satellites.length;
-        },
+        // active_satellites_count() {
+        //     // It is devided by three because the tle list has 3 lines per satellite, i.e., it is a 3LE format.
+        //     return this.active_satellites.length;
+        // },
         debris_count() {
             return this.debris.length;
         },
@@ -112,7 +106,7 @@ app.component('header-vue', {
             this.active_satellites_crossing_sky = this.objects_crossing_sky.filter(satellite => satellite.satname.match(regex_codes_for_debries));
 
             return this.active_satellites_crossing_sky.length;
-        }
+        },
     },
     methods: {
         fetchActiveSatellites() {
@@ -138,6 +132,8 @@ app.component('header-vue', {
                      
             let test_array = "CALSPHERE 1\n1 00900U 64063C   24117.56436043  .00001716  00000+0  17860-2 0  9992\n2 00900  90.2043  54.2710 0027073 131.1214  42.8462 13.74946808963936\nCALSPHERE 2\n1 00902U 64063E   24117.57333720  .00000136  00000+0  19110-3 0  9999\n2 00902  90.2196  57.8402 0017884 342.8630 191.9104 13.52793224750588";
 
+            document.getElementById('refresh-button-1').style.animation = "spin 2s linear infinite";
+
             fetch("https://easyfermi.com/ComputePositionFromTLE/", 
             {
              method: "POST",
@@ -145,11 +141,16 @@ app.component('header-vue', {
             }).then((response) => response.json())
             .then((data) => {
                 this.active_satellites = data;
+
+                document.getElementById('refresh-button-1').style.animation = 'none';
             });
+            
         }
 
         ,
         fetchSatellitesCrossingUserSky() {
+
+            document.getElementById('refresh-button-2').style.animation = "spin 2s linear infinite";
 
             latitude = this.user_location[0];
             longitude = this.user_location[1];
@@ -175,6 +176,8 @@ app.component('header-vue', {
 
                 });
 
+                document.getElementById('refresh-button-2').style.animation = "none";
+
 
             })
         },
@@ -182,28 +185,35 @@ app.component('header-vue', {
 
         },
 
-        showAllActiveSatellites(){
+        showAllActiveSatellites(button_state){
             
-            document.getElementById('canvas2D_active_satellites').style.opacity = 1;
-
+            if (button_state ===true) {
+                document.getElementById('canvas2D_active_satellites').style.opacity = 1;
+            
+                document.getElementById('satellites_crossing_sky_checkbox').checked = false;
+                this.showActiveSatellitesCrossingUserSky(false);
+            } else {
+                document.getElementById('canvas2D_active_satellites').style.opacity = 0;
+            }
+         
         },
-        showActiveSatellitesCrossingUserSky(){
+        showActiveSatellitesCrossingUserSky(button_state){
 
-            document.getElementById('canvas2D_crossing_sky').style.opacity = 1;
+            if (button_state ===true) {
+                document.getElementById('canvas2D_crossing_sky').style.opacity = 1;
 
-        },
-        hideAllActiveSatellites(){
+                document.getElementById('active_satellites_checkbox').checked = false;
+                this.showAllActiveSatellites(false);
+            } else {
+                document.getElementById('canvas2D_crossing_sky').style.opacity = 0;
+            }
 
-            document.getElementById('canvas2D_active_satellites').style.opacity = 0;
-        
-        },
-        hideActiveSatellitesCrossingUserSky(){
-
-            document.getElementById('canvas2D_crossing_sky').style.opacity = 0;
-        
         },
 
         updateActiveSatellitesPositions(){
+
+            mountedApp.active_satellites_count = 0;
+
             let canvas_ctx = document.getElementById('canvas2D_active_satellites').getContext('2d');
             canvas_ctx.clearRect(0, 0, canvas2D.width, canvas2D.height);
 

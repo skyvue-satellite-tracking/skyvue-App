@@ -232,8 +232,34 @@ app.component('specs-tab', {
               
                 // console.log(data);
 
-                mountedApp.predicted_path = data;
-        
+                for (let i = 0; i < data.length; i++) {
+
+                    mountedApp.predicted_path.push(
+
+                        {
+
+                            'index': i,
+                            'name':  mountedApp.object_path[0]['name'],
+                            'id': mountedApp.selected_satellite,
+                            'latitude': data[i].latitude,
+                            'longitude': data[i].longitude,
+                            'altitude': data[i].altitude,
+                            'velocity': data[i].velocity,
+                            'visibility': '',
+                            'footprint': '',
+                            'time': timestampToDateConversion(Number(data[i].timestamp)),
+                            'timestamp': data[i].timestamp,
+                            'daynum': '',
+                            'solarlatitude': '',
+                            'solarlongitude': '',
+                            'units': '',
+                          
+                        }
+
+                    );
+                    
+                }
+
             });
         
         }

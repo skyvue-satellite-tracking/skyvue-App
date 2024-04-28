@@ -41,7 +41,7 @@ app.component('view-panel', {
                 {'id':'user-label', 'image':'./assets/here.png', 'text':"you're here"},
                 {'id':'satellite-label', 'image':'./assets/satellite.png', 'text':"satellite"},
                 {'id':'footprint-label', 'image':'./assets/dashed_circle.png', 'text':"footprint"},
-                {'id':'path-label', 'image':'./assets/dotted_line.png', 'text':"traveled path"},
+                // {'id':'path-label', 'image':'./assets/dotted_line.png', 'text':"traveled path"},
                 {'id':'predicted-label', 'image':'./assets/continuous_line.png', 'text':"predicted path"},
 
             ]

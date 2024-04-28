@@ -1,0 +1,14 @@
+/* Style the label to make it a square */
+.data-row-gadgets label {
+  display: inline-block;
+  width: 20px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+  background-color: #98919100; /* Set the background color */
+  border: 1px solid #99999900; /* Add a border for visual clarity */
+  
+}
+
+label {
+	font-family: monospace; 
+	font-weight: bolder;
+}
