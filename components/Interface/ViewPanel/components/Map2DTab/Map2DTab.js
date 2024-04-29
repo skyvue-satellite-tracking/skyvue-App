@@ -4,8 +4,8 @@ app.component('map2D-tab', {
     `
     <div class="display-system" id="map2D-container">
     
-        <img v-show="path_length > 0 && tracking" id="satellite" src="assets/satellite.png" alt="a mundi map" lang="en">
-        <div v-show="path_length > 0 && tracking" id="visibility-radius"></div>
+        <img v-show="path_length > 0 && tracking" id="satellite" src="assets/header_satellite.png" alt="a mundi map" lang="en">
+        <div v-show="path_length > 0 && tracking" id="footprint-radius"></div>
         <img v-show="path_length > 0 && tracking" width="20px" id="satellite-location-flag">
         <div v-show="path_length > 0 && tracking" id="satellite-location-name"></div>
         
@@ -62,7 +62,7 @@ app.component('map2D-tab', {
             updateNationalFlagPosition(mountedApp.object_path);                   
 
         }
-
+   
     },
     methods: {
         placeCross(event) {

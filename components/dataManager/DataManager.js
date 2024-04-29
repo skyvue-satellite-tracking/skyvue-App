@@ -27,7 +27,7 @@ app.component('data-manager', {
                     
                     <data-row id="data-units" :field_data="data_units"></data-row>
 
-                    <data-row v-for="field_data in predicted_path.slice(0,30)" :id="field_data.index" :field_data="field_data"></data-row>
+                    <data-row v-for="field_data in predicted_path.slice(0,100)" :id="field_data.index" :field_data="field_data"></data-row>
 
                 </div>
             </div>
@@ -91,7 +91,7 @@ app.component('data-manager', {
         
                 let headerArray = [Object.values(this.data_header)];
                 let unitsArray = [Object.values(this.data_units)];
-                let pathArray = this.object_path.map(obj => Object.values(obj));
+                let pathArray = this.predicted_path.map(obj => Object.values(obj));
                     
                 // console.dir(headerArray);
                 // console.dir(unitsArray);

@@ -57,7 +57,7 @@ canvas {
 	border-width: 5px;
 	border-radius: 50%;
 	border-color: rgba(245, 243, 243, 0);
-	background-color: rgba(192, 185, 177, 0.936);
+	background-image: radial-gradient(circle, rgb(90 90 90), rgb(226 210 210 / 91%));
 
 	backdrop-filter: blur(10px);
 
@@ -65,11 +65,11 @@ canvas {
 
 }
 
-#visibility-radius {
+#footprint-radius {
 	position: absolute;
     z-index: 3;
-	width: 150px;
-	height: 150px;	
+	width: 0px;
+	height: 0px;	
 
 	border-style: dashed;
 	border-width: 2px;

@@ -38,7 +38,7 @@ app.component('data-tab', {
                 </div>
             </div>
             
-            <div>
+<!--            <div>
                 <div>Solar Latitude</div>
                 <div class="data-field">
                     <output style="cursor: default;" id="solarlatitude" readonly class="" value="0"></output> 	
@@ -53,6 +53,7 @@ app.component('data-tab', {
                     <div class="units coordinates-unit">deg</div>
                 </div>
             </div>
+
             
             <div>
                 <div>
@@ -64,7 +65,7 @@ app.component('data-tab', {
                     <div class="units">&nbsp;</div>
                 </div>
             </div>
-            
+-->            
             <div>
                 <div>
                     <div class="spec-info-mini" title="The footprint of a communications satellite is the ground area that its transponders offer coverage, and determines the satellite dish diameter required to receive each transponder's signal.">?</div>
@@ -144,11 +145,19 @@ app.component('data-tab', {
             }
 
             //Temporary approach to suply velocity information for satellites other than ISS:
-             try {
-                document.getElementById('velocity').value = mountedApp.predicted_path[0].velocity;                
-             } catch (error) {
-                console.log('Still no velocity value obtained from TLE data.');
-             }   
+            try {
+            document.getElementById('velocity').value = mountedApp.predicted_path[0].velocity;                
+            } catch (error) {
+            // console.log('Still no velocity value obtained from TLE data.');
+            }
+
+            //Temporary approach to suply footprint information for satellites other than ISS:
+            try {
+                document.getElementById('footprint').value = mountedApp.predicted_path[0].footprint;                
+                } catch (error) {
+                // console.log('Still no footprint value obtained from TLE data.');
+                }   
+                
         }
     }
 })

@@ -12,7 +12,7 @@ app.component('source-tab', {
 
                 <div class="source-field">
                     
-                    <input style="color: #ffc431;" @keyup.enter="startTracking(norad_number)" @click="$event.target.value = ''" type="text" class="" v-model="norad_number"/>
+                    <input style="color: #ffc431;" @keyup.enter="enterSatellite()" @click="$event.target.value = ''" type="text" class="" v-model="norad_number"/>
 
                 </div>
                 <div class="spec">
@@ -151,6 +151,11 @@ app.component('source-tab', {
             });
             
 
+        },
+
+        enterSatellite() {
+            this.stopTracking(); 
+            setTimeout(() => {this.startTracking(mountedApp.selected_satellite)}, 300);
         }
 
     },

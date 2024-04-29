@@ -37,7 +37,7 @@ app.component('view-panel', {
             map2D_labels: [
                 
                 {'id':'user-label', 'image':'./assets/here.png', 'text':"you're here"},
-                {'id':'satellite-label', 'image':'./assets/satellite.png', 'text':"satellite"},
+                {'id':'satellite-label', 'image':'./assets/header_satellite.png', 'text':"satellite"},
                 {'id':'footprint-label', 'image':'./assets/dashed_circle.png', 'text':"footprint"},
                 // {'id':'path-label', 'image':'./assets/dotted_line.png', 'text':"traveled path"},
                 {'id':'predicted-label', 'image':'./assets/continuous_line.png', 'text':"predicted path"},

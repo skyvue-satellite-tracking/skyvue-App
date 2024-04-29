@@ -3,9 +3,9 @@ app.component('orbit-tab', {
     template: 
     /*html*/
     `
-    <div class="display-system" id="specs-container">
-    
-        <div class="specs-flex">
+    <div class="data-container" id="output-container">
+						
+        <div class="data-display">
         
             <div class="specs-header"> 
                 <div class="loader" id="tle-loader"></div>  
@@ -24,11 +24,6 @@ app.component('orbit-tab', {
             </div>
             
         
-        </div>
-
-        <div style="opacity:0;" class="specs-flex">
-
-           
         </div>
 
     </div>
@@ -239,7 +234,7 @@ app.component('orbit-tab', {
 
                         {
 
-                            'index': i,
+                            'index': i + 1,
                             'name':  mountedApp.object_path[0]['name'],
                             'id': mountedApp.selected_satellite,
                             'latitude': data[i].latitude,
@@ -247,7 +242,7 @@ app.component('orbit-tab', {
                             'altitude': data[i].altitude,
                             'velocity': data[i].velocity,
                             'visibility': '',
-                            'footprint': '',
+                            'footprint': data[i].footprint,
                             'time': timestampToDateConversion(Number(data[i].timestamp)),
                             'timestamp': data[i].timestamp,
                             'daynum': '',

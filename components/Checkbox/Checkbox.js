@@ -24,9 +24,11 @@ app.component('checkbox', {
     
     checkbox.addEventListener('change', () => {
       if (checkbox.checked) {
-        console.log(this.id);
+        // console.log(this.id);
       }
-      else {console.log(this.id);}
+      else {
+        // console.log(this.id);
+      }
     })
   }
 

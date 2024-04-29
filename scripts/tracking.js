@@ -2,7 +2,7 @@ function fetchCurrentState(norad_number, object_path){
 
   if (norad_number == 25544) {
 
-    mountedApp.source_URL = "https://api.wheretheiss.at/";
+    let source_URL = "https://api.wheretheiss.at/";
 
     activityLogging("requesting data");
 
@@ -23,7 +23,7 @@ function fetchCurrentState(norad_number, object_path){
   //     "units": "kilometers"
   // }
 
-  let API_URL = mountedApp.source_URL + "v1/satellites/" + norad_number + "?units=" + mountedApp.units; 
+  let API_URL = source_URL + "v1/satellites/" + norad_number + "?units=" + mountedApp.units; 
       // https://api.wheretheiss.at/v1/satellites/25544?units=miles
   fetch(API_URL)
   .then((response) => response.json())
@@ -66,7 +66,7 @@ function fetchCurrentState(norad_number, object_path){
 
   else {
 
-    mountedApp.source_URL = "https://api.n2yo.com/";
+    let source_URL = "https://api.n2yo.com/";
 
  // {
     //   "info": {

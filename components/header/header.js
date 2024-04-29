@@ -220,6 +220,8 @@ app.component('header-vue', {
         },
 
         updateSatellitesCrossingSkyPositions(){
+
+            mountedApp.satellites_crossing_count = 0;
             
             let canvas_ctx = document.getElementById('canvas2D_crossing_sky').getContext('2d');
             canvas_ctx.clearRect(0, 0, canvas2D.width, canvas2D.height);

@@ -6,7 +6,7 @@ const app = Vue.createApp( {
             selected_satellite: '',
             tracking: false,
             //API configuration
-            source_URL: '',
+            source_URL: 'skyVue API',
             locationNameByCoordinates_URL: 'https://api.wheretheiss.at/',
             // Collected data
             // object_path[i] = {index, name, id, latitude, longitude, altitude, velocity, visibility, footprint, time, timestamp, daynum, solar_lat, solar_lon, units};
@@ -48,12 +48,12 @@ const app = Vue.createApp( {
             document.getElementById("longitude").value = '';  
             document.getElementById("altitude").value = ''; 
             document.getElementById("velocity").value = ''; 
-            document.getElementById("visibility").value = ''; 
+            // document.getElementById("visibility").value = ''; 
             document.getElementById("footprint").value = ''; 
             document.getElementById("time").value = ''; 
             // document.getElementById("daynum").value = ''; 
-            document.getElementById("solarlatitude").value = ''; 
-            document.getElementById("solarlongitude").value = ''; 
+            // document.getElementById("solarlatitude").value = ''; 
+            // document.getElementById("solarlongitude").value = ''; 
             // document.getElementById("units").value = ''; 
 
         },

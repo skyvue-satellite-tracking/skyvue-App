@@ -295,9 +295,6 @@
 	font-size: 25px;
 	font-weight: 100;
 
-	backdrop-filter: blur(20px);
-	background-color: rgba(36, 40, 68, 0.642);
-
 }
 
 .satbot-header {
@@ -352,11 +349,6 @@
 	scroll-snap-type: mandatory;
     scrollbar-color: rgb(255, 255, 255) rgba(43, 45, 43, 0.756);
 	-webkit-overflow-scrolling: touch;
-	
-	backdrop-filter: blur(20px);
-	background-color: rgba(77, 85, 152, 0.254);
-
-
 
 }
 
