@@ -54,9 +54,8 @@ app.component('config-tab', {
                     </div>
                 </div>	
             </div>
-            
-            
-            
+                        
+<!--
             <div v-if="source === 'https://api.wheretheiss.at/' && tracking">
                 <div>
                     <div class="spec-info-mini" title="">?</div>
@@ -69,7 +68,7 @@ app.component('config-tab', {
                     </select>						
                 </div>
             </div>
-            
+-->
             <br>
             
         </div>
@@ -133,7 +132,6 @@ app.component('config-tab', {
             if (id === 'line-level-detail'){ 
                 mountedApp.line_level_detail = value;
                 updateMap([
-                    [mountedApp.object_path, mountedApp.line_level_detail],
                     [mountedApp.predicted_path, 100]
                 ]);            
             }
@@ -162,7 +160,6 @@ app.component('config-tab', {
                 }
 
                 updateMap([
-                    [mountedApp.object_path, mountedApp.line_level_detail],
                     [mountedApp.predicted_path, 100]
                 ]);
                 

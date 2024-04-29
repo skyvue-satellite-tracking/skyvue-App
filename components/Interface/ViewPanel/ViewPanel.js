@@ -5,7 +5,6 @@ app.component('view-panel', {
     <div id ="main-window">
 					
         <div id="view-tabs">
-            <div @click="selectTab($event.target)" class="tab" id="specs-tab">TLE</div>
             <div @click="selectTab($event.target)" class="tab" id="map2D-tab">2D VIEW</div>
             <div @click="selectTab($event.target)" class="tab" id="map3D-tab">3D VIEW</div>
             <!-- <div @click="selectTab($event.target)" class="tab" id="altitude-tab">PLANETARIUM</div> -->
@@ -17,7 +16,6 @@ app.component('view-panel', {
         
         <div id="screen" >
         
-            <specs-tab  v-show="viewer_state === 'specs'" :tracking="tracking" :selected_satellite="selected_satellite" :tle_string="tle_string" ></specs-tab>
             <map2D-tab  v-show="viewer_state === 'map2D'" :tracking="tracking" :object_path="object_path"></map2D-tab>
             <map3D-tab  v-show="viewer_state === 'map3D'"></map3D-tab>
             <altitude-tab  v-show="viewer_state === 'altitude'"></altitude-tab>

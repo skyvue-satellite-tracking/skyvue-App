@@ -1,4 +1,5 @@
-app.component('specs-tab', {
+app.component('orbit-tab', {
+
     template: 
     /*html*/
     `
@@ -36,27 +37,27 @@ app.component('specs-tab', {
     data() {
         return {
             specs: [
-                {id: 'name-spec', name:"NAME: ", info: ""},
-                {id: 'norad-spec', name:'NORAD: ', info: "The NORAD Catalog Number, also known as the SATCAT, is a nine-digit sequential identifier assigned by the United States Space Command (USSPACECOM) to all artificial objects in Earth’s orbit and those that have left Earth’s orbit. It represents the order of launch or discovery and is used to track satellites and other space objects."},
-                {id: 'classification-spec', name:'CLASSIFICATION: ', info: "U: Unclassified; C: Classified; S: Secret"},
-                {id: 'launch-year-spec', name:'LAUNCH YEAR: ', info: "" },
-                {id: 'launch-number-spec', name:'LAUNCH NUMBER: ', info: "Launch number of the year." },
-                {id: 'piece-spec', name:'PIECE OF THE LAUNCH: ', info: "Piece of the launch."},
-                {id: 'epoch-year-spec', name:'EPOCH YEAR: ', info: ""},
+                {id: 'name-spec', name:"NAME ", info: ""},
+                {id: 'norad-spec', name:'NORAD ', info: "The NORAD Catalog Number, also known as the SATCAT, is a nine-digit sequential identifier assigned by the United States Space Command (USSPACECOM) to all artificial objects in Earth’s orbit and those that have left Earth’s orbit. It represents the order of launch or discovery and is used to track satellites and other space objects."},
+                {id: 'classification-spec', name:'CLASSIFICATION ', info: "U: Unclassified; C: Classified; S: Secret"},
+                {id: 'launch-year-spec', name:'LAUNCH YEAR ', info: "" },
+                {id: 'launch-number-spec', name:'LAUNCH NUMBER ', info: "Launch number of the year." },
+                {id: 'piece-spec', name:'PIECE OF THE LAUNCH ', info: "Piece of the launch."},
+                {id: 'epoch-year-spec', name:'EPOCH YEAR ', info: ""},
                 {id: 'epoch-spec', name:'EPOCH: ', info: "Day of the year and fractional portion of the day"},
-                {id: 'first-derivative-spec', name:'1° DERIVATIVE: ', info: "Mean motion first derivative."},
-                {id: 'second-derivative-spec', name:'2° DERIVATIVE: ', info: "Mean motion second derivative."},
-                {id: 'bstar-spec', name:'BSTAR: ', info: "Bstar drag term (leading decimal point assumed)."},
-                {id: 'ephemeris-spec', name:'EPHEMERIS TYPE: ', info: ""},
-                {id: 'inclination-spec', name:'INCLINATION: ', info: "(degrees)"},
-                {id: 'ascension-spec', name:'RAAN: ', info: "Right Ascension of the Ascending Node (degrees)"},
-                {id: 'eccentricity-spec', name:'ECCENTRICITY: ', info: "Leading decimal point assumed."},
-                {id: 'perigee-spec', name:'PERIGEE: ', info: "Argument of perigee. (degrees)"},
-                {id: 'mean-anomaly-spec', name:'MEAN ANOMALY: ', info: "(degrees)"},
-                {id: 'mean-motion-spec', name:'MEAN MOTION: ', info: "(revolutions per day)"},
-                {id: 'revolution-number-spec', name:'REVOLUTION NUMBER: ', info: "Number of revolution at epoch this TLE refers to."},
-                {id: 'checksum-line1-spec', name:'CHECKSUM (LINE 1): ', info: "Indicates TLE's line 1 data integrity."},
-                {id: 'checksum-line2-spec', name:'CHECKSUM (LINE 2): ', info: "Indicates TLE's line 2 data integrity."},
+                {id: 'first-derivative-spec', name:'1° DERIVATIVE ', info: "Mean motion first derivative."},
+                {id: 'second-derivative-spec', name:'2° DERIVATIVE ', info: "Mean motion second derivative."},
+                {id: 'bstar-spec', name:'BSTAR ', info: "Bstar drag term (leading decimal point assumed)."},
+                {id: 'ephemeris-spec', name:'EPHEMERIS TYPE ', info: ""},
+                {id: 'inclination-spec', name:'INCLINATION ', info: "(degrees)"},
+                {id: 'ascension-spec', name:'RAAN ', info: "Right Ascension of the Ascending Node (degrees)"},
+                {id: 'eccentricity-spec', name:'ECCENTRICITY ', info: "Leading decimal point assumed."},
+                {id: 'perigee-spec', name:'PERIGEE ', info: "Argument of perigee. (degrees)"},
+                {id: 'mean-anomaly-spec', name:'MEAN ANOMALY ', info: "(degrees)"},
+                {id: 'mean-motion-spec', name:'MEAN MOTION ', info: "(revolutions per day)"},
+                {id: 'revolution-number-spec', name:'REVOLUTION NUMBER ', info: "Number of revolution at epoch this TLE refers to."},
+                {id: 'checksum-line1-spec', name:'CHECKSUM (LINE 1) ', info: "Indicates TLE's line 1 data integrity."},
+                {id: 'checksum-line2-spec', name:'CHECKSUM (LINE 2) ', info: "Indicates TLE's line 2 data integrity."},
             ]
         }
     },
@@ -264,4 +265,5 @@ app.component('specs-tab', {
         
         }
     }
+
 })

@@ -15,7 +15,7 @@ app.component('map3D-tab', {
             
             <div id="contribute">
                 <a class="buymeacoffee-button" target="_blank" href="https://buymeacoffee.com/skyvue?new=1"><img src="./assets/buymeacoffee-button.png" alt="Buy Me A Coffee" style="width: 140px;" ></a>
-                <a class="roadmap-button" target="_blank" href="https://github.com/orgs/skyvue-satellite-tracking/projects/1"><img src="./assets/join.png" alt="Join the team" style="width: 140px;" ></a>
+                <a class="roadmap-button" target="_blank" href="https://github.com/orgs/skyvue-satellite-tracking/projects/1"><img src="./assets/roadmap_github.png" alt="Join the team" style="width: 140px;" ></a>
             </div>
         </div>
         

@@ -24,7 +24,7 @@ app.component('header-vue', {
                         <div class="sky-status">
                             <div class="status-info" :title="info.CROSSING_YOUR_SKY">?</div> 
                             <div class="sky-status-field-name">CROSSING YOUR SKY:</div>
-                            <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.crossing_sky_count}}</div>
+                            <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.satellites_crossing_count}}</div>
                             <div @click="updateSatellitesCrossingSkyPositions();" class=refresh-button id=refresh-button-2><img src="./components/header/assets/refresh_button.png" /></div>
                             <label @change="showActiveSatellitesCrossingUserSky($event.target.checked)" class="bin-button data-manager-row-button" for="myCheckbox">
                                 <input type="checkbox" name="myCheckbox" id='satellites_crossing_sky_checkbox'>
@@ -66,6 +66,10 @@ app.component('header-vue', {
             type: Number,
             required: true
         },
+        satellites_crossing_count: {
+            type: Number,
+            required: true
+        },
     }
     ,
     watch: {
@@ -80,12 +84,12 @@ app.component('header-vue', {
             // drawArray(this.active_satellites, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx, 0);
             // mountedApp.active_satellites_count = this.active_satellites.length;
 
-            drawGradually(this.active_satellites, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx, 0.01);
+            drawActiveSatellites(this.active_satellites, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx, 0);
             
         },
         active_satellites_crossing_sky() {
             let canvas_ctx = document.getElementById('canvas2D_crossing_sky').getContext('2d');
-            drawArray(this.active_satellites_crossing_sky, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx);
+            drawSatellitesCrossing(this.active_satellites_crossing_sky, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx, 0);
         },
 
     },
@@ -96,16 +100,6 @@ app.component('header-vue', {
         // },
         debris_count() {
             return this.debris.length;
-        },
-        crossing_sky_count() {
-
-            // Regex expression to filtering only strings that does not contain 'DEB' or 'R/B' patterns.
-            let regex_codes_for_debries = '^((?!DEB|R\/B).)*$';
-
-            // Filtering only objects not classified as debris.
-            this.active_satellites_crossing_sky = this.objects_crossing_sky.filter(satellite => satellite.satname.match(regex_codes_for_debries));
-
-            return this.active_satellites_crossing_sky.length;
         },
     },
     methods: {
@@ -178,6 +172,11 @@ app.component('header-vue', {
 
                 document.getElementById('refresh-button-2').style.animation = "none";
 
+                // Regex expression to filtering only strings that does not contain 'DEB' or 'R/B' patterns.
+                let regex_codes_for_debries = '^((?!DEB|R\/B).)*$';
+
+                // Filtering only objects not classified as debris.
+                this.active_satellites_crossing_sky = this.objects_crossing_sky.filter(satellite => satellite.satname.match(regex_codes_for_debries));
 
             })
         },

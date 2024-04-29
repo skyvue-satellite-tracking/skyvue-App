@@ -10,11 +10,13 @@ app.component('data-panel', {
 		
 		<div id="data-tabs">
 			<div @click="selectTab($event.target)" class="data-tab" id="source-tab">SOURCE</div>
+			<div @click="selectTab($event.target)" class="data-tab" id="orbit-tab">ORBIT</div>
 			<div @click="selectTab($event.target)" class="data-tab" id="data-tab">DATA</div>
 			<div @click="selectTab($event.target)" class="data-tab" id="config-tab">SETUP</div>
 		</div>
 		
 		<source-tab v-show="data_display_state === 'source'" :tracking="tracking"></source-tab>
+		<orbit-tab v-show="data_display_state === 'orbit'" :tle_string="tle_string" :tracking="tracking" :selected_satellite="selected_satellite"></orbit-tab>
 		<data-tab :object_path="object_path" v-show="data_display_state === 'data'"></data-tab>
 		<config-tab  v-show="data_display_state === 'config'" :source="source" :tracking="tracking"></config-tab>				
 	
@@ -45,6 +47,10 @@ app.component('data-panel', {
             type: Array,
             required: true
         },
+        tle_string: {
+			type: String,
+			required: true
+		}
     },
     methods: {
         selectTab(element){

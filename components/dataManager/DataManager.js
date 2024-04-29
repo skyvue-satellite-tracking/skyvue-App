@@ -27,7 +27,7 @@ app.component('data-manager', {
                     
                     <data-row id="data-units" :field_data="data_units"></data-row>
 
-                    <data-row v-for="field_data in predicted_path.slice(0,100)" :id="field_data.index" :field_data="field_data"></data-row>
+                    <data-row v-for="field_data in predicted_path.slice(0,30)" :id="field_data.index" :field_data="field_data"></data-row>
 
                 </div>
             </div>

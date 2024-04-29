@@ -38,11 +38,11 @@
 			
 			<video id="video-bg" muted autoplay loop src="assets/bg.webm"></video>
 
-			<header-vue id="header-vue" :user_location="user_location" :active_satellites_count="active_satellites_count"></header-vue>
+			<header-vue id="header-vue" :user_location="user_location" :satellites_crossing_count="satellites_crossing_count" :active_satellites_count="active_satellites_count"></header-vue>
 			
 			<div id="interface" class="interface">
 				
-				<data-panel :tracking="tracking" :object_path="object_path" :selected_satellite="selected_satellite" :source="source_URL"></data-panel>
+				<data-panel :tracking="tracking" :object_path="object_path" :selected_satellite="selected_satellite" :source="source_URL" :tle_string="tle_string"></data-panel>
 				
 				<view-panel :tracking="tracking" :object_path="object_path" :selected_satellite="selected_satellite" :tle_string="tle_string"></view-panel>
 
@@ -83,7 +83,7 @@
 				<div class="band-display">
 					<div id="contribute">
 						<a class="buymeacoffee-button" target="_blank" href="https://buymeacoffee.com/skyvue?new=1"><img src="./assets/buymeacoffee-button.png" alt="Buy Me A Coffee" style="width: 165px;" ></a>
-						<a class="roadmap-button" target="_blank" href="https://github.com/orgs/skyvue-satellite-tracking/projects/1"><img src="./assets/join.png" alt="Join the team" style="width: 165px;" ></a>
+						<a class="roadmap-button" target="_blank" href="https://github.com/orgs/skyvue-satellite-tracking/projects/1"><img src="./assets/roadmap_github.png" alt="Join the team" style="width: 165px;" ></a>
 					</div>
 					<div class="inline-flex-container">
 
@@ -175,6 +175,8 @@
 		<script src="./components/header/header.js"></script>
 		<script src="./components/Interface/DataPanel/DataPanel.js"></script>
 		<script src="./components/Interface/DataPanel/components/SourceTab.js"></script>
+		<script src="./components/Interface/DataPanel/components/SpecsTab/OrbitTab.js"></script>
+		<script src="./components/Interface/DataPanel/components/SpecsTab/components/spec.js"></script>
 		<script src="./components/Interface/DataPanel/components/DataTab.js"></script>
 		<script src="./components/Interface/DataPanel/components/ConfigTab.js"></script>
 		<script src="./components/Interface/ViewPanel/ViewPanel.js"></script>
@@ -182,8 +184,6 @@
 		<script src="./components/Interface/ViewPanel/components/ForecastTab.js"></script>
 		<script src="./components/Interface/ViewPanel/components/Map2DTab/Map2DTab.js"></script>
 		<script src="./components/Interface/ViewPanel/components//Map3DTab/Map3DTab.js"></script>
-		<script src="./components/Interface/ViewPanel/components/SpectsTab/SpecsTab.js"></script>
-		<script src="./components/Interface/ViewPanel/components/SpectsTab/components/spec.js"></script>
 		<script src="./components/Interface/ViewPanel/components/StatisticsTab.js"></script>
 		<script src="./components/Interface/ViewPanel/components/ViewLabel.js"></script>
 		<script src="./components/dataManager/DataManager.js"></script>

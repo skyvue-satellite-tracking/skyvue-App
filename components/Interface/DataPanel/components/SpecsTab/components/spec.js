@@ -2,13 +2,17 @@ app.component('spec', {
     template:
     /*html*/
     `
-    <div class="spec">
+    <div>
         <div style="display: inline-flex; gap: 5px;">
             <div class="spec-info" :title="spec.info">?</div>
-            <div class="spec-name">{{this.spec.name}}</div>	
+            <div>{{this.spec.name}}</div>
+        </div> 
+        <div class="data-field">
+            <output style="cursor: default;" :id="spec.id" readonly value=" &nbsp"></output> 
+           <!-- <div class="units coordinates-unit">deg</div> -->
         </div>
-        <output class="spec-value" :id="spec.id" readonly value=""></output>
     </div>
+
     `
     ,
     props: {

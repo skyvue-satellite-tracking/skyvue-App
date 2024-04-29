@@ -29,6 +29,7 @@ const app = Vue.createApp( {
             // possible values: 'retreated', 'full'
             satbot_display: 'retreated',
             active_satellites_count: 0,
+            satellites_crossing_count: 0,
         }
     },
 

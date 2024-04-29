@@ -109,7 +109,6 @@ app.component('source-tab', {
                     }
 
                     updateMap([
-                        [mountedApp.object_path, mountedApp.line_level_detail],
                         [mountedApp.predicted_path, 100]
                     ]);
                         
