@@ -179,8 +179,8 @@ function setFootprintCircleRadius(){
   longitudinal_length = 2 * Math.PI * earth_radius * Math.cos(current_latitude*Math.PI/180);
   earth_meridional_length = 40074; 
 
-  map_width = document.getElementById('map2D-img').offsetWidth; 
-  map_height = document.getElementById('map2D-img').offsetHeight; 
+  let map_width = document.getElementById('map2D-img').offsetWidth; 
+  let map_height = document.getElementById('map2D-img').offsetHeight; 
 
   document.getElementById('footprint-radius').style.width = map_width * (footprint_radius/longitudinal_length) + 'px';
   document.getElementById('footprint-radius').style.height = map_height * (footprint_radius/earth_meridional_length) + 'px';
@@ -196,15 +196,18 @@ function updateObjectPosition(object_path){
   latitude = object_path[object_path.length-1]['latitude'];
   longitude = object_path[object_path.length-1]['longitude'];
 
+  let map_width = document.getElementById('map2D-img').offsetWidth; 
+  let map_height = document.getElementById('map2D-img').offsetHeight;
+
   //Unit conversions, scaling and positional adjustments:
   satellite_picture_width = Number(document.getElementById("satellite").offsetWidth); 
-  satY = (Number(latitude) - 90)*(-2.2222) - satellite_picture_width/2;
-  satX = (Number(longitude) + 180)*(2.2222) - satellite_picture_width/2;
+  satY = (Number(latitude) - 90)*(-map_height/180) - satellite_picture_width/2;
+  satX = (Number(longitude) + 180)*(map_width/360) - satellite_picture_width/2;
 
   visibility_radius_width = Number(document.getElementById("footprint-radius").offsetWidth); 
   visibility_radius_height = Number(document.getElementById("footprint-radius").offsetHeight); 
-  radiusY = (Number(latitude) - 90)*(-2.2222) - visibility_radius_height/2;
-  radiusX = (Number(longitude) + 180)*(2.2222) - visibility_radius_width/2;
+  radiusY = (Number(latitude) - 90)*(-map_height/180) - visibility_radius_height/2;
+  radiusX = (Number(longitude) + 180)*(map_width/360) - visibility_radius_width/2;
 
   document.getElementById("satellite").style.transform = "translate(" + satX + "px, " + satY +  "px)";
   document.getElementById("footprint-radius").style.transform = "translate(" + radiusX + "px, " + radiusY +  "px)";
@@ -219,6 +222,9 @@ function updateNationalFlagPosition(object_path){
   
   latitude = object_path[object_path.length-1]['latitude'];
   longitude = object_path[object_path.length-1]['longitude']; 
+
+  let map_width = document.getElementById('map2D-img').offsetWidth; 
+  let map_height = document.getElementById('map2D-img').offsetHeight;
 
   // https://secure.geonames.org/countryCodeJSON?formatted=true&lat=47.03&lng=10.2&username=clodolinus&style=full
   fetch("https://secure.geonames.org/countryCodeJSON?formatted=true&lat=" + latitude + "&lng=" + longitude + "&username=clodolinus&style=full")
@@ -235,8 +241,8 @@ function updateNationalFlagPosition(object_path){
       document.getElementById("satellite-location-flag").src = flagURL;
       
       satellite_picture_width = Number(document.getElementById("satellite").offsetWidth); 
-      positionY = (Number(latitude) - 90)*(-2.2222);
-      positionX = (Number(longitude) + 180)*(2.2222);
+      positionY = (Number(latitude) - 90)*(-map_height/180);
+      positionX = (Number(longitude) + 180)*(map_width/360);
 
       document.getElementById("satellite-location-flag").style.transform = "translate(" + (positionX - satellite_picture_width/2 -5) + "px, " + (positionY - satellite_picture_width/2 - 5) +  "px)";
       document.getElementById("satellite-location-name").style.transform = "translate(" + (positionX + 10) + "px, " + (positionY + 10) +  "px)";

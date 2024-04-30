@@ -76,7 +76,6 @@
         align-items: center;
 
         row-gap: 100px;
-
     }
 
     .interface {
@@ -179,16 +178,25 @@
     }
 
     #satbot-container {
-        position: fixed;
-        z-index: 2;
-        right: 0;
         top: 0;
         bottom: none;
-    
-        width: fit-content;
-        height: 400px;
-        max-height: 100%;
-    
+        max-height: 40%;
+
+    }
+
+    #view-labels {
+        flex-wrap: wrap;
+    }
+
+    .sky-status {
+                
+        width: 100%;
+        margin: 0;
+    }
+
+    .sky-status-field-value {
+        padding: 0;
+        min-width: 6vw;
     }
 }
 

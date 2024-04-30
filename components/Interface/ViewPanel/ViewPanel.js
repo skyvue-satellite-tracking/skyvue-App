@@ -45,7 +45,6 @@ app.component('view-panel', {
             ]
         }
     },
-
     props: {
         tracking: {
             type: Boolean,

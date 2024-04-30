@@ -203,11 +203,14 @@ function fetchUserLocation(){
         let altitude = position.coords.altitude;
         
         mountedApp.user_location = [latitude, longitude, altitude];
+
+        let map_width = document.getElementById('map2D-img').offsetWidth; 
+        let map_height = document.getElementById('map2D-img').offsetHeight;
         
         //Unit conversions, scaling and positional adjustments:
         let user_picture_width = Number(document.getElementById("user-location").offsetWidth); 
-        let userY = (Number(latitude) - 90)*(-2.2222) - user_picture_width/2;
-        let userX = (Number(longitude) + 180)*(2.2222) - user_picture_width/2;
+        let userY = (Number(latitude) - 90)*(-map_height/180) - user_picture_width/2;
+        let userX = (Number(longitude) + 180)*(map_width/360) - user_picture_width/2;
         
         document.getElementById("user-location").style.transform = "translate(" + userX + "px, " + userY +  "px)";
         document.getElementById("user-location").style.opacity = 1;
@@ -230,8 +233,8 @@ function fetchUserLocation(){
           document.getElementById("user-location-flag").src = flagURL;
           
           let user_picture_width = Number(document.getElementById("user-location").offsetWidth);
-          let positionY = (Number(latitude) - 90)*(-2.2222);
-          let positionX = (Number(longitude) + 180)*(2.2222);
+          let positionY = (Number(latitude) - 90)*(-map_height/180);
+          let positionX = (Number(longitude) + 180)*(map_width/360);
           
           document.getElementById("user-location-flag").style.transform = "translate(" + (positionX - user_picture_width/2 -8) + "px, " + (positionY - user_picture_width/2 - 10) +  "px)";
           document.getElementById("user-location-name").style.transform = "translate(" + (positionX + 10) + "px, " + (positionY + 10) +  "px)";
