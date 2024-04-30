@@ -206,25 +206,6 @@
 	gap: 2vh;
 }
 
-#satbot-img {
-
-	width: 6vw;
-	height: 6vw;
-	
-	position: relative;
-	/* z-index: 1000; */
-
-	/* bottom: 0;
-	right: 0; */
-
-	margin: 0vw;
-
-	border-style: solid;
-	border-radius: 50%;
-	border-color: white;
-	border-width: 2px;
-	
-}
 
 .satbot-background {
 

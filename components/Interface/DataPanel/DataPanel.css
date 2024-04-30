@@ -14,7 +14,7 @@
 .source-field input, .source-field output  {
 	
 	color: rgba(217, 204, 204, 0.874);
-	font-size: 1.8vh;
+	font-size: 14px;
 
 	background-color: rgba(31, 28, 28, 0.754);
 	width: 100%;
@@ -385,7 +385,7 @@
 	flex-wrap: nowrap;
 	gap: 0;
 
-	font-size: 1.5vh;
+	font-size: 14px;
 	font-weight: 100;
 	color: white;
 }
@@ -484,7 +484,7 @@
 }
 
 .source-spec-name {
-	font-size: 1.5vh;
+	font-size: 12px;
 	cursor: pointer;
 }
 

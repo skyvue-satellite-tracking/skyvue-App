@@ -64,6 +64,7 @@ function drawActiveSatellites(path, detail_level, point_color = 'rgba(255, 255, 
 
       loop_counter++;
 
+      // This loop gives more control over the deliberate slowdown of the drawing process. 
       if (loop_counter % 10 === 0) {
         await sleep(delay_miliseconds); 
       }      

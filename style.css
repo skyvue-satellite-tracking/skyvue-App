@@ -25,13 +25,14 @@ body {
 .interface {
 
 	width: 100%;
-	height: 87vh;
-	
+	min-height: 87vh;
+	height: fit-content;
+
 	padding: 18px 0 18px 6vw;
 
 	display: inline-flex;
 	flex-wrap: wrap;
-	gap: 6vw;
+	gap: 3vw;
 	align-items: center;
 	justify-content: flex-start;
 
@@ -42,7 +43,7 @@ body {
 footer {
 
 	width: 100%;
-	height:30vh;
+	height: fit-content;
 	margin-top: 14vh;
 	padding-right: 0.8vw;
 
@@ -277,7 +278,7 @@ p{
     font-family: 'Courier New', Courier, monospace;
 	font-weight: 300; 
 	opacity: 0.9; 
-    font-size: 5vh; 
+    font-size: 34px; 
     margin: 0 0 0 0;
 	padding: 0;
 	color: rgba(255, 255, 255, 0.685);
@@ -489,7 +490,7 @@ a:hover{
 
 #the-community-display {
     width: 80%;
-    height:fit-content;
+    height: fit-content;
     margin-top: 5vh;
 
     backdrop-filter: blur(10px);
@@ -533,14 +534,17 @@ a:hover{
 	background-color: rgba(91, 104, 243, 0.014);
     box-shadow: 0.3vw 0.3vw 1vw 0.2vw rgba(235, 172, 155, 0.329);   
 
+	padding: 50px;
+    position: relative;
+    z-index: 0;
+
 }
 
 
 
 #datawrapper-chart-IzNXS{
     width:100%;
-    height: 600px; 
-    padding: 2vw; 
+    height: auto;
     align-self: center; 
     justify-self: center; 
 	color-scheme: dark;
@@ -563,4 +567,13 @@ a:hover{
 	height: auto;
 
 	opacity: 0.8;
+}
+
+.recommended-resources {
+
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 5vh; 
+	padding: 3vw;
+
 }

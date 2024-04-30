@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>SkyVue</title>
 
-		<link rel="icon" href="assets/space_station.png">
+		<link rel="icon" href="assets/skyvue_logo.jpeg">
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -24,6 +24,9 @@
 
 		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!--Vue.js Development Build  -->
 		<!-- <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.prod.js"></script> -->  <!--Vue.js Production Build  -->
+
+		<link href="./responsiveness.css" rel="stylesheet" type="text/css" />
+		
 	</head>
 	
 	<body>
@@ -68,7 +71,7 @@
 							<h6>from other creators</h6>
 						</div>
 						
-						<div style="display: inline-flex; flex-wrap: wrap; gap: 5vh; padding: 3vw;">
+						<div class="recommended-resources">
 							<div class="band-button-container"><a target="_blank" href="https://celestrak.org"><button class="rectangular-button" id="resource-button-1"><img class="resource-image" src="./assets/resource1.png" width="100%" height="100%" ></button></a><div class="button-name">Celestrack</div></div>
 							<div class="band-button-container"><a target="_blank" href="https://celestrak.org/columns/"><button class="rectangular-button" id="resource-button-1"><img class="resource-image" src="./assets/stlogo.gif" width="100%" height="100%" ></button></a><div class="button-name">Satellite Times - articles</div></div>
 							<div class="band-button-container"><a target="_blank" href="https://nattybumppo.github.io/rocket-launch-history/"><button class="rectangular-button" id="resource-button-1"><img class="resource-image" src="./assets/HistoryOfLaunches.gif" width="100%" height="100%" ></button></a><div class="button-name">A BRIEF HISTORY OF ROCKET LAUNCHES</div></div>
@@ -100,15 +103,15 @@
 				</div>
 			</div>
 
-			<div style="padding: 50px; position: relative; z-index: 0;" class="band-container-community">
+			<div class="band-container-community">
 				<div id="community-display-container">
-					<div class="band-title-box" style="align-self: flex-start;">
+					<div class="band-title-box">
 						<h6>skyVue users</h6>
 						<h1 class="band-title">THE COMMUNITY</h1>
 						<h6>around the globe</h6>
 					</div>
 					<div id="the-community-display">
-						<iframe title="" aria-label="Map" id="datawrapper-chart-IzNXS" src="https://datawrapper.dwcdn.net/IzNXS/13/?dark=true" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="600px" data-external="1"></iframe>
+						<iframe title="" aria-label="Map" id="datawrapper-chart-IzNXS" src="https://datawrapper.dwcdn.net/IzNXS/13/?dark=true" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; height: 600px; border: none;" data-external="1"></iframe>
 					</div>
 				</div>
 			</div>

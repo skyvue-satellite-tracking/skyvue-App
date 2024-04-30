@@ -10,9 +10,7 @@ canvas {
 
 #map2D-container {
 
-	/* width: 800px;  */
 	width: 800px; 
-	height: 0;
 
 	object-fit: contain;
 
@@ -171,7 +169,7 @@ canvas {
     margin: 0;
     padding: 0;
 
-    font-size: 1vw;
+    font-size: 17px;
     font-weight: 100;
     /* background-color: rgba(207, 207, 255, 0.467); */
 }

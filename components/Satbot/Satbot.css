@@ -1,11 +1,12 @@
 #satbot-container {
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     right: 0;
-    bottom: 16vh;
+    bottom: 0;
 
     width: fit-content;
     height: 400px;
+    max-height: 100%;
 
     padding: 0px;
 
@@ -78,29 +79,9 @@
 
 }
 
-#satbot-img {
-
-	width: 6vw;
-	height: 6vw;
-	
-	position: relative;
-	/* z-index: 1000; */
-
-	/* bottom: 0;
-	right: 0; */
-
-	margin: 0vw;
-
-	border-style: solid;
-	border-radius: 50%;
-	border-color: white;
-	border-width: 2px;
-	
-}
-
 .satbot-loader-container {
-    width: 5vw;
-    height: 5vw;
+    width: 60px;
+    height: 60px;
     margin: 0;
     
 
@@ -111,6 +92,20 @@
     border-radius: 50%;
 
 }
+
+
+
+#satbot-loader{
+
+    margin: 0;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+	
+    border-top-color: #f3f3f3;
+    animation: spin 2s linear infinite;
+}
+
 
 
 .chatbot-data-display {
@@ -150,18 +145,6 @@
 	
 }
 
-
-#satbot-loader{
-
-    margin: 0;
-    padding: 0;
-    width: 5vw;
-    height: 5vw;
-	
-    border-top-color: #f3f3f3;
-    animation: spin 2s linear infinite;
-}
-
 .satbot-background-container {
 
 	position: fixed;
@@ -181,8 +164,8 @@
 .satbot-background {
 
 	position: fixed;
-    width: 7vw;
-    height: 7vw;
+    width: 100px;
+    height: 100px;
 
     margin: 0;
 

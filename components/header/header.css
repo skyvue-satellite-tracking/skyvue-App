@@ -3,7 +3,7 @@ header {
 	position: relative;
 	z-index: 1;
 
-	height: 13vh;
+	height: fit-content;
 	width: 100%;
 	font-family: 'Courier New', Courier, monospace;
 	padding: 1vh 2vw;
@@ -48,8 +48,8 @@ header {
 
 #logo {
 
-	width: 6vw;
-	height: 6vw; 
+	width: 80px;
+	height: 80px; 
 
 	border-width: 2px;
 	border-radius: 50%; 
@@ -108,7 +108,7 @@ header {
 
 .header-box{
 
-	width: 40vw;
+	width: 100%;
 	height: fit-content;
 	
 	display: inline-flex; 
@@ -130,6 +130,14 @@ header {
 
 #sky-status-container {
 	display: inline-flex;
+	/* margin-right: 20vw; */
+}
+
+#sky-status-container .invertible-flexbox {
+	display: flex;
+	flex-direction: row;
+
+	gap: 20vw;
 }
 
 #sky-status-flex {
@@ -147,7 +155,7 @@ header {
 
 .sky-status {
 	display: inline-flex;
-	font-size: 1.8vh;
+	font-size: 14px;
 
 	padding: 5px;
 

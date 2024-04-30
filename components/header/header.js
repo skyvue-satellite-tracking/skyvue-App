@@ -8,37 +8,51 @@ app.component('header-vue', {
             <div class="header-box">
                 <img id="logo" src="assets/skyvue_logo.jpeg">
                 <div id="sky-status-container">
-                    <img id="header-satellite" src="./assets/header_satellite.png">
-                    <div id="sky-status-flex">
+                    
 
-                        <div class="sky-status">
-                            <div class="status-info" :title="info.ACTIVE_SATELLITES">?</div> 
-                            <div class="sky-status-field-name">ACTIVE SATELLITES:</div>
-                            <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.active_satellites_count}}</div>
-                            <div @click="updateActiveSatellitesPositions();" class=refresh-button id=refresh-button-1><img src="./components/header/assets/refresh_button.png" /></div>
-                            <label @change="showAllActiveSatellites($event.target.checked)" class="bin-button data-manager-row-button" for="myCheckbox">
-                                <input checked type="checkbox" name="myCheckbox" id='active_satellites_checkbox'>
-                            </label>
-                        </div>
+                    <div class="invertible-flexbox">
 
-                        <div class="sky-status">
-                            <div class="status-info" :title="info.CROSSING_YOUR_SKY">?</div> 
-                            <div class="sky-status-field-name">CROSSING YOUR SKY:</div>
-                            <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.satellites_crossing_count}}</div>
-                            <div @click="updateSatellitesCrossingSkyPositions();" class=refresh-button id=refresh-button-2><img src="./components/header/assets/refresh_button.png" /></div>
-                            <label @change="showActiveSatellitesCrossingUserSky($event.target.checked)" class="bin-button data-manager-row-button" for="myCheckbox">
-                                <input type="checkbox" name="myCheckbox" id='satellites_crossing_sky_checkbox'>
-                            </label>
+                        <div style="display:inline-flex; ">
+                            <img id="header-satellite" src="./assets/header_satellite.png">
+                            <div id="sky-status-flex">
+                                <div class="sky-status">
+                                    <div class="status-info" :title="info.ACTIVE_SATELLITES">?</div> 
+                                    <div class="sky-status-field-name">ACTIVE SATELLITES:</div>
+                                    <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.active_satellites_count}}</div>
+                                    <div @click="updateActiveSatellitesPositions();" class=refresh-button id=refresh-button-1><img src="./components/header/assets/refresh_button.png" /></div>
+                                    <label @change="showAllActiveSatellites($event.target.checked)" class="bin-button data-manager-row-button" for="myCheckbox">
+                                        <input checked type="checkbox" name="myCheckbox" id='active_satellites_checkbox'>
+                                    </label>
+                                </div>
+
+                                <div class="sky-status">
+                                    <div class="status-info" :title="info.CROSSING_YOUR_SKY">?</div> 
+                                    <div class="sky-status-field-name">CROSSING YOUR SKY:</div>
+                                    <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.satellites_crossing_count}}</div>
+                                    <div @click="updateSatellitesCrossingSkyPositions();" class=refresh-button id=refresh-button-2><img src="./components/header/assets/refresh_button.png" /></div>
+                                    <label @change="showActiveSatellitesCrossingUserSky($event.target.checked)" class="bin-button data-manager-row-button" for="myCheckbox">
+                                        <input type="checkbox" name="myCheckbox" id='satellites_crossing_sky_checkbox'>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>    
+
+                        <div id="social-links">
+                            <a target="_blank" href="https://twitter.com/home"><img src="./assets/X.png" width="28px"></a>
+                            <a target="_blank" href="https://github.com/skyvue-satellite-tracking"><img src="./assets/github.png" width="35px"></a>
                         </div>
 
                     </div>
+
+
+
                 </div>
+
+
             </div>
             
-            <div id="social-links">
-                <a target="_blank" href="https://twitter.com/home"><img src="./assets/X.png" width="28px"></a>
-                <a target="_blank" href="https://github.com/skyvue-satellite-tracking"><img src="./assets/github.png" width="35px"></a>
-            </div>
+
 
         </div>
     </header>
@@ -111,7 +125,7 @@ app.component('header-vue', {
 
             // Letting celestrck direct link makes each user responsible by the use of this resource, since it is its own IP in use for these requests. 
             // Differently from the N2YO plataform, Celestrak allows that approach.
-            fetch(celestrack_URL)
+            fetch(skyvue_php_source)
             .then((response => response.text()))
             .then((body) => {
 
