@@ -125,7 +125,7 @@ app.component('header-vue', {
 
             // Letting celestrck direct link makes each user responsible by the use of this resource, since it is its own IP in use for these requests. 
             // Differently from the N2YO plataform, Celestrak allows that approach.
-            fetch(celestrack_URL)
+            fetch(skyvue_php_source)
             .then((response => response.text()))
             .then((body) => {
 
@@ -225,7 +225,7 @@ app.component('header-vue', {
 
         updateActiveSatellitesPositions(){
 
-            mountedApp.active_satellites_count = 0;
+            mountedApp.active_satellites_count = [0];
 
             let canvas_ctx = document.getElementById('canvas2D_active_satellites').getContext('2d');
             canvas_ctx.clearRect(0, 0, canvas2D.width, canvas2D.height);
@@ -235,7 +235,7 @@ app.component('header-vue', {
 
         updateSatellitesCrossingSkyPositions(){
 
-            mountedApp.satellites_crossing_count = 0;
+            mountedApp.satellites_crossing_count = [0];
             
             let canvas_ctx = document.getElementById('canvas2D_crossing_sky').getContext('2d');
             canvas_ctx.clearRect(0, 0, canvas2D.width, canvas2D.height);

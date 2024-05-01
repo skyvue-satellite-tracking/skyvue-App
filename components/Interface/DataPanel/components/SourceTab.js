@@ -80,7 +80,7 @@ app.component('source-tab', {
         
         startTracking(norad_number){
 
-            document.getElementById('main-window').scrollIntoView();
+            window.innerWidth < 1250 ? document.getElementById('main-window').scrollIntoView() : '';
         
             this.stopTracking();
 

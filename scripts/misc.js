@@ -115,4 +115,3 @@ function map2DGradualAppearance(timeToAppear){
   }, 500);
   
 }
-

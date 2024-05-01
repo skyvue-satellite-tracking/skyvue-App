@@ -87,16 +87,30 @@ app.component('map2D-tab', {
         },
         crossOn() {
             this.crossDisplay = true;
+        },
+        resizeCanvas() {
+                    
+            let canvas2D_list = document.getElementsByClassName('canvas2D');
+
+            for (let index = 0; index < canvas2D_list.length; index++) {
+                canvas2D_list[index].width = document.getElementById('screen').offsetWidth;                
+                canvas2D_list[index].height = document.getElementById('screen').offsetHeight;                
+            }
+
         }
     },
     mounted() {
-        
-        let canvas2D_list = document.getElementsByClassName('canvas2D');
 
-        for (let index = 0; index < canvas2D_list.length; index++) {
-            canvas2D_list[index].width = document.getElementById('screen').offsetWidth;                
-            canvas2D_list[index].height = document.getElementById('screen').offsetHeight;                
-        }
+        this.resizeCanvas();
+
+        window.addEventListener('resize', () => {
+            this.resizeCanvas();
+            if (mountedApp.user_location.length > 0) {
+                setMapObjectPosition(mountedApp.user_location[0], mountedApp.user_location[1]);                
+            }
+        })
+
+        
 
     }
 })
