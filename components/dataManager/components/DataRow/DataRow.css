@@ -118,7 +118,7 @@
 
 .data-manager-data-field {
 
-    width: 120px;
+    width: 100%;
     min-height: 23px;
     padding: 0;
 
@@ -139,9 +139,8 @@
 
 .data-manager-data-field:hover {
 
-    overflow: visible;
-    min-width: 130px;
-    width: fit-content;
+    min-width: max-content;
+    width: max-content;
 
     padding: 0 2px;
 

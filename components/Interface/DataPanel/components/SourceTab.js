@@ -28,7 +28,7 @@ app.component('source-tab', {
 
         <div class="data-display">
             <div class="source-examples-table">
-                <p style="font-size:14px; padding:0; font-weight:100">Examples</p>
+                <p id="examples-text">Examples</p>
                 <div class="source-example-row">
                     <div class="source-example-header">NAME</div>
                     <div class="source-example-header">NORAD</div>
@@ -80,7 +80,7 @@ app.component('source-tab', {
         
         startTracking(norad_number){
 
-            window.innerWidth < 1250 ? document.getElementById('main-window').scrollIntoView() : '';
+            (window.innerWidth < 1250) ? document.getElementById('main-window').scrollIntoView() : '';
         
             this.stopTracking();
 

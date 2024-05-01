@@ -125,7 +125,7 @@ app.component('header-vue', {
 
             // Letting celestrck direct link makes each user responsible by the use of this resource, since it is its own IP in use for these requests. 
             // Differently from the N2YO plataform, Celestrak allows that approach.
-            fetch(skyvue_php_source)
+            fetch(celestrack_URL)
             .then((response => response.text()))
             .then((body) => {
 

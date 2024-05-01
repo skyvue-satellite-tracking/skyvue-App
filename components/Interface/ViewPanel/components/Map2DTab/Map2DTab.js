@@ -6,11 +6,11 @@ app.component('map2D-tab', {
     
         <img v-show="path_length > 0 && tracking" id="satellite" src="assets/header_satellite.png" alt="a mundi map" lang="en">
         <div v-show="path_length > 0 && tracking" id="footprint-radius"></div>
-        <img v-show="path_length > 0 && tracking" width="20px" id="satellite-location-flag">
+        <img v-show="path_length > 0 && tracking" id="satellite-location-flag">
         <div v-show="path_length > 0 && tracking" id="satellite-location-name"></div>
         
         <img id="user-location" src="assets/here.png" style="background-color:rgba(40,40,40,1)" alt="here" lang="en">
-        <img width="20px" id="user-location-flag">
+        <img id="user-location-flag">
         <div id="user-location-name"></div>
 
         <img id="map2D-img" src="./assets/map2D.png">
@@ -106,7 +106,9 @@ app.component('map2D-tab', {
         window.addEventListener('resize', () => {
             this.resizeCanvas();
             if (mountedApp.user_location.length > 0) {
-                setMapObjectPosition(mountedApp.user_location[0], mountedApp.user_location[1]);                
+                setTimeout(() => {
+                    setMapObjectPosition(mountedApp.user_location[0], mountedApp.user_location[1]);                    
+                }, 100);
             }
         })
 

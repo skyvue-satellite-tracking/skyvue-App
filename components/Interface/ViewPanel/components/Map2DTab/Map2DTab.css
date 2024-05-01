@@ -102,6 +102,7 @@ canvas {
 
 #satellite-location-flag{
 
+	width: 20px; 
 	position: absolute;
 	z-index: 3;
 
@@ -111,6 +112,9 @@ canvas {
 
 	position: absolute;
 	z-index: 3;
+
+	width: 20px;
+
 	opacity: 1;
 
 }

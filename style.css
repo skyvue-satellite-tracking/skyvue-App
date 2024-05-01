@@ -91,6 +91,7 @@ footer {
 	justify-items: center;
 	align-items: center;
 
+	font-size: 10px;
 
 }
 
@@ -315,7 +316,7 @@ p{
     opacity: 1;
 }
 
-#contribute{
+.contribute{
 	display: inline-flex;
 	padding: 0 3vw;
 	gap: 20px;
@@ -392,10 +393,12 @@ p{
 .roadmap-button img{
 	border-radius: 8px;
 	opacity: 0.8;
+	width: 165px;
 }
 
 .buymeacoffee-button img{
     opacity: 0.8;
+	width: 165px;
 }
 
 .buymeacoffee-button img:hover, .roadmap-button img:hover{
@@ -576,4 +579,12 @@ a:hover{
 	gap: 5vh; 
 	padding: 3vw;
 
+}
+
+.power-ups a img{
+	width: 150px;
+}
+
+#the-community-display iframe {
+	height: 600px;
 }

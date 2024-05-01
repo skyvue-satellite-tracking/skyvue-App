@@ -74,6 +74,11 @@
 
     }
 
+    
+    .data-manager-data-field {
+
+        width: 100px;
+    }
 }
 
 
@@ -249,6 +254,7 @@
 
     #data-manager-title {
         font-size: 2rem;
+        min-width: max-content;
     }
     
 }
@@ -258,7 +264,7 @@
 
     .interface {
 
-        padding: 60px 0 18px 0;
+        padding: 3vw 3vw;
     
         align-items: center;
         justify-content: flex;    
@@ -267,10 +273,54 @@
         
     }
 
+
+    #data-display {
+        width: 25vw;
+        height: 67vh;
+        position: relative;
+        font-size: 30px;
+    }
+
+    .data-field output {
+        width: max-content;
+        min-width: 16vw;
+        padding: 1px;
+    }
+
+    .data-field input{
+        width: max-content;
+        min-width: 16vw;
+        padding: 20px;
+    }
+
+    #tle-loader {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .specs-header {
+        font-size: 2vw;
+    }
+
+    .spec-info, .spec-info-mini {
+        width: 1.2vw;
+        height: 1.2vw;
+        font-size: 1.1vw;
+    }
+
+    .units {
+        font-size: 1vw;
+    }
+
+    #main-window {
+        width: max-content;
+        height: max-content;
+    }
+
     #screen {
 
-        width: 100%; 
-        height: 100vh;
+        width: 60vw;
+        height: 30vw;
     
         border-style: solid;
         border-color: rgb(255, 255, 255);
@@ -283,19 +333,6 @@
         object-fit: cover;
     }
 
-    #data-display {
-        width: auto;
-        height: 100%;
-        position: absolute;
-        font-size: 30px;
-    }
-
-    #main-window {
-        width: 100%;
-        height: fit-content;
-        border-right-width: 0;
-        border-left-width: 0;
-    }
 
     .article>*, #archive, .padding_wrapper {
         max-width: none;
@@ -303,11 +340,12 @@
         margin-right: none;
         padding-left: none;
         padding-right: none;
-        margin: 20vw;
+        margin: 7vw;
     }
 
     .source-field input, .source-field output, .source-examples-table {
-        font-size: 25px;
+        font-size: 1vw;
+        padding: 0.8vw;
 
     }
 
@@ -315,5 +353,223 @@
         font-size: 30px;
     }
     
+    #logo, #header-satellite {
+        width: 6vw;
+        height: 6vw;
+    }
 
+    .sky-status {
+        font-size: 1vw;
+    }
+
+    #social-links img {
+        width: 2vw;
+        height: 2vw;
+    }
+
+    .loader {
+        width: 2vw;
+        height: 2vw;
+        margin-left: 2vw;
+    }
+
+    #log {
+        font-size: 1.1vw;
+        min-width: max-content;
+        width: max-content;
+        padding-right: 6vw;
+    }
+
+    #log-box {
+        margin: 20px 0;
+        justify-content: space-between;
+    }
+
+    .tab {
+        font-size: 1vw;
+    }
+
+    .label-text {
+        font-size: 1vw;
+    }
+
+    .label-img {
+        height: 2vw;
+    }
+
+    #examples-text {
+        font-size:1vw;
+        padding:0; 
+        font-weight:100;
+    }
+
+    .source-spec-name {
+        font-size: 1vw;
+        cursor: pointer;
+    }
+
+    .source-spec-info {
+        font-size: 1vw;
+        width: 1vw;
+        height: 1vw;
+    }
+
+    .refresh-button img {
+        animation: none;
+        width: 1.3vw;
+        height: 1.3vw;
+    }
+
+    p {
+        font-size: 1vw;
+    }
+
+    button, input, optgroup, select, textarea {
+        width: 1vw;
+        height: 1vw;
+    }
+
+    .button-box {
+        margin: 1vw 0 0 0;
+    }
+
+    #user-location {
+        width: 2.5vw;
+        height: 2.5vw;
+    }
+
+    #user-location-name, #satellite-location-name {
+        font-size: 1vw;
+    }
+
+    #user-location-flag, #satellite-location-flag {
+        width: 1vw;
+    }
+
+    #satellite {
+        width: 3vw;
+        height: 3vw;
+    }
+
+    #time {
+        font-size: 1vw;
+    }
+
+    #satbot-container {
+        height: 50vh;
+    }
+
+    #satbot-response-container {
+        width: 30vw;
+    }
+
+    .satbot-loader-container, #satbot-loader {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    #chatbot-response {
+        font-size: 1.2vw;
+    }
+
+    .data-manager-data-field {
+
+        width: 100%;
+        height: 50px;
+        min-height: max-content;
+        font-size: 1vw;
+        
+    }
+
+    .data-manager-data-field:hover {
+
+        font-size: 1vw;
+
+    }
+
+    .download-button, .meta-field, .close-button {
+        font-size: 1.2vw;
+    }
+
+    .band-title {
+        font-size: 3vw;
+    }
+    
+    .buymeacoffee-button img{
+        opacity: 0.8;
+        width: 12vw;
+    }
+
+    .roadmap-button img{
+        border-radius: 8px;
+        opacity: 0.8;
+        width: 12vw;
+    }
+    
+    h6, .button-name {
+        font-size: 1vw;
+    }
+
+    .rectangular-button {
+        width: 13vw;
+        height: 7vw;
+    }
+
+    .circular-button {
+        width: 8vw;
+        height: 8vw;
+    }
+
+    .band-display {
+        
+        padding: 1vw 0;
+        
+    }
+
+    .poem {
+        font-size: 1.2vw;
+    }
+
+    .contribute{
+        gap: 3vw;
+    }
+    
+    .power-ups a img{
+        width: 10vw;
+    }
+
+    .box-image {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    .footer-box {
+        font-size: 1vw;
+    }
+
+    .footer-grid {
+        padding: 3vw;
+    }
+    
+    .SOON {
+        gap: 3vw;
+    }
+
+    .in-development {
+        position: absolute;
+        z-index: 5;
+        bottom: 0;
+        left: 0;
+        margin: 1vw;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        height: auto;
+        opacity: 0.8;
+    }
+
+    #the-community-display iframe {
+        height: 700px;
+    }
 }

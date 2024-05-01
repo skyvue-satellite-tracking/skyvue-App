@@ -63,6 +63,13 @@ app.component('view-panel', {
 			required: true
 		}
     },
+    watch: {
+        viewer_state() {
+            setTimeout(() => {
+                setMapObjectPosition(mountedApp.user_location[0], mountedApp.user_location[1]);                  
+            }, 100);
+        }
+    },
 
     methods: {
         selectTab(element) {
