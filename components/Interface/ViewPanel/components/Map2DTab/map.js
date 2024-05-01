@@ -6,7 +6,7 @@ function drawArray(path, detail_level, point_color = 'rgba(255, 255, 255, 1)', p
   if(path.length === 0){
     return
   }
-
+ 
   let step = Math.floor(100/detail_level);
 
   for (let index = 0; index < path.length - 1; index += step) {
@@ -16,25 +16,21 @@ function drawArray(path, detail_level, point_color = 'rgba(255, 255, 255, 1)', p
     latitude = path[index]['latitude'];
     longitude = path[index]['longitude'];
 
+    let map_width = document.getElementById('map2D-img').offsetWidth; 
+    let map_height = document.getElementById('map2D-img').offsetHeight;
+    
     // console.log(latitude);
     // console.log(longitude);
     // console.log('-----------------------------------');
 
     //Unit conversions:
-    latitude = (Number(latitude) - 90)*(-2.2222);
-    longitude = (Number(longitude) + 180)*(2.2222);
-    
-    scale_fix = 2.66;
-    
-    lat = latitude/scale_fix;
-    lon = longitude/scale_fix;
-    
+    latitude = (Number(latitude) - 90)*(-map_height/180);
+    longitude = (Number(longitude) + 180)*(map_width/360);
      
-
     canvas_ctx.fillStyle = point_color;
 
     for (let stroke = 0; stroke < point_strength; stroke++) {
-      canvas_ctx.fillRect(lon, lat, point_size, point_size);
+      canvas_ctx.fillRect(longitude, latitude, point_size, point_size);
     }
     
   }
@@ -42,7 +38,7 @@ function drawArray(path, detail_level, point_color = 'rgba(255, 255, 255, 1)', p
 }
 
 // updateMap([path_1, line_level_detail_1], ...)
-function drawActiveSatellites(path, detail_level, point_color = 'rgba(255, 255, 255, 1)', point_size = 0.1, point_strength = 10, canvas_ctx, delay_miliseconds = 0){
+function drawArraySlowMotion(path, detail_level, point_color = 'rgba(255, 255, 255, 1)', point_size = 0.1, point_strength = 10, canvas_ctx, delay_miliseconds = 0, object_counter = [counter = 0]){
 
   // console.log('path: ', path);
    
@@ -69,81 +65,30 @@ function drawActiveSatellites(path, detail_level, point_color = 'rgba(255, 255, 
         await sleep(delay_miliseconds); 
       }      
       
-      mountedApp.active_satellites_count++;
+      // Make object counter display follows the plotting of each object.
+      object_counter[0]++;
 
       // console.log('satellite: ', path[index]);
   
       let latitude = position['latitude'];
       let longitude = position['longitude'];
   
+      let map_width = document.getElementById('map2D-img').offsetWidth; 
+      let map_height = document.getElementById('map2D-img').offsetHeight;
+      
       // console.log(latitude);
       // console.log(longitude);
       // console.log('-----------------------------------');
   
-      //Unit conversions:
-      latitude = (Number(latitude) - 90)*(-2.2222);
-      longitude = (Number(longitude) + 180)*(2.2222);
-      
-      let scale_fix = 2.66;
-      
-      let lat = latitude/scale_fix;
-      let lon = longitude/scale_fix;
-      
-      for (let stroke = 0; stroke < point_strength; stroke++) {
-        canvas_ctx.fillRect(lon, lat, point_size, point_size);
-      }
-      
-         
+    //Unit conversions:
+    latitude = (Number(latitude) - 90)*(-map_height/180);
+    longitude = (Number(longitude) + 180)*(map_width/360);
+     
+    canvas_ctx.fillStyle = point_color;
+
+    for (let stroke = 0; stroke < point_strength; stroke++) {
+      canvas_ctx.fillRect(longitude, latitude, point_size, point_size);
     }
-  }
-
-  drawPoint(path);
-    
-  
-}
-
-function drawSatellitesCrossing(path, detail_level, point_color = 'rgba(255, 255, 255, 1)', point_size = 0.1, point_strength = 10, canvas_ctx, delay_miliseconds = 0){
-
-  // console.log('path: ', path);
-   
-  if(path.length === 0){
-    return
-  }
-
-  canvas_ctx.fillStyle = point_color;
-
-  let sleep = (milliseconds) => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds))
-  }
-
-  const drawPoint = async (path) => {
-    for (let position of path) {
-      
-      await sleep(delay_miliseconds);
-
-      mountedApp.satellites_crossing_count++;
-
-      // console.log('satellite: ', path[index]);
-  
-      let latitude = position['latitude'];
-      let longitude = position['longitude'];
-  
-      // console.log(latitude);
-      // console.log(longitude);
-      // console.log('-----------------------------------');
-  
-      //Unit conversions:
-      latitude = (Number(latitude) - 90)*(-2.2222);
-      longitude = (Number(longitude) + 180)*(2.2222);
-      
-      let scale_fix = 2.66;
-      
-      let lat = latitude/scale_fix;
-      let lon = longitude/scale_fix;
-      
-      for (let stroke = 0; stroke < point_strength; stroke++) {
-        canvas_ctx.fillRect(lon, lat, point_size, point_size);
-      }
       
          
     }
@@ -155,14 +100,14 @@ function drawSatellitesCrossing(path, detail_level, point_color = 'rgba(255, 255
 }
 
 function updateMap(paths) {
-
+ 
   let canvas_ctx = document.getElementById('canvas2D').getContext('2d');
   canvas_ctx.clearRect(0, 0, canvas2D.width, canvas2D.height);
 
   setFootprintCircleRadius();
   
   paths.forEach(path => {
-    drawArray(path[0], path[1], 'white', 0.1, 10, canvas_ctx);
+    drawArray(path[0], path[1], 'white', 1, 1, canvas_ctx);
   });
     
 }
@@ -178,7 +123,7 @@ function setFootprintCircleRadius(){
   current_latitude = mountedApp.object_path[object_path.length - 1].latitude;
   longitudinal_length = 2 * Math.PI * earth_radius * Math.cos(current_latitude*Math.PI/180);
   earth_meridional_length = 40074; 
-
+ 
   let map_width = document.getElementById('map2D-img').offsetWidth; 
   let map_height = document.getElementById('map2D-img').offsetHeight; 
 

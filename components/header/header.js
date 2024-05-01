@@ -18,7 +18,7 @@ app.component('header-vue', {
                                 <div class="sky-status">
                                     <div class="status-info" :title="info.ACTIVE_SATELLITES">?</div> 
                                     <div class="sky-status-field-name">ACTIVE SATELLITES:</div>
-                                    <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.active_satellites_count}}</div>
+                                    <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.active_satellites_count[0]}}</div>
                                     <div @click="updateActiveSatellitesPositions();" class=refresh-button id=refresh-button-1><img src="./components/header/assets/refresh_button.png" /></div>
                                     <label @change="showAllActiveSatellites($event.target.checked)" class="bin-button data-manager-row-button" for="myCheckbox">
                                         <input checked type="checkbox" name="myCheckbox" id='active_satellites_checkbox'>
@@ -28,7 +28,7 @@ app.component('header-vue', {
                                 <div class="sky-status">
                                     <div class="status-info" :title="info.CROSSING_YOUR_SKY">?</div> 
                                     <div class="sky-status-field-name">CROSSING YOUR SKY:</div>
-                                    <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.satellites_crossing_count}}</div>
+                                    <div class="sky-status-field-value" style="color: rgba(100, 250, 100, 1);">{{this.satellites_crossing_count[0]}}</div>
                                     <div @click="updateSatellitesCrossingSkyPositions();" class=refresh-button id=refresh-button-2><img src="./components/header/assets/refresh_button.png" /></div>
                                     <label @change="showActiveSatellitesCrossingUserSky($event.target.checked)" class="bin-button data-manager-row-button" for="myCheckbox">
                                         <input type="checkbox" name="myCheckbox" id='satellites_crossing_sky_checkbox'>
@@ -77,11 +77,11 @@ app.component('header-vue', {
             required: true
         },
         active_satellites_count: {
-            type: Number,
+            type: Array,
             required: true
         },
         satellites_crossing_count: {
-            type: Number,
+            type: Array,
             required: true
         },
     }
@@ -98,12 +98,12 @@ app.component('header-vue', {
             // drawArray(this.active_satellites, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx, 0);
             // mountedApp.active_satellites_count = this.active_satellites.length;
 
-            drawActiveSatellites(this.active_satellites, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx, 0);
+            drawArraySlowMotion(this.active_satellites, 100, 'rgba(160, 255, 160, 0.7)', 0.5, 10, canvas_ctx, 0, mountedApp.active_satellites_count);
             
         },
         active_satellites_crossing_sky() {
             let canvas_ctx = document.getElementById('canvas2D_crossing_sky').getContext('2d');
-            drawSatellitesCrossing(this.active_satellites_crossing_sky, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx, 0);
+            drawArraySlowMotion(this.active_satellites_crossing_sky, 100, 'rgba(160, 255, 160, 1)', 0.5, 10, canvas_ctx, 0, mountedApp.satellites_crossing_count);
         },
 
     },

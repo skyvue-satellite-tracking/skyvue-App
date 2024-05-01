@@ -111,14 +111,8 @@ function gradualOpacity(className, timeToAppear){
 function map2DGradualAppearance(timeToAppear){
 
   setTimeout(() => {
-    document.getElementById('map2D-container').style.transition = 'height 1.5s';  
-    document.getElementById('map2D-container').style.height = '400px';  
-
-    setTimeout(() => {
-      fetchUserLocation();
-    }, 500);
-    
-  }, timeToAppear);
+    fetchUserLocation();
+  }, 500);
   
 }
 

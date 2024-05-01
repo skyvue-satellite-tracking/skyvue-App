@@ -79,6 +79,8 @@ app.component('source-tab', {
     methods: {
         
         startTracking(norad_number){
+
+            document.getElementById('main-window').scrollIntoView();
         
             this.stopTracking();
 

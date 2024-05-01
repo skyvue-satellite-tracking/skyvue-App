@@ -28,8 +28,8 @@ const app = Vue.createApp( {
             units: 'kilometers',
             // possible values: 'retreated', 'full'
             satbot_display: 'retreated',
-            active_satellites_count: 0,
-            satellites_crossing_count: 0,
+            active_satellites_count: [0],
+            satellites_crossing_count: [0],
         }
     },
 

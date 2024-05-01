@@ -14,9 +14,9 @@ app.component('map2D-tab', {
         <div id="user-location-name"></div>
 
         <img id="map2D-img" src="./assets/map2D.png">
-        <canvas id="canvas2D"></canvas>
-        <canvas id="canvas2D_active_satellites" style="opacity:1;"></canvas>
-        <canvas id="canvas2D_crossing_sky" style="opacity:0;"></canvas>
+        <canvas id="canvas2D" class="canvas2D"></canvas>
+        <canvas id="canvas2D_active_satellites" class="canvas2D" style="opacity:1;"></canvas>
+        <canvas id="canvas2D_crossing_sky" class="canvas2D" style="opacity:0;"></canvas>
 
         <div @mousemove="placeCross($event)" @mouseout="crossOff()" @mouseover="crossOn()" id="cursor-cross">
             <div id="parallel" @mouseover="crossOn()" v-show="crossDisplay">
@@ -53,7 +53,7 @@ app.component('map2D-tab', {
     computed: {
         path_length(){
             return this.object_path.length;
-        }
+        },
     },
     watch: {
 
@@ -61,7 +61,7 @@ app.component('map2D-tab', {
         
             updateNationalFlagPosition(mountedApp.object_path);                   
 
-        }
+        },
    
     },
     methods: {
@@ -70,8 +70,11 @@ app.component('map2D-tab', {
             y = event.layerY;
             x = event.layerX;
         
-            crossYPosition = 100 *(1 - (y / 400));
-            crossXPosition = 100 * (1 - (x / 800));
+            let map_width = document.getElementById('map2D-img').offsetWidth; 
+            let map_height = document.getElementById('map2D-img').offsetHeight;
+
+            crossYPosition = 100 *(1 - (y / map_height));
+            crossXPosition = 100 * (1 - (x / map_width));
             
             document.getElementById('parallel').style.bottom = crossYPosition + '%';
             document.getElementById('meridian').style.right = crossXPosition + '%';
@@ -85,5 +88,15 @@ app.component('map2D-tab', {
         crossOn() {
             this.crossDisplay = true;
         }
+    },
+    mounted() {
+        
+        let canvas2D_list = document.getElementsByClassName('canvas2D');
+
+        for (let index = 0; index < canvas2D_list.length; index++) {
+            canvas2D_list[index].width = document.getElementById('screen').offsetWidth;                
+            canvas2D_list[index].height = document.getElementById('screen').offsetHeight;                
+        }
+
     }
 })

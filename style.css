@@ -490,7 +490,7 @@ a:hover{
 
 #the-community-display {
     width: 80%;
-    height: fit-content;
+    height: 50vw;
     margin-top: 5vh;
 
     backdrop-filter: blur(10px);

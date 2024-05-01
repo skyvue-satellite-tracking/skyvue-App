@@ -5,12 +5,13 @@ canvas {
 	width: inherit;
 	height: inherit;
 
-	transition: 'width 3s, opacity 1.5s';
+	transition: width 3s, opacity 1.5s;
 }
 
 #map2D-container {
 
-	width: 800px; 
+	width: inherit; 
+	height: inherit;
 
 	object-fit: contain;
 
@@ -163,8 +164,8 @@ canvas {
     position: absolute;
     z-index: 3;
 
-    width: 800px;
-    height: 400px;
+    width: inherit;
+    height: inherit;
 
     margin: 0;
     padding: 0;
