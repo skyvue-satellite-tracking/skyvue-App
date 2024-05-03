@@ -7,18 +7,15 @@
 		
 		<!-- SEO (Search Engine Optimization) -->
 		<title>SkyVue - Satellite Tracking Graphical Interface</title>
-		<meta name="description" content="An interactive web application designed for learning about and monitoring Earth-orbiting satellites through a 
-		a intuitive and accessible graphical interface. ">
+		<meta name="description" content="skyVue is an intuitive and accessible web app for tracking and learning about satellites..">
 		<meta name="robots" content="index, follow">
 		<meta property="og:title" content="skyVue - Satellite Tracking Graphical Interface" />
-		<meta property="og:description" content="An interactive web application designed for learning about and monitoring Earth-orbiting satellites through a 
-		a intuitive and accessible graphical interface." />
+		<meta property="og:description" content="skyVue - An intuitive and accessible web app for tracking and learning about satellites." />
 		<meta property="og:url" content="https://skyvue.space/" />
 		<meta property="og:image" content="https://skyvue.space/assets/skyvue_logo.jpeg" />
 		<meta property="og:image:width" content="600" />
 		<meta property="og:image:height" content="600" />
 		<meta property="og:locale" content="en_US" />
-		<h1 style="display: none;">SkyVue - Satellite Tracking Interface</h1>
 
 		<link rel="icon" href="favicon.ico">
 
@@ -47,6 +44,9 @@
 	<body>
 
 		<div id="app">
+
+			<h1 style="position: absolute; z-index: -1; opacity: 0;">SkyVue - Satellite Tracking Interface</h1>
+			<h1 style="position: absolute; z-index: -1; opacity: 0;">skyVue - An intuitive and accessible web app for tracking and learning about satellites.</h1>
 
 			<satbot :satbot_display="satbot_display"></satbot>
 
