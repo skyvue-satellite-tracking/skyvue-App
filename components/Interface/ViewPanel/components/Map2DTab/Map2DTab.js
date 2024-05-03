@@ -4,16 +4,16 @@ app.component('map2D-tab', {
     `
     <div class="display-system" id="map2D-container">
     
-        <img v-show="path_length > 0 && tracking" id="satellite" src="assets/header_satellite.png" alt="a mundi map" lang="en">
+        <img alt="Satellite figure" v-show="path_length > 0 && tracking" id="satellite" src="assets/header_satellite.png" alt="a mundi map" lang="en">
         <div v-show="path_length > 0 && tracking" id="footprint-radius"></div>
-        <img v-show="path_length > 0 && tracking" id="satellite-location-flag">
+        <img alt="" v-show="path_length > 0 && tracking" id="satellite-location-flag">
         <div v-show="path_length > 0 && tracking" id="satellite-location-name"></div>
         
-        <img id="user-location" src="assets/here.png" style="background-color:rgba(40,40,40,1)" alt="here" lang="en">
-        <img id="user-location-flag">
+        <img alt="user's location image" id="user-location" src="assets/here.png" style="background-color:rgba(40,40,40,1)" alt="here" lang="en">
+        <img alt="" id="user-location-flag">
         <div id="user-location-name"></div>
 
-        <img id="map2D-img" src="./assets/map2D.png">
+        <img alt="2D map" id="map2D-img" src="./assets/map2D.png">
         <canvas id="canvas2D" class="canvas2D"></canvas>
         <canvas id="canvas2D_active_satellites" class="canvas2D" style="opacity:1;"></canvas>
         <canvas id="canvas2D_crossing_sky" class="canvas2D" style="opacity:0;"></canvas>

@@ -11,12 +11,12 @@ app.component('data-manager', {
             </div>
             
             <div id="data-manager-title-container">
-                <div id="data-manager-title"><img src="./assets/data.png" width="60px">Data Manager</div>
+                <div id="data-manager-title"><img alt="Data Manager image." src="./assets/data.png" width="60px">Data Manager</div>
             </div>
             
             <div id="download-button-container">
                 <div class="download-button-box">
-                    <a id="download-button" class="download-button"><img src="./assets/export.png" width="30px">DOWNLOAD DATA</a>
+                    <a id="download-button" class="download-button"><img alt="Download button." src="./assets/export.png" width="30px">DOWNLOAD DATA</a>
                 </div>
             </div>
             

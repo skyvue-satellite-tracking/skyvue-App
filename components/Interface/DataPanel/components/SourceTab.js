@@ -50,14 +50,14 @@ app.component('source-tab', {
         
         <div v-if="!tracking" class="button-box">
             <button @click="startTracking(norad_number)" class="button">
-                <img src="./assets/start_tracking.png" width="30px">
+                <img alt="Start Tracking button." src="./assets/start_tracking.png" width="30px">
                 START TRACKING
             </button>
         </div>
         
         <div v-if="tracking" class="button-box">
             <button @click="stopTracking()" class="button">
-                <img src="./assets/stop_tracking.png" width="30px">
+                <img alt="Stop tracking button." src="./assets/stop_tracking.png" width="30px">
                 STOP TRACKING
             </button>
         </div>

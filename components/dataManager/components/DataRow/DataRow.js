@@ -7,7 +7,7 @@ app.component('data-row', {
                 <div v-for="item in field_data" class="data-manager-data-field">{{item}}</div>
             </div>
 <!--            <div class="data-row-gadgets">
-                <img onclick="copyRowData(event)" src="./components/dataManager/assets/copy.png" class="copyButton data-manager-row-button">
+                <img alt="Copy to clipboard button." onclick="copyRowData(event)" src="./components/dataManager/assets/copy.png" class="copyButton data-manager-row-button">
                 <checkbox :index='index'></checkbox>
             </div>
 -->

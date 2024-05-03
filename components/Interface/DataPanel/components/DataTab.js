@@ -82,7 +82,7 @@ app.component('data-tab', {
         </div>
         
         <div class="button-box">
-            <button @click="openDataManager()" class="button"><img src="./assets/data.png" width="30px">DATA MANAGER</button>
+            <button @click="openDataManager()" class="button"><img alt="Data manager button." src="./assets/data.png" width="30px">DATA MANAGER</button>
         </div>
         
     </div>

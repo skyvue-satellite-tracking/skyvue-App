@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>SkyVue</title>
+		
+		<!-- SEO (Search Engine Optimization) -->
+		<title>SkyVue - Satellite Tracking Graphical Interface</title>
+		<meta name="description" content="An interactive web application designed for learning about and monitoring Earth-orbiting satellites through a 
+		a intuitive and accessible graphical interface. ">
+		<meta name="robots" content="index, follow">
+		<meta property="og:title" content="skyVue - Satellite Tracking Graphical Interface" />
+		<meta property="og:description" content="An interactive web application designed for learning about and monitoring Earth-orbiting satellites through a 
+		a intuitive and accessible graphical interface." />
+		<meta property="og:url" content="https://skyvue.space/" />
+		<meta property="og:image" content="https://skyvue.space/assets/skyvue_logo.jpeg" />
+		<meta property="og:image:width" content="600" />
+		<meta property="og:image:height" content="600" />
+		<meta property="og:locale" content="en_US" />
+		<h1 style="display: none;">SkyVue - Satellite Tracking Interface</h1>
 
-		<link rel="icon" href="assets/skyvue_logo.jpeg">
+		<link rel="icon" href="favicon.ico">
 
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -28,28 +43,28 @@
 
 
 	</head>
-	
+
 	<body>
-		
+
 		<div id="app">
-			
+
 			<satbot :satbot_display="satbot_display"></satbot>
 
 			<data-manager :object_path="object_path" :predicted_path="predicted_path" :units="units" :source="source_URL"></data-manager>
-			
-			<img id="img-bg" src="assets/bg.jpg">
-			
+
+			<img alt="Page background image." id="img-bg" src="assets/bg.jpg">
+
 			<video id="video-bg" muted autoplay loop src="assets/bg.webm"></video>
 
 			<header-vue id="header-vue" :user_location="user_location" :satellites_crossing_count="satellites_crossing_count" :active_satellites_count="active_satellites_count"></header-vue>
-			
+
 			<div id="interface" class="interface">
-				
+
 				<data-panel :tracking="tracking" :object_path="object_path" :selected_satellite="selected_satellite" :source="source_URL" :tle_string="tle_string"></data-panel>
 				<view-panel :tracking="tracking" :object_path="object_path" :selected_satellite="selected_satellite" :tle_string="tle_string"></view-panel>
 
 			</div>
-					
+
 			<!-- <div id="trivia" class="band-container">
 				<div class="band-display">
 					<div style="width: 100%; display: inline-flex" >
@@ -69,13 +84,13 @@
 							<h1 class="band-title">RESOURCES</h1>
 							<h6>from other creators</h6>
 						</div>
-						
+
 						<div class="recommended-resources">
-							<div class="band-button-container"><a target="_blank" href="https://celestrak.org"><button class="rectangular-button" id="resource-button-1"><img class="resource-image" src="./assets/resource1.png" width="100%" height="100%" ></button></a><div class="button-name">Celestrack</div></div>
-							<div class="band-button-container"><a target="_blank" href="https://celestrak.org/columns/"><button class="rectangular-button" id="resource-button-1"><img class="resource-image" src="./assets/stlogo.gif" width="100%" height="100%" ></button></a><div class="button-name">Satellite Times - articles</div></div>
-							<div class="band-button-container"><a target="_blank" href="https://nattybumppo.github.io/rocket-launch-history/"><button class="rectangular-button" id="resource-button-1"><img class="resource-image" src="./assets/HistoryOfLaunches.gif" width="100%" height="100%" ></button></a><div class="button-name">A BRIEF HISTORY OF ROCKET LAUNCHES</div></div>
-							<div class="band-button-container"><a target="_blank" href="https://satmap.space/"><button class="rectangular-button" id="resource-button-1"><img class="resource-image" src="./assets/satmap_demo.gif" width="100%" height="100%" ></button></a><div class="button-name">satmap.space</div></div>
-							<div class="band-button-container"><a target="_blank" href="https://www.keeptrack.space/articles/"><button class="rectangular-button" id="resource-button-1"><img class="resource-image" src="./assets/keeptrack.png" width="100%" height="100%" ></button></a><div class="button-name">Deep Dive - articles</div></div>
+							<div class="band-button-container"><a target="_blank" href="https://celestrak.org"><button class="rectangular-button" id="resource-button-1"><img alt="Celestrak - Main page" class="resource-image" src="./assets/resource1.png" width="100%" height="100%" ></button></a><div class="button-name">Celestrack</div></div>
+							<div class="band-button-container"><a target="_blank" href="https://celestrak.org/columns/"><button class="rectangular-button" id="resource-button-1"><img alt="Celestrack - Satellite News" class="resource-image" src="./assets/stlogo.gif" width="100%" height="100%" ></button></a><div class="button-name">Satellite Times - articles</div></div>
+							<div class="band-button-container"><a target="_blank" href="https://nattybumppo.github.io/rocket-launch-history/"><button class="rectangular-button" id="resource-button-1"><img alt="Rocket Launch History" class="resource-image" src="./assets/HistoryOfLaunches.gif" width="100%" height="100%" ></button></a><div class="button-name">A BRIEF HISTORY OF ROCKET LAUNCHES</div></div>
+							<div class="band-button-container"><a target="_blank" href="https://satmap.space/"><button class="rectangular-button" id="resource-button-1"><img alt="Satmap.space webpage" class="resource-image" src="./assets/satmap_demo.gif" width="100%" height="100%" ></button></a><div class="button-name">satmap.space</div></div>
+							<div class="band-button-container"><a target="_blank" href="https://www.keeptrack.space/articles/"><button class="rectangular-button" id="resource-button-1"><img alt="keeptrack.space webpage" class="resource-image" src="./assets/keeptrack.png" width="100%" height="100%" ></button></a><div class="button-name">Keep Track - Deep Dive articles</div></div>
 						</div>
 					</div>
 				</div>
@@ -85,15 +100,13 @@
 				<div class="band-display">
 					<div class="contribute">
 						<a class="buymeacoffee-button" target="_blank" href="https://buymeacoffee.com/skyvue?new=1"><img src="./assets/buymeacoffee-button.png" alt="Buy Me A Coffee"></a>
-						<a class="roadmap-button" target="_blank" href="https://github.com/orgs/skyvue-satellite-tracking/projects/1"><img src="./assets/roadmap_github.png" alt="Join the team"></a>
+						<a class="roadmap-button" target="_blank" href="https://github.com/orgs/skyvue-satellite-tracking/projects/1"><img src="./assets/roadmap_github.png" alt="skyVue's Roadmap"></a>
 					</div>
 					<div class="inline-flex-container">
 
 						<div style="display: inline-flex; flex-wrap: nowrap; gap: 4vh;">
-							<div class="band-button-container"><a target="_blank" href="https://clodo.me/" target="_blank"><button class="circular-button" id="dev-button-1"><img class="dev-image" src="./assets/dev1.png" width="100%" ></button></a><div class="button-name">Clodo</div></div>
-							<div class="band-button-container"><a target="_blank" href="https://clodo.me/" target="_blank"><button class="circular-button" id="dev-button-1"><img class="dev-image" src="./assets/satbot.jpeg" width="100%" ></button></a><div class="button-name">Satbot</div></div>
-							<!-- <div class="band-button-container"><a target="_blank" href="https://clodon1109.github.io/caiosoter-webpage/" target="_blank"><button class="circular-button" id="dev-button-2"><img class="dev-image" src="./assets/caio-profile-art.png" width="100%" ></button></a><div class="button-name">Caio Sóter</div></div> -->
-
+							<div class="band-button-container"><a target="_blank" href="https://clodo.me/" target="_blank"><button class="circular-button" id="dev-button-1"><img alt="clodo.me webpage." class="dev-image" src="./assets/dev1.png" width="100%" ></button></a><div class="button-name">Clodo</div></div>
+							<div class="band-button-container"><a target="_blank" href="https://clodo.me/" target="_blank"><button class="circular-button" id="dev-button-1"><img alt="Satbot OpenAI chatbot." class="dev-image" src="./assets/satbot.jpeg" width="100%" ></button></a><div class="button-name">Satbot</div></div>
 						</div>
 						<div class="band-title-box">
 							<h1 class="band-title">THE TEAM</h1>
@@ -131,42 +144,42 @@
 					</div>
 				</div>
 			</div>
-			
 
-			<footer id="footer">	
-				
+
+			<footer id="footer">
+
 				<div class ="footer-grid">
-					
+
 					<a target="_blank" href="https://clodo.me">
 						<div class="footer-box">
-							
+
 							<div style="font-family:courier; color: white;"><div style="transition: all 0s; width: max-content; padding: 2px;">design by Clodo</div></div>
-							
+
 							<div class="box-image" ></div>
-							
-							<div style="transition: all 0s; color: white;"><div class="clodo-web-address" style="transition: all 0s;">clodo.me</div></div> 
-							
+
+							<div style="transition: all 0s; color: white;"><div class="clodo-web-address" style="transition: all 0s;">clodo.me</div></div>
+
 						</div>
 					</a>
-					
+
 					<div class="powered-by">
 						<div style="margin-right: 1vw; min-width: fit-content;">Powered by</div>
 						<div class="power-ups">
-							<a target="_blank" href="https://www.n2yo.com/api/"><img src="./assets/n2yo.png" style="background-color: rgba(255, 255, 255, 0.856);"></a>
-							<a target="_blank" href="https://celestrak.org/"><img src="./assets/resource1.png" style="background-color: rgba(255, 255, 255, 0.856);"></a>
-							<a target="_blank" href="https://wheretheiss.at/w/developer"><img src="./assets/wheretheissat.png"></a>
-							<a target="_blank" href="https://flagsapi.com/"><img src="https://flagsapi.com/img/logo-countryflags.png" style="background-color: rgba(255, 255, 255, 0.863);"></a>
-							<a target="_blank" href="https://www.geonames.org/"><img src="./assets/geonames.png" style="background-color: rgba(255, 255, 255, 0.514);"></a>						
-							<a target="_blank" href="https://vuejs.org/"><img src="./assets/vuejs.jpeg" style="background-color: rgba(245, 231, 231, 0.849);"></a>						
-							<a target="_blank" href="https://platform.openai.com/"><img src="./assets/chatGPT_rectangular.png" style="background-color: rgba(255, 255, 255, 0.726);"></a>						
+							<a target="_blank" href="https://www.n2yo.com/api/"><img alt="n2yo.com webpage." src="./assets/n2yo.png" style="background-color: rgba(255, 255, 255, 0.856);"></a>
+							<a target="_blank" href="https://celestrak.org/"><img alt="celestrak.org webpage." src="./assets/resource1.png" style="background-color: rgba(255, 255, 255, 0.856);"></a>
+							<a target="_blank" href="https://wheretheiss.at/w/developer"><img alt="wheretheiss.at webpage." src="./assets/wheretheissat.png"></a>
+							<a target="_blank" href="https://flagsapi.com/"><img alt="flagsapi.com webpage." src="https://flagsapi.com/img/logo-countryflags.png" style="background-color: rgba(255, 255, 255, 0.863);"></a>
+							<a target="_blank" href="https://www.geonames.org/"><img alt="geonames.org webpage." src="./assets/geonames.png" style="background-color: rgba(255, 255, 255, 0.514);"></a>
+							<a target="_blank" href="https://vuejs.org/"><img alt="vuejs.org webpage" src="./assets/vuejs.jpeg" style="background-color: rgba(245, 231, 231, 0.849);"></a>
+							<a target="_blank" href="https://platform.openai.com/"><img alt="platform.openai.com webpage." src="./assets/chatGPT_rectangular.png" style="background-color: rgba(255, 255, 255, 0.726);"></a>
 						</div>
 					</div>
-					
-					
+
+
 				</div>
-				
+
 			</footer>
-					
+
 		</div>
 
 		<script src="./scripts/tracking.js"></script>
@@ -200,7 +213,7 @@
 		<script>
 			const mountedApp = app.mount('#app');
 		</script>
-				
+
 	</body>
-				
+
 </html>

@@ -15,7 +15,7 @@ app.component('satbot', {
 
         <div v-show="satbot_display === 'full'" id="satbot-response-container">
             <div class="satbot-background-container">
-                <img class="satbot-background" src="./assets/chatGPT.webp"/>
+                <img alt="Satbot response background." class="satbot-background" src="./assets/chatGPT.webp"/>
             </div>
             <div class="chatbot-data-display" >
                 <div id="chatbot-response">

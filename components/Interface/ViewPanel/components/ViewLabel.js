@@ -3,7 +3,7 @@ app.component('view-label', {
     /*html*/
     `
     <div class="label" :id="label.id" style="opacity: 0.9;">
-        <img class="label-img" :src="label.image">
+        <img alt="Map label" class="label-img" :src="label.image">
         <div class="label-text">{{this.label.text}}</div>
     </div>
     `
