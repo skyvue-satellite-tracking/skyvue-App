@@ -1,4 +1,4 @@
-# SKYVUE APP <a href="https://skyvue.space">![website](https://img.shields.io/badge/https://skyvue.space-blue)</a>
+# skyVue App <a href="https://skyvue.space">![website](https://img.shields.io/badge/https://skyvue.space-blue)</a>
 
 ## Satellite Tracking Graphical Interface
 
