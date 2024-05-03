@@ -59,9 +59,7 @@ app.component('header-vue', {
     `,
     data() {
         return {
-            active_satellites: [],
             active_satellites_tle: [],
-            active_satellites_crossing_sky: [],
             debris: [],
             objects_crossing_sky: [],
             info: {
@@ -84,6 +82,14 @@ app.component('header-vue', {
             type: Array,
             required: true
         },
+        active_satellites: {
+            type: Array,
+            required: true
+        },
+        active_satellites_crossing_sky: {
+            type: Array,
+            required: true
+        },
     }
     ,
     watch: {
@@ -95,22 +101,19 @@ app.component('header-vue', {
         active_satellites() {
 
             let canvas_ctx = document.getElementById('canvas2D_active_satellites').getContext('2d');
-            // drawArray(this.active_satellites, 100, 'rgba(160, 255, 160, 1)', 0.05, 150, canvas_ctx, 0);
-            // mountedApp.active_satellites_count = this.active_satellites.length;
-
-            drawArraySlowMotion(this.active_satellites, 100, 'rgba(160, 255, 160, 0.7)', 0.5, 10, canvas_ctx, 0, mountedApp.active_satellites_count);
-            
+            drawArraySlowMotion(this.active_satellites, 100, 'rgba(160, 255, 160, 0.7)', 0.5, 10, canvas_ctx, 0, this.active_satellites_count);
         },
         active_satellites_crossing_sky() {
+
             let canvas_ctx = document.getElementById('canvas2D_crossing_sky').getContext('2d');
-            drawArraySlowMotion(this.active_satellites_crossing_sky, 100, 'rgba(160, 255, 160, 1)', 0.5, 10, canvas_ctx, 0, mountedApp.satellites_crossing_count);
+            drawArraySlowMotion(this.active_satellites_crossing_sky, 100, 'rgba(160, 255, 160, 1)', 0.5, 10, canvas_ctx, 0, this.satellites_crossing_count);
         },
 
     },
     computed: {
         // active_satellites_count() {
         //     // It is devided by three because the tle list has 3 lines per satellite, i.e., it is a 3LE format.
-        //     return this.active_satellites.length;
+        //     return mountedApp.active_satellites.length;
         // },
         debris_count() {
             return this.debris.length;
@@ -148,7 +151,7 @@ app.component('header-vue', {
              body: satellites_tle_array,
             }).then((response) => response.json())
             .then((data) => {
-                this.active_satellites = data;
+                mountedApp.active_satellites = data;
 
                 document.getElementById('refresh-button-1').style.animation = 'none';
             });
@@ -190,7 +193,7 @@ app.component('header-vue', {
                 let regex_codes_for_debries = '^((?!DEB|R\/B).)*$';
 
                 // Filtering only objects not classified as debris.
-                this.active_satellites_crossing_sky = this.objects_crossing_sky.filter(satellite => satellite.satname.match(regex_codes_for_debries));
+                mountedApp.active_satellites_crossing_sky = this.objects_crossing_sky.filter(satellite => satellite.satname.match(regex_codes_for_debries));
 
             })
         },
@@ -225,8 +228,6 @@ app.component('header-vue', {
 
         updateActiveSatellitesPositions(){
 
-            mountedApp.active_satellites_count = [0];
-
             let canvas_ctx = document.getElementById('canvas2D_active_satellites').getContext('2d');
             canvas_ctx.clearRect(0, 0, canvas2D.width, canvas2D.height);
 
@@ -234,8 +235,6 @@ app.component('header-vue', {
         },
 
         updateSatellitesCrossingSkyPositions(){
-
-            mountedApp.satellites_crossing_count = [0];
             
             let canvas_ctx = document.getElementById('canvas2D_crossing_sky').getContext('2d');
             canvas_ctx.clearRect(0, 0, canvas2D.width, canvas2D.height);

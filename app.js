@@ -4,6 +4,8 @@ const app = Vue.createApp( {
         return{
             timestamp: "",
             selected_satellite: '',
+            active_satellites: [],
+            active_satellites_crossing_sky: [],
             tracking: false,
             //API configuration
             source_URL: 'skyVue API',
@@ -20,7 +22,6 @@ const app = Vue.createApp( {
             // Container for scheduled timeouts.
             timeouts: new Array(),
             // Display configuration (time in miliseconds).
-            wiki_update_rate: 10000,
             data_update_rate: 5000,
             display_framerate: 1000,
             line_level_detail: 5,

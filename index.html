@@ -56,7 +56,13 @@
 
 			<video id="video-bg" muted autoplay loop src="assets/bg.webm"></video>
 
-			<header-vue id="header-vue" :user_location="user_location" :satellites_crossing_count="satellites_crossing_count" :active_satellites_count="active_satellites_count"></header-vue>
+			<header-vue id="header-vue" 
+				:user_location="user_location" 
+				:satellites_crossing_count="satellites_crossing_count" 
+				:active_satellites_count="active_satellites_count"
+				:active_satellites="active_satellites"
+				:active_satellites_crossing_sky="active_satellites_crossing_sky"
+			></header-vue>
 
 			<div id="interface" class="interface">
 

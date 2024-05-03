@@ -4,12 +4,12 @@ app.component('map2D-tab', {
     `
     <div class="display-system" id="map2D-container">
     
-        <img alt="Satellite figure" v-show="path_length > 0 && tracking" id="satellite" src="assets/header_satellite.png" alt="a mundi map" lang="en">
+        <img alt="Satellite figure" v-show="path_length > 0 && tracking" id="satellite" src="assets/header_satellite.png" lang="en">
         <div v-show="path_length > 0 && tracking" id="footprint-radius"></div>
         <img alt="" v-show="path_length > 0 && tracking" id="satellite-location-flag">
         <div v-show="path_length > 0 && tracking" id="satellite-location-name"></div>
         
-        <img alt="user's location image" id="user-location" src="assets/here.png" style="background-color:rgba(40,40,40,1)" alt="here" lang="en">
+        <img alt="user's location image" id="user-location" src="assets/here.png" style="background-color:rgba(40,40,40,1)" lang="en">
         <img alt="" id="user-location-flag">
         <div id="user-location-name"></div>
 
@@ -107,7 +107,14 @@ app.component('map2D-tab', {
             this.resizeCanvas();
             if (mountedApp.user_location.length > 0) {
                 setTimeout(() => {
-                    setMapObjectPosition(mountedApp.user_location[0], mountedApp.user_location[1]);                    
+                    setMapObjectPosition(mountedApp.user_location[0], mountedApp.user_location[1]);  
+                    
+                    let canvas_ctx = document.getElementById('canvas2D_active_satellites').getContext('2d'); 
+                    drawArray(mountedApp.active_satellites, 100, 'rgba(160, 255, 160, 0.7)', 0.5, 10, canvas_ctx, 0);
+                    
+                    canvas_ctx = document.getElementById('canvas2D_crossing_sky').getContext('2d');
+                    drawArray(mountedApp.active_satellites_crossing_sky, 100, 'rgba(160, 255, 160, 1)', 0.5, 10, canvas_ctx, 0);
+                             
                 }, 100);
             }
         })
