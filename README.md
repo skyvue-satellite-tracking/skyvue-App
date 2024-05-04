@@ -16,6 +16,13 @@ Built with
   <img src="https://github.com/skyvue-satellite-tracking/skyvue-App/assets/104923248/fd9dfed4-d313-4d78-a260-2ca58cb31b39" width="100%">
 </div>
 
+<br>
+
+- Vizualise all active satellites and get amazed by the great complexity of satellites orbiting Earth.
+- Get the whereabouts of any satellite by entering its NORAD number.
+- Get insights on the history and purpose of each satellite.
+- Find links to great resources and tools on satellite tracking by other creators. 
+- (soon) Get predictions for next passage 
 
 <br>
 
