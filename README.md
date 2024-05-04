@@ -22,7 +22,7 @@ Built with
 - Get the whereabouts of any satellite by entering its NORAD number.
 - Get insights on the history and purpose of each satellite.
 - Find links to great resources and tools on satellite tracking by other creators. 
-- (soon) Get predictions for next passage 
+- (soon) Get predictions for the next passages over your sky. 
 
 <br>
 
