@@ -26,8 +26,6 @@ Built with
 
 <br>
 
-## Sitemap
-
 <div align="center">
   <img src="https://github.com/skyvue-satellite-tracking/skyvue-App/assets/104923248/4dca6d16-2bfb-458e-bd2f-2ebd58e2b2fa" width="100%">
 </div>
