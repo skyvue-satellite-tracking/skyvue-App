@@ -18,7 +18,7 @@ Built with
 
 <br>
 
-- Vizualise all active satellites and get amazed by the great complexity of satellites orbiting Earth.
+- Visualize all active satellites and get amazed by the great complexity of satellites orbiting Earth.
 - Get the whereabouts of any satellite by entering its NORAD number.
 - Get insights on the history and purpose of each satellite.
 - Find links to great resources and tools on satellite tracking by other creators. 
