@@ -18,15 +18,13 @@ Built with
 
 <br>
 
-- Vizualise all active satellites and get amazed by the great complexity of satellites orbiting Earth.
+- Visualize all active satellites and get amazed by the great complexity of satellites orbiting Earth.
 - Get the whereabouts of any satellite by entering its NORAD number.
 - Get insights on the history and purpose of each satellite.
 - Find links to great resources and tools on satellite tracking by other creators. 
 - (soon) Get predictions for the next passages over your sky. 
 
 <br>
-
-## Sitemap
 
 <div align="center">
   <img src="https://github.com/skyvue-satellite-tracking/skyvue-App/assets/104923248/4dca6d16-2bfb-458e-bd2f-2ebd58e2b2fa" width="100%">
