@@ -85,7 +85,7 @@ app.component('orbit-tab', {
         tle_string(new_value, old_value){
           
             this.feedTLEFields();
-            this.fetchSatbotInfo();                    
+            //this.fetchSatbotInfo();                    
             this.fetchPredictedPath();
         }
 
